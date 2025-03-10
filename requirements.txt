@@ -19,4 +19,6 @@ wikipedia>=1.4.0
 beautifulsoup4>=4.9.3
 joblib>=1.0.1
 sqlalchemy>=1.4.15
+pillow>=8.2.0
+platform>=1.0.8
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz

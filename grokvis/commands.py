@@ -20,6 +20,9 @@ from grokvis.entertainment import tell_joke, play_music, get_movie_listings, sha
 from grokvis.productivity import start_timer, start_stopwatch, stop_stopwatch, add_to_shopping_list
 from grokvis.productivity import show_shopping_list, take_note, show_notes, location_reminder
 from grokvis.system import switch_persona, adjust_volume, sleep_mode, check_for_updates, is_sleeping
+from grokvis.system_control import launch_application, close_application, take_screenshot, lock_computer
+from grokvis.system_control import shutdown_computer, restart_computer, get_system_status, find_files
+from grokvis.system_control import open_file, create_folder, add_app_shortcut
 
 def process_command(command):
     """Process the spoken command."""
@@ -198,6 +201,68 @@ def process_command(command):
             
         elif "update yourself" in command or "check for updates" in command:
             check_for_updates()
+            
+        # SYSTEM CONTROL COMMANDS
+        elif "open" in command or "launch" in command or "start" in command:
+            # Extract application name
+            if "open" in command:
+                app_name = command.split("open")[1].strip()
+            elif "launch" in command:
+                app_name = command.split("launch")[1].strip()
+            elif "start" in command:
+                app_name = command.split("start")[1].strip()
+                
+            if app_name:
+                launch_application(app_name)
+                
+        elif "close" in command or "exit" in command:
+            # Check if it's for an application
+            if not ("quit" in command and "shutdown" in command):  # Not the quit command
+                # Extract application name
+                if "close" in command:
+                    app_name = command.split("close")[1].strip()
+                elif "exit" in command:
+                    app_name = command.split("exit")[1].strip()
+                    
+                if app_name:
+                    close_application(app_name)
+                    
+        elif "take a screenshot" in command or "capture screen" in command:
+            take_screenshot()
+            
+        elif "lock" in command and ("computer" in command or "pc" in command or "system" in command):
+            lock_computer()
+            
+        elif "shutdown" in command and ("computer" in command or "pc" in command or "system" in command):
+            if "in" in command or "after" in command:
+                # Extract delay time
+                delay_text = command.split("in")[1].strip() if "in" in command else command.split("after")[1].strip()
+                try:
+                    # Try to parse minutes
+                    delay = int(re.search(r'\d+', delay_text).group())
+                    shutdown_computer(delay)
+                except:
+                    speak("I couldn't understand the delay time. Please specify like 'shutdown computer in 30 minutes'.")
+            else:
+                shutdown_computer()
+                
+        elif "restart" in command and ("computer" in command or "pc" in command or "system" in command):
+            restart_computer()
+            
+        elif "system status" in command or "how's my computer" in command or "computer status" in command:
+            get_system_status()
+            
+        elif "find" in command and "files" in command:
+            # Extract search query
+            query = command.split("find")[1].split("files")[0].strip()
+            if query:
+                find_files(query)
+                
+        elif "create" in command and "folder" in command:
+            # Extract folder name
+            folder_name = command.split("folder")[1].strip()
+            if folder_name:
+                create_folder(folder_name)
             
         # QUIT COMMAND
         elif "quit" in command or "exit" in command or "shutdown" in command:

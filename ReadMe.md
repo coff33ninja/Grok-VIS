@@ -16,6 +16,8 @@ GrokVIS is a modular voice assistant with memory, scheduling, and home automatio
 - **Entertainment**: Tells jokes, plays music, shows movie listings, and shares random facts
 - **Productivity Tools**: Manages timers, stopwatches, shopping lists, notes, and location-based reminders
 - **System Controls**: Adjusts volume, enters sleep mode, and checks for updates
+- **Application Control**: Launches and closes applications, takes screenshots, and manages system functions
+- **File Management**: Searches for files, creates folders, and opens documents
 
 ## Project Structure
 
@@ -35,7 +37,8 @@ grokvis/
 ├── knowledge.py      # Information retrieval and language services
 ├── entertainment.py  # Fun and entertainment features
 ├── productivity.py   # Time management and organization tools
-└── system.py         # System control and configuration
+├── system.py         # System control and configuration
+└── system_control.py # Application and file management
 ```
 
 ## Installation
@@ -114,6 +117,19 @@ The system will:
 - **Sleep Mode**: "Go to sleep for [time period]" - Temporarily disable wake word detection
 - **Updates**: "Update yourself" - Check for and install updates
 - **Wake Up**: "Wake up" - Exit sleep mode early
+
+### Application Control Commands
+- **Launch Apps**: "Open [application]" / "Launch [application]" - Start applications
+- **Close Apps**: "Close [application]" - Terminate running applications
+- **Screenshots**: "Take a screenshot" - Capture and save screen image
+- **System Control**: "Lock my computer" - Lock your workstation
+- **Power Management**: "Shutdown computer in [minutes]" / "Restart computer" - Control power state
+- **System Info**: "System status" / "How's my computer" - Get CPU, memory, and disk usage
+
+### File Management Commands
+- **File Search**: "Find [query] files" - Search for files matching a pattern
+- **Folder Creation**: "Create folder [name]" - Create new directories
+- **App Shortcuts**: "Add shortcut for [app]" - Create custom application shortcuts
 
 ## Web Dashboard
 
