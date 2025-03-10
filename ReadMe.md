@@ -106,6 +106,18 @@ Access the dashboard at http://localhost:5000 to:
 - Customize the wake word in `speech.py`
 - Add new web dashboard features in `web.py`
 
+## Package Structure
+grokvis/
+├── __init__.py       # Package initialization
+├── core.py           # Core functionality and initialization
+├── speech.py         # Speech recognition and TTS
+├── memory.py         # Memory storage and retrieval
+├── scheduler.py      # Event scheduling
+├── home_automation.py # Device control
+├── weather.py        # Weather services
+├── web.py            # Web dashboard
+└── commands.py       # Command processing
+
 ## License
 
 [MIT License](LICENSE)
