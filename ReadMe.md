@@ -12,6 +12,10 @@ GrokVIS is a modular voice assistant with memory, scheduling, and home automatio
 - **Home Automation**: Controls smart devices and supports Wake-on-LAN
 - **Weather Services**: Fetches current weather and forecasts
 - **Web Dashboard**: Provides a browser-based interface for monitoring and control
+- **Knowledge Base**: Fetches information from Wikipedia, news, dictionaries, and translation services
+- **Entertainment**: Tells jokes, plays music, shows movie listings, and shares random facts
+- **Productivity Tools**: Manages timers, stopwatches, shopping lists, notes, and location-based reminders
+- **System Controls**: Adjusts volume, enters sleep mode, and checks for updates
 
 ## Project Structure
 
@@ -69,11 +73,43 @@ The system will:
 
 ## Voice Commands
 
+### Basic Commands
 - **Weather**: "What's the weather in [city]?" or "Give me the forecast for [city]"
 - **Scheduling**: "Schedule [task] at [time]", "Show my schedule", "Remove [task]"
 - **Memory**: "Remember [information]", "What did I say about [topic]?"
 - **Home Automation**: "Turn on/off [device]", "Check if [device] is online"
 - **System**: "Quit" or "Shutdown"
+
+### Knowledge Commands
+- **Wikipedia**: "Tell me about [topic]" - Get information from Wikipedia
+- **News**: "What's in the news today?" - Get latest news headlines
+- **Dictionary**: "Define [word]" - Look up word definitions
+- **Translation**: "Translate [phrase] to [language]" - Translate text to another language
+
+### Home Automation Commands
+- **Temperature**: "Set the temperature to [value] degrees" - Control smart thermostat
+- **Scenes**: "Set scene [scene name]" - Activate predefined combinations of device settings
+- **Status Check**: "Is my [device] on?" - Check status of specific devices
+
+### Entertainment Commands
+- **Jokes**: "Tell me a joke" - Get a random joke
+- **Music**: "Play some [genre] music" - Play music by genre
+- **Movies**: "What movies are playing nearby?" - Get movie listings
+- **Facts**: "Give me a random fact" - Get interesting trivia
+
+### Productivity Commands
+- **Timers**: "Start a timer for [time]" - Set countdown timers
+- **Stopwatch**: "Start a stopwatch" / "Stop the stopwatch" - Track elapsed time
+- **Shopping Lists**: "Add [item] to my shopping list" / "Show my shopping list"
+- **Notes**: "Take a note: [content]" / "Show my notes" - Quick note-taking
+- **Location Reminders**: "Remind me to [task] when I get to [location]"
+
+### System Commands
+- **Persona**: "Switch to [Alfred/Beatrice]" - Change assistant persona
+- **Volume**: "Volume up" / "Volume down" - Adjust system volume
+- **Sleep Mode**: "Go to sleep for [time period]" - Temporarily disable wake word detection
+- **Updates**: "Update yourself" - Check for and install updates
+- **Wake Up**: "Wake up" - Exit sleep mode early
 
 ## Web Dashboard
 
@@ -83,6 +119,16 @@ Access the dashboard at http://localhost:5000 to:
 - Monitor system statistics
 
 ## Key Enhancements
+
+### Expanded Voice Commands
+
+- **What's Done**: Added over 20 new voice commands across multiple categories:
+  - **Knowledge**: Wikipedia lookups, news headlines, word definitions, translations
+  - **Entertainment**: Jokes, music playback, movie listings, random facts
+  - **Productivity**: Timers, stopwatches, shopping lists, notes, location reminders
+  - **System Controls**: Persona switching, volume control, sleep mode, updates
+- **How It Works**: Each command category has its own module with specialized functions
+- **Impact**: Transforms GrokVIS from a basic assistant to a comprehensive voice interface
 
 ### Personality System
 
