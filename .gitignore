@@ -1,0 +1,30 @@
+# Ignore virtual environments
+.venv/
+venv/
+
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and IDE files
+.env
+.env.local
+.vscode/
+.idea/
+
+# Pip and dependency management
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Logs and debug
+*.log
+debug.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
