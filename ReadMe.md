@@ -167,6 +167,7 @@ Access the dashboard at http://localhost:5000 to:
   3. Updating the `setup_personality()` function to include your new option
 
 ## Package Structure
+```
 grokvis/
 ├── __init__.py       # Package initialization
 ├── core.py           # Core functionality and initialization
@@ -176,7 +177,12 @@ grokvis/
 ├── home_automation.py # Device control
 ├── weather.py        # Weather services
 ├── web.py            # Web dashboard
-└── commands.py       # Command processing
+├── commands.py       # Command processing
+├── knowledge.py      # Information retrieval and language services
+├── entertainment.py  # Fun and entertainment features
+├── productivity.py   # Time management and organization tools
+└── system.py         # System control and configuration
+```
 
 
 ## How to Test
