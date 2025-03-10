@@ -31,7 +31,11 @@ grokvis/
 ├── home_automation.py # Device control
 ├── weather.py        # Weather services
 ├── web.py            # Web dashboard
-└── commands.py       # Command processing
+├── commands.py       # Command processing
+├── knowledge.py      # Information retrieval and language services
+├── entertainment.py  # Fun and entertainment features
+├── productivity.py   # Time management and organization tools
+└── system.py         # System control and configuration
 ```
 
 ## Installation
@@ -166,23 +170,28 @@ Access the dashboard at http://localhost:5000 to:
   2. Creating new quips lists in `core.py`
   3. Updating the `setup_personality()` function to include your new option
 
-## Package Structure
-```
-grokvis/
-├── __init__.py       # Package initialization
-├── core.py           # Core functionality and initialization
-├── speech.py         # Speech recognition and TTS
-├── memory.py         # Memory storage and retrieval
-├── scheduler.py      # Event scheduling
-├── home_automation.py # Device control
-├── weather.py        # Weather services
-├── web.py            # Web dashboard
-├── commands.py       # Command processing
-├── knowledge.py      # Information retrieval and language services
-├── entertainment.py  # Fun and entertainment features
-├── productivity.py   # Time management and organization tools
-└── system.py         # System control and configuration
-```
+### Extending Functionality Modules
+
+- **Knowledge Module**: Add new information sources in `knowledge.py`
+  - Integrate additional APIs for specialized knowledge domains
+  - Add methods for different types of information retrieval
+
+- **Entertainment Module**: Expand entertainment options in `entertainment.py`
+  - Connect to music streaming services
+  - Add games or interactive entertainment features
+  - Integrate with video streaming platforms
+
+- **Productivity Module**: Enhance productivity tools in `productivity.py`
+  - Add calendar integration
+  - Implement task prioritization
+  - Create project management features
+
+- **System Module**: Add system controls in `system.py`
+  - Implement additional device controls
+  - Add network management features
+  - Create system monitoring capabilities
+
+
 
 
 ## How to Test
