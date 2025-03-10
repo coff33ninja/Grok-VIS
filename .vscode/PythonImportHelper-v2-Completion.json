@@ -1,0 +1,2159 @@
+[
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "jarvis_quips",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "alfred_quips",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "beatrice_quips",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "executor",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "persona",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "executor",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "memory_model",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "tts",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "wake_word_handle",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "jarvis_quips",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "persona",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "persona",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "wake_word_handle",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "executor",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "persona",
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "isExtraImport": true,
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "store_memory",
+        "importPath": "grokvis.memory",
+        "description": "grokvis.memory",
+        "isExtraImport": true,
+        "detail": "grokvis.memory",
+        "documentation": {}
+    },
+    {
+        "label": "handle_memory",
+        "importPath": "grokvis.memory",
+        "description": "grokvis.memory",
+        "isExtraImport": true,
+        "detail": "grokvis.memory",
+        "documentation": {}
+    },
+    {
+        "label": "store_memory",
+        "importPath": "grokvis.memory",
+        "description": "grokvis.memory",
+        "isExtraImport": true,
+        "detail": "grokvis.memory",
+        "documentation": {}
+    },
+    {
+        "label": "add_event",
+        "importPath": "grokvis.scheduler",
+        "description": "grokvis.scheduler",
+        "isExtraImport": true,
+        "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "list_events",
+        "importPath": "grokvis.scheduler",
+        "description": "grokvis.scheduler",
+        "isExtraImport": true,
+        "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "remove_event",
+        "importPath": "grokvis.scheduler",
+        "description": "grokvis.scheduler",
+        "isExtraImport": true,
+        "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "wake_pc",
+        "importPath": "grokvis.home_automation",
+        "description": "grokvis.home_automation",
+        "isExtraImport": true,
+        "detail": "grokvis.home_automation",
+        "documentation": {}
+    },
+    {
+        "label": "control_device",
+        "importPath": "grokvis.home_automation",
+        "description": "grokvis.home_automation",
+        "isExtraImport": true,
+        "detail": "grokvis.home_automation",
+        "documentation": {}
+    },
+    {
+        "label": "check_device_status",
+        "importPath": "grokvis.home_automation",
+        "description": "grokvis.home_automation",
+        "isExtraImport": true,
+        "detail": "grokvis.home_automation",
+        "documentation": {}
+    },
+    {
+        "label": "get_weather",
+        "importPath": "grokvis.weather",
+        "description": "grokvis.weather",
+        "isExtraImport": true,
+        "detail": "grokvis.weather",
+        "documentation": {}
+    },
+    {
+        "label": "get_forecast",
+        "importPath": "grokvis.weather",
+        "description": "grokvis.weather",
+        "isExtraImport": true,
+        "detail": "grokvis.weather",
+        "documentation": {}
+    },
+    {
+        "label": "get_wikipedia_summary",
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "isExtraImport": true,
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "get_news_headlines",
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "isExtraImport": true,
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "get_word_definition",
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "isExtraImport": true,
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "translate_text",
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "isExtraImport": true,
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "tell_joke",
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "isExtraImport": true,
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "play_music",
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "isExtraImport": true,
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "get_movie_listings",
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "isExtraImport": true,
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "share_random_fact",
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "isExtraImport": true,
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "start_timer",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "start_stopwatch",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "stop_stopwatch",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "add_to_shopping_list",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "show_shopping_list",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "take_note",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "show_notes",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "location_reminder",
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "isExtraImport": true,
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "switch_persona",
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "isExtraImport": true,
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "adjust_volume",
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "isExtraImport": true,
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "sleep_mode",
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "isExtraImport": true,
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "check_for_updates",
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "isExtraImport": true,
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "is_sleeping",
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "isExtraImport": true,
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "launch_application",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "close_application",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "take_screenshot",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "lock_computer",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "shutdown_computer",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "restart_computer",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "get_system_status",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "find_files",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "open_file",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "create_folder",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "add_app_shortcut",
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "isExtraImport": true,
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "SentenceTransformer",
+        "importPath": "sentence_transformers",
+        "description": "sentence_transformers",
+        "isExtraImport": true,
+        "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "SentenceTransformer",
+        "importPath": "sentence_transformers",
+        "description": "sentence_transformers",
+        "isExtraImport": true,
+        "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "spacy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "spacy",
+        "description": "spacy",
+        "detail": "spacy",
+        "documentation": {}
+    },
+    {
+        "label": "pynvml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pynvml",
+        "description": "pynvml",
+        "detail": "pynvml",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "TTS",
+        "importPath": "TTS.api",
+        "description": "TTS.api",
+        "isExtraImport": true,
+        "detail": "TTS.api",
+        "documentation": {}
+    },
+    {
+        "label": "TTS",
+        "importPath": "TTS.api",
+        "description": "TTS.api",
+        "isExtraImport": true,
+        "detail": "TTS.api",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundScheduler",
+        "importPath": "apscheduler.schedulers.background",
+        "description": "apscheduler.schedulers.background",
+        "isExtraImport": true,
+        "detail": "apscheduler.schedulers.background",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundScheduler",
+        "importPath": "apscheduler.schedulers.background",
+        "description": "apscheduler.schedulers.background",
+        "isExtraImport": true,
+        "detail": "apscheduler.schedulers.background",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemyJobStore",
+        "importPath": "apscheduler.jobstores.sqlalchemy",
+        "description": "apscheduler.jobstores.sqlalchemy",
+        "isExtraImport": true,
+        "detail": "apscheduler.jobstores.sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemyJobStore",
+        "importPath": "apscheduler.jobstores.sqlalchemy",
+        "description": "apscheduler.jobstores.sqlalchemy",
+        "isExtraImport": true,
+        "detail": "apscheduler.jobstores.sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "wakeonlan",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "wakeonlan",
+        "description": "wakeonlan",
+        "detail": "wakeonlan",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "wikipedia",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "wikipedia",
+        "description": "wikipedia",
+        "detail": "wikipedia",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "struct",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
+        "documentation": {}
+    },
+    {
+        "label": "speech_recognition",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "speech_recognition",
+        "description": "speech_recognition",
+        "detail": "speech_recognition",
+        "documentation": {}
+    },
+    {
+        "label": "sounddevice",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sounddevice",
+        "description": "sounddevice",
+        "detail": "sounddevice",
+        "documentation": {}
+    },
+    {
+        "label": "librosa",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "librosa",
+        "description": "librosa",
+        "detail": "librosa",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "OneClassSVM",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
+        "isExtraImport": true,
+        "detail": "sklearn.svm",
+        "documentation": {}
+    },
+    {
+        "label": "OneClassSVM",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
+        "isExtraImport": true,
+        "detail": "sklearn.svm",
+        "documentation": {}
+    },
+    {
+        "label": "pvporcupine",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pvporcupine",
+        "description": "pvporcupine",
+        "detail": "pvporcupine",
+        "documentation": {}
+    },
+    {
+        "label": "process_command",
+        "importPath": "grokvis.commands",
+        "description": "grokvis.commands",
+        "isExtraImport": true,
+        "detail": "grokvis.commands",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "platform",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "platform",
+        "description": "platform",
+        "detail": "platform",
+        "documentation": {}
+    },
+    {
+        "label": "psutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psutil",
+        "description": "psutil",
+        "detail": "psutil",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template_string",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template_string",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "grokvis_run",
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "isExtraImport": true,
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "process_command",
+        "kind": 2,
+        "importPath": "grokvis.commands",
+        "description": "grokvis.commands",
+        "peekOfCode": "def process_command(command):\n    \"\"\"Process the spoken command.\"\"\"\n    try:\n        if not command:\n            return\n        # Check if system is in sleep mode\n        if is_sleeping():\n            # Only respond to \"wake up\" command while sleeping\n            if \"wake up\" in command.lower():\n                from grokvis.system import sleep_until",
+        "detail": "grokvis.commands",
+        "documentation": {}
+    },
+    {
+        "label": "setup_logging",
+        "kind": 2,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "def setup_logging():\n    \"\"\"Set up logging configuration.\"\"\"\n    logging.basicConfig(filename='grokvis_errors.log', level=logging.ERROR,\n                        format='%(asctime)s - %(levelname)s - %(message)s')\n# Global variables and initialization\ndef initialize_components():\n    \"\"\"Initialize core components of GrokVIS.\"\"\"\n    global memory_model, nlp, conn, executor, scheduler, persona\n    # Initialize core components\n    memory_model = SentenceTransformer('all-MiniLM-L6-v2')",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_components",
+        "kind": 2,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "def initialize_components():\n    \"\"\"Initialize core components of GrokVIS.\"\"\"\n    global memory_model, nlp, conn, executor, scheduler, persona\n    # Initialize core components\n    memory_model = SentenceTransformer('all-MiniLM-L6-v2')\n    nlp = spacy.load(\"en_core_web_sm\")\n    pynvml.nvmlInit()\n    conn = sqlite3.connect(\"grokvis_memory.db\")\n    # tts will be initialized in setup_personality\n    executor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "grokvis_run",
+        "kind": 2,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "def grokvis_run():\n    \"\"\"Run the main GROK-VIS loop with wake word detection.\"\"\"\n    try:\n        # Setup logging\n        setup_logging()\n        # Initialize components\n        initialize_components()\n        # Import modules here to avoid circular imports\n        from grokvis.speech import speak, train_voice_model, wake_word_listener, setup_personality\n        from grokvis.web import app",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "memory_model",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "memory_model = None\nnlp = None\nconn = None\ntts = None\nexecutor = None\nscheduler = None\nmodel = None\nwake_word_handle = None\npersona = None\n# Personality quips",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "nlp",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "nlp = None\nconn = None\ntts = None\nexecutor = None\nscheduler = None\nmodel = None\nwake_word_handle = None\npersona = None\n# Personality quips\nalfred_quips = [",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "conn = None\ntts = None\nexecutor = None\nscheduler = None\nmodel = None\nwake_word_handle = None\npersona = None\n# Personality quips\nalfred_quips = [\n    \"At your service, sir. How else may I assist?\",",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "tts",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "tts = None\nexecutor = None\nscheduler = None\nmodel = None\nwake_word_handle = None\npersona = None\n# Personality quips\nalfred_quips = [\n    \"At your service, sir. How else may I assist?\",\n    \"Task complete. Shall I prepare anything else?\",",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "executor",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "executor = None\nscheduler = None\nmodel = None\nwake_word_handle = None\npersona = None\n# Personality quips\nalfred_quips = [\n    \"At your service, sir. How else may I assist?\",\n    \"Task complete. Shall I prepare anything else?\",\n    \"Consider it done. I'm here whenever you need me.\",",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "scheduler = None\nmodel = None\nwake_word_handle = None\npersona = None\n# Personality quips\nalfred_quips = [\n    \"At your service, sir. How else may I assist?\",\n    \"Task complete. Shall I prepare anything else?\",\n    \"Consider it done. I'm here whenever you need me.\",\n    \"As you wish. Your wish is my command.\",",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "model = None\nwake_word_handle = None\npersona = None\n# Personality quips\nalfred_quips = [\n    \"At your service, sir. How else may I assist?\",\n    \"Task complete. Shall I prepare anything else?\",\n    \"Consider it done. I'm here whenever you need me.\",\n    \"As you wish. Your wish is my command.\",\n    \"Executed with precision. What's next on the agenda?\"",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "wake_word_handle",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "wake_word_handle = None\npersona = None\n# Personality quips\nalfred_quips = [\n    \"At your service, sir. How else may I assist?\",\n    \"Task complete. Shall I prepare anything else?\",\n    \"Consider it done. I'm here whenever you need me.\",\n    \"As you wish. Your wish is my command.\",\n    \"Executed with precision. What's next on the agenda?\"\n]",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "persona",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "persona = None\n# Personality quips\nalfred_quips = [\n    \"At your service, sir. How else may I assist?\",\n    \"Task complete. Shall I prepare anything else?\",\n    \"Consider it done. I'm here whenever you need me.\",\n    \"As you wish. Your wish is my command.\",\n    \"Executed with precision. What's next on the agenda?\"\n]\nbeatrice_quips = [",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "alfred_quips",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "alfred_quips = [\n    \"At your service, sir. How else may I assist?\",\n    \"Task complete. Shall I prepare anything else?\",\n    \"Consider it done. I'm here whenever you need me.\",\n    \"As you wish. Your wish is my command.\",\n    \"Executed with precision. What's next on the agenda?\"\n]\nbeatrice_quips = [\n    \"All done with elegance. What else can I help with?\",\n    \"Task completed gracefully. Anything else?\",",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "beatrice_quips",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "beatrice_quips = [\n    \"All done with elegance. What else can I help with?\",\n    \"Task completed gracefully. Anything else?\",\n    \"Consider it handled. I'm here for whatever you need next.\",\n    \"Done with a touch of class. What would you like now?\",\n    \"Finished with finesse. How else may I assist you today?\"\n]\n# Default quips (will be replaced based on persona)\njarvis_quips = alfred_quips\n# Initialize logging",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "jarvis_quips",
+        "kind": 5,
+        "importPath": "grokvis.core",
+        "description": "grokvis.core",
+        "peekOfCode": "jarvis_quips = alfred_quips\n# Initialize logging\ndef setup_logging():\n    \"\"\"Set up logging configuration.\"\"\"\n    logging.basicConfig(filename='grokvis_errors.log', level=logging.ERROR,\n                        format='%(asctime)s - %(levelname)s - %(message)s')\n# Global variables and initialization\ndef initialize_components():\n    \"\"\"Initialize core components of GrokVIS.\"\"\"\n    global memory_model, nlp, conn, executor, scheduler, persona",
+        "detail": "grokvis.core",
+        "documentation": {}
+    },
+    {
+        "label": "tell_joke",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def tell_joke():\n    \"\"\"Tell a random joke from the JokeAPI.\"\"\"\n    try:\n        # Get a random joke from the JokeAPI\n        url = \"https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Pun?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart\"\n        response = requests.get(url)\n        joke_data = response.json()\n        if joke_data['error']:\n            # Fallback to a built-in joke if the API fails\n            jokes = [",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "play_music",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def play_music(genre=None):\n    \"\"\"Simulate playing music of a specific genre.\"\"\"\n    try:\n        genres = {\n            \"rock\": [\"Queen\", \"Led Zeppelin\", \"AC/DC\", \"The Beatles\"],\n            \"pop\": [\"Taylor Swift\", \"Ed Sheeran\", \"Ariana Grande\", \"Justin Bieber\"],\n            \"jazz\": [\"Miles Davis\", \"John Coltrane\", \"Ella Fitzgerald\", \"Louis Armstrong\"],\n            \"classical\": [\"Mozart\", \"Beethoven\", \"Bach\", \"Chopin\"],\n            \"hip hop\": [\"Kendrick Lamar\", \"Drake\", \"Jay-Z\", \"Eminem\"],\n            \"electronic\": [\"Daft Punk\", \"Deadmau5\", \"Calvin Harris\", \"Skrillex\"]",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "get_movie_listings",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def get_movie_listings(location=\"nearby\"):\n    \"\"\"Get movie listings for theaters in the area.\"\"\"\n    try:\n        # This would normally use a real movie API\n        # For demonstration, we'll use mock data\n        movies = [\n            {\"title\": \"The Matrix Resurrections\", \"rating\": \"PG-13\", \"showtime\": \"7:30 PM\"},\n            {\"title\": \"Spider-Man: No Way Home\", \"rating\": \"PG-13\", \"showtime\": \"6:15 PM, 9:00 PM\"},\n            {\"title\": \"Dune\", \"rating\": \"PG-13\", \"showtime\": \"5:45 PM, 8:30 PM\"},\n            {\"title\": \"No Time to Die\", \"rating\": \"PG-13\", \"showtime\": \"7:00 PM\"},",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "share_random_fact",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def share_random_fact():\n    \"\"\"Share a random interesting fact.\"\"\"\n    try:\n        # Get a random fact from the uselessfacts API\n        url = \"https://uselessfacts.jsph.pl/random.json?language=en\"\n        response = requests.get(url)\n        fact_data = response.json()\n        if 'text' in fact_data:\n            fact = fact_data['text']\n            speak(f\"Here's a random fact: {fact}\")",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "wake_pc",
+        "kind": 2,
+        "importPath": "grokvis.home_automation",
+        "description": "grokvis.home_automation",
+        "peekOfCode": "def wake_pc(mac_address=\"YOUR_PC_MAC\"):\n    \"\"\"Wake a PC using Wake-on-LAN.\"\"\"\n    try:\n        wakeonlan.send_magic_packet(mac_address)\n        speak(\"PC waking up. Don't fry it.\")\n    except Exception as e:\n        logging.error(f\"Wake-on-LAN Error: {e}\")\n        speak(\"Sorry, I couldn't wake the PC.\")\ndef control_device(device, action):\n    \"\"\"Simulate controlling a smart device.\"\"\"",
+        "detail": "grokvis.home_automation",
+        "documentation": {}
+    },
+    {
+        "label": "control_device",
+        "kind": 2,
+        "importPath": "grokvis.home_automation",
+        "description": "grokvis.home_automation",
+        "peekOfCode": "def control_device(device, action):\n    \"\"\"Simulate controlling a smart device.\"\"\"\n    try:\n        speak(f\"{action}ing the {device}. Need more?\")\n    except Exception as e:\n        logging.error(f\"Device Control Error: {e}\")\n        speak(\"Sorry, I couldn't control the device.\")\ndef check_device_status(device):\n    \"\"\"Check if a device is online by attempting to connect to its IP.\"\"\"\n    try:",
+        "detail": "grokvis.home_automation",
+        "documentation": {}
+    },
+    {
+        "label": "check_device_status",
+        "kind": 2,
+        "importPath": "grokvis.home_automation",
+        "description": "grokvis.home_automation",
+        "peekOfCode": "def check_device_status(device):\n    \"\"\"Check if a device is online by attempting to connect to its IP.\"\"\"\n    try:\n        # This is a placeholder - in a real implementation, you would use the device's actual IP\n        device_ip = {\n            \"tv\": \"192.168.1.100\",\n            \"lights\": \"192.168.1.101\",\n            \"thermostat\": \"192.168.1.102\"\n        }.get(device.lower(), None)\n        if not device_ip:",
+        "detail": "grokvis.home_automation",
+        "documentation": {}
+    },
+    {
+        "label": "get_wikipedia_summary",
+        "kind": 2,
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "peekOfCode": "def get_wikipedia_summary(topic, sentences=2):\n    \"\"\"Get a summary of a topic from Wikipedia.\"\"\"\n    try:\n        # Search for the topic\n        search_results = wikipedia.search(topic)\n        if not search_results:\n            speak(f\"I couldn't find any information about {topic} on Wikipedia.\")\n            return None\n        # Get the page for the first result\n        try:",
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "get_news_headlines",
+        "kind": 2,
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "peekOfCode": "def get_news_headlines(country='us', category='general', count=5):\n    \"\"\"Get top news headlines from NewsAPI.\"\"\"\n    try:\n        # Replace with your actual API key\n        api_key = \"YOUR_NEWSAPI_KEY\"\n        url = f\"https://newsapi.org/v2/top-headlines?country={country}&category={category}&apiKey={api_key}\"\n        response = requests.get(url)\n        news_data = response.json()\n        if news_data['status'] != 'ok' or news_data['totalResults'] == 0:\n            speak(\"Sorry, I couldn't fetch any news headlines right now.\")",
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "get_word_definition",
+        "kind": 2,
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "peekOfCode": "def get_word_definition(word):\n    \"\"\"Look up the definition of a word using the Free Dictionary API.\"\"\"\n    try:\n        url = f\"https://api.dictionaryapi.dev/api/v2/entries/en/{word}\"\n        response = requests.get(url)\n        if response.status_code == 404:\n            speak(f\"Sorry, I couldn't find a definition for '{word}'.\")\n            return\n        data = response.json()\n        if not data or not isinstance(data, list):",
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "translate_text",
+        "kind": 2,
+        "importPath": "grokvis.knowledge",
+        "description": "grokvis.knowledge",
+        "peekOfCode": "def translate_text(text, target_language):\n    \"\"\"Translate text using the LibreTranslate API.\"\"\"\n    try:\n        # Map common language names to language codes\n        language_map = {\n            'spanish': 'es',\n            'french': 'fr',\n            'german': 'de',\n            'italian': 'it',\n            'portuguese': 'pt',",
+        "detail": "grokvis.knowledge",
+        "documentation": {}
+    },
+    {
+        "label": "store_memory",
+        "kind": 2,
+        "importPath": "grokvis.memory",
+        "description": "grokvis.memory",
+        "peekOfCode": "def store_memory(command, response):\n    \"\"\"Store a command and response in the memory database.\"\"\"\n    try:\n        timestamp = datetime.datetime.now().strftime(\"%Y-%m-%d %H:%M\")\n        embedding = memory_model.encode(command + \" \" + response).tobytes()\n        conn.execute(\"INSERT INTO memory (timestamp, command, response, embedding) VALUES (?, ?, ?, ?)\",\n                     (timestamp, command, response, embedding))\n        conn.commit()\n    except Exception as e:\n        logging.error(f\"Memory Storage Error: {e}\")",
+        "detail": "grokvis.memory",
+        "documentation": {}
+    },
+    {
+        "label": "recall_memory",
+        "kind": 2,
+        "importPath": "grokvis.memory",
+        "description": "grokvis.memory",
+        "peekOfCode": "def recall_memory(query, top_k=1):\n    \"\"\"Recall the most similar past command and response.\"\"\"\n    try:\n        query_emb = memory_model.encode(query)\n        cursor = conn.execute(\"SELECT command, response, embedding FROM memory\")\n        results = []\n        for cmd, resp, emb_blob in cursor:\n            emb = np.frombuffer(emb_blob, dtype=np.float32)\n            similarity = cosine_similarity([query_emb], [emb])[0][0]\n            results.append((similarity, cmd, resp))",
+        "detail": "grokvis.memory",
+        "documentation": {}
+    },
+    {
+        "label": "handle_memory",
+        "kind": 2,
+        "importPath": "grokvis.memory",
+        "description": "grokvis.memory",
+        "peekOfCode": "def handle_memory(command):\n    \"\"\"Handle memory-related commands.\"\"\"\n    if \"remember\" in command:\n        parts = command.split(\"remember\")[-1].strip()\n        store_memory(parts, \"Noted.\")\n        speak(f\"Got it, I'll remember: {parts}.\")\n    elif \"what did i\" in command or \"recall\" in command:\n        query = command.split(\"about\")[-1].strip() if \"about\" in command else command\n        recalled = recall_memory(query)\n        if recalled:",
+        "detail": "grokvis.memory",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_memory_db",
+        "kind": 2,
+        "importPath": "grokvis.memory",
+        "description": "grokvis.memory",
+        "peekOfCode": "def initialize_memory_db():\n    \"\"\"Initialize the memory database if it doesn't exist.\"\"\"\n    try:\n        conn.execute('''\n        CREATE TABLE IF NOT EXISTS memory (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            timestamp TEXT,\n            command TEXT,\n            response TEXT,\n            embedding BLOB",
+        "detail": "grokvis.memory",
+        "documentation": {}
+    },
+    {
+        "label": "start_timer",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def start_timer(duration_str):\n    \"\"\"Start a countdown timer.\"\"\"\n    try:\n        # Parse the duration string (e.g., \"5 minutes\", \"1 hour 30 minutes\")\n        duration_seconds = 0\n        if \"hour\" in duration_str:\n            hours = int(duration_str.split(\"hour\")[0].strip().split()[-1])\n            duration_seconds += hours * 3600\n        if \"minute\" in duration_str:\n            if \"hour\" in duration_str:",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "timer_complete",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def timer_complete(timer_id):\n    \"\"\"Called when a timer completes.\"\"\"\n    try:\n        if timer_id in timers:\n            speak(\"Timer complete!\")\n            del timers[timer_id]\n    except Exception as e:\n        logging.error(f\"Timer Complete Error: {e}\")\ndef start_stopwatch():\n    \"\"\"Start a stopwatch.\"\"\"",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "start_stopwatch",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def start_stopwatch():\n    \"\"\"Start a stopwatch.\"\"\"\n    try:\n        # Create a unique ID for this stopwatch\n        stopwatch_id = f\"stopwatch_{int(time.time())}\"\n        # Store the stopwatch\n        stopwatches[stopwatch_id] = {\n            \"start_time\": datetime.now(),\n            \"running\": True\n        }",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "stop_stopwatch",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def stop_stopwatch(stopwatch_id=None):\n    \"\"\"Stop a running stopwatch and report the elapsed time.\"\"\"\n    try:\n        # If no ID provided, stop the most recent stopwatch\n        if stopwatch_id is None and stopwatches:\n            stopwatch_id = list(stopwatches.keys())[-1]\n        if stopwatch_id in stopwatches:\n            stopwatch = stopwatches[stopwatch_id]\n            if stopwatch[\"running\"]:\n                elapsed = datetime.now() - stopwatch[\"start_time\"]",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "add_to_shopping_list",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def add_to_shopping_list(item, list_name=\"default\"):\n    \"\"\"Add an item to a shopping list.\"\"\"\n    try:\n        # Initialize the list if it doesn't exist\n        if list_name not in shopping_lists:\n            shopping_lists[list_name] = []\n        # Add the item to the list\n        shopping_lists[list_name].append({\n            \"item\": item,\n            \"added\": datetime.now().isoformat(),",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "show_shopping_list",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def show_shopping_list(list_name=\"default\"):\n    \"\"\"Show the contents of a shopping list.\"\"\"\n    try:\n        if list_name not in shopping_lists or not shopping_lists[list_name]:\n            speak(f\"Your {list_name} shopping list is empty.\")\n            return\n        items = [item[\"item\"] for item in shopping_lists[list_name] if not item[\"completed\"]]\n        if not items:\n            speak(f\"All items in your {list_name} shopping list are marked as completed.\")\n            return",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "save_shopping_lists",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def save_shopping_lists():\n    \"\"\"Save shopping lists to a file.\"\"\"\n    try:\n        with open(\"shopping_lists.json\", \"w\") as f:\n            json.dump(shopping_lists, f)\n    except Exception as e:\n        logging.error(f\"Save Shopping Lists Error: {e}\")\ndef load_shopping_lists():\n    \"\"\"Load shopping lists from a file.\"\"\"\n    global shopping_lists",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "load_shopping_lists",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def load_shopping_lists():\n    \"\"\"Load shopping lists from a file.\"\"\"\n    global shopping_lists\n    try:\n        if os.path.exists(\"shopping_lists.json\"):\n            with open(\"shopping_lists.json\", \"r\") as f:\n                shopping_lists = json.load(f)\n    except Exception as e:\n        logging.error(f\"Load Shopping Lists Error: {e}\")\n        shopping_lists = {}",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "take_note",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def take_note(content):\n    \"\"\"Save a note.\"\"\"\n    try:\n        # Create a new note\n        note = {\n            \"content\": content,\n            \"timestamp\": datetime.now().isoformat(),\n            \"id\": len(notes) + 1\n        }\n        # Add it to the notes list",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "show_notes",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def show_notes(count=5):\n    \"\"\"Show recent notes.\"\"\"\n    try:\n        if not notes:\n            speak(\"You don't have any notes yet.\")\n            return\n        recent_notes = sorted(notes, key=lambda x: x[\"timestamp\"], reverse=True)[:count]\n        speak(f\"Here are your {len(recent_notes)} most recent notes:\")\n        for i, note in enumerate(recent_notes):\n            timestamp = datetime.fromisoformat(note[\"timestamp\"]).strftime(\"%B %d, %Y at %I:%M %p\")",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "save_notes",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def save_notes():\n    \"\"\"Save notes to a file.\"\"\"\n    try:\n        with open(\"notes.json\", \"w\") as f:\n            json.dump(notes, f)\n    except Exception as e:\n        logging.error(f\"Save Notes Error: {e}\")\ndef load_notes():\n    \"\"\"Load notes from a file.\"\"\"\n    global notes",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "load_notes",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def load_notes():\n    \"\"\"Load notes from a file.\"\"\"\n    global notes\n    try:\n        if os.path.exists(\"notes.json\"):\n            with open(\"notes.json\", \"r\") as f:\n                notes = json.load(f)\n    except Exception as e:\n        logging.error(f\"Load Notes Error: {e}\")\n        notes = []",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "location_reminder",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def location_reminder(task, location):\n    \"\"\"Set a reminder for when you reach a specific location.\"\"\"\n    try:\n        # In a real implementation, this would use geofencing or location services\n        # For demonstration, we'll just save it to a database\n        conn = sqlite3.connect(\"location_reminders.db\")\n        cursor = conn.cursor()\n        # Create table if it doesn't exist\n        cursor.execute('''\n        CREATE TABLE IF NOT EXISTS location_reminders (",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "initialize",
+        "kind": 2,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "def initialize():\n    \"\"\"Initialize the productivity module.\"\"\"\n    load_shopping_lists()\n    load_notes()",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "timers",
+        "kind": 5,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "timers = {}\nstopwatches = {}\nshopping_lists = {}\nnotes = []\ndef start_timer(duration_str):\n    \"\"\"Start a countdown timer.\"\"\"\n    try:\n        # Parse the duration string (e.g., \"5 minutes\", \"1 hour 30 minutes\")\n        duration_seconds = 0\n        if \"hour\" in duration_str:",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "stopwatches",
+        "kind": 5,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "stopwatches = {}\nshopping_lists = {}\nnotes = []\ndef start_timer(duration_str):\n    \"\"\"Start a countdown timer.\"\"\"\n    try:\n        # Parse the duration string (e.g., \"5 minutes\", \"1 hour 30 minutes\")\n        duration_seconds = 0\n        if \"hour\" in duration_str:\n            hours = int(duration_str.split(\"hour\")[0].strip().split()[-1])",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "shopping_lists",
+        "kind": 5,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "shopping_lists = {}\nnotes = []\ndef start_timer(duration_str):\n    \"\"\"Start a countdown timer.\"\"\"\n    try:\n        # Parse the duration string (e.g., \"5 minutes\", \"1 hour 30 minutes\")\n        duration_seconds = 0\n        if \"hour\" in duration_str:\n            hours = int(duration_str.split(\"hour\")[0].strip().split()[-1])\n            duration_seconds += hours * 3600",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "notes",
+        "kind": 5,
+        "importPath": "grokvis.productivity",
+        "description": "grokvis.productivity",
+        "peekOfCode": "notes = []\ndef start_timer(duration_str):\n    \"\"\"Start a countdown timer.\"\"\"\n    try:\n        # Parse the duration string (e.g., \"5 minutes\", \"1 hour 30 minutes\")\n        duration_seconds = 0\n        if \"hour\" in duration_str:\n            hours = int(duration_str.split(\"hour\")[0].strip().split()[-1])\n            duration_seconds += hours * 3600\n        if \"minute\" in duration_str:",
+        "detail": "grokvis.productivity",
+        "documentation": {}
+    },
+    {
+        "label": "add_event",
+        "kind": 2,
+        "importPath": "grokvis.scheduler",
+        "description": "grokvis.scheduler",
+        "peekOfCode": "def add_event(time_str, task):\n    \"\"\"Schedule an event using APScheduler.\"\"\"\n    try:\n        event_time = datetime.datetime.strptime(time_str, \"%H:%M\")\n        event_time = event_time.replace(year=datetime.datetime.now().year,\n                                        month=datetime.datetime.now().month,\n                                        day=datetime.datetime.now().day)\n        if event_time < datetime.datetime.now():\n            event_time += datetime.timedelta(days=1)\n        scheduler.add_job(speak, 'date', run_date=event_time, args=[f\"Reminder: {task} now.\"])",
+        "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "list_events",
+        "kind": 2,
+        "importPath": "grokvis.scheduler",
+        "description": "grokvis.scheduler",
+        "peekOfCode": "def list_events():\n    \"\"\"List all scheduled events.\"\"\"\n    try:\n        jobs = scheduler.get_jobs()\n        if not jobs:\n            speak(\"You have no scheduled events.\")\n            return\n        speak(\"Here are your scheduled events:\")\n        for job in jobs:\n            run_time = job.next_run_time.strftime(\"%Y-%m-%d %H:%M\")",
+        "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "remove_event",
+        "kind": 2,
+        "importPath": "grokvis.scheduler",
+        "description": "grokvis.scheduler",
+        "peekOfCode": "def remove_event(task_keyword):\n    \"\"\"Remove an event containing the given keyword.\"\"\"\n    try:\n        jobs = scheduler.get_jobs()\n        removed = False\n        for job in jobs:\n            if job.args and task_keyword.lower() in job.args[0].lower():\n                job_id = job.id\n                scheduler.remove_job(job_id)\n                speak(f\"Removed event: {job.args[0]}\")",
+        "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def speak(text):\n    \"\"\"Speak the given text aloud using Coqui TTS.\"\"\"\n    try:\n        print(text)\n        tts.tts_to_file(text=text, file_path=\"output.wav\")\n        audio_data, samplerate = sd.read(\"output.wav\")\n        sd.play(audio_data, samplerate=samplerate)\n        sd.wait()\n    except Exception as e:\n        logging.error(f\"TTS Error: {e}\")",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "record_clip",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:\n                f.write(audio.get_wav_data())\n    except Exception as e:",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "extract_mfcc",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def extract_mfcc(file_path):\n    \"\"\"Extract MFCC features from an audio file.\"\"\"\n    try:\n        audio, sample_rate = librosa.load(file_path, sr=16000)\n        mfcc = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=13)\n        return np.mean(mfcc.T, axis=0)\n    except Exception as e:\n        logging.error(f\"MFCC Extraction Error: {e}\")\n        return None\ndef train_one_class_model(directory):",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "train_one_class_model",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def train_one_class_model(directory):\n    \"\"\"Train a One-Class SVM model on voice samples.\"\"\"\n    try:\n        files = glob.glob(f\"{directory}/*.wav\")\n        X = [extract_mfcc(f) for f in files if extract_mfcc(f) is not None]\n        model = OneClassSVM(kernel='rbf', gamma='auto')\n        model.fit(X)\n        joblib.dump(model, 'voice_model.pkl')\n        return model\n    except Exception as e:",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "listen",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def listen():\n    \"\"\"Listen for a command and verify the speaker's voice.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Listening...\")\n            audio = recognizer.listen(source)\n            with open(\"temp.wav\", \"wb\") as f:\n                f.write(audio.get_wav_data())\n            mfcc = extract_mfcc(\"temp.wav\")",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "wake_word_listener",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def wake_word_listener():\n    \"\"\"Listen for the wake word 'Hey GrokVis' using Porcupine.\"\"\"\n    global wake_word_handle\n    try:\n        access_key = \"YOUR_PICOVOICE_ACCESS_KEY\"  # Replace with your Picovoice key\n        keywords = [\"Hey GrokVis\"]\n        wake_word_handle = pvporcupine.create(access_key=access_key, keywords=keywords, sensitivities=[0.5])\n        def audio_callback(indata, frames, time, status):\n            pcm = struct.pack('<' + ('h' * len(indata)), *indata)\n            if wake_word_handle.process(pcm) >= 0:",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "setup_personality",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def setup_personality():\n    \"\"\"First-time setup to choose between Alfred (male) or Beatrice (female) persona.\"\"\"\n    global tts\n    try:\n        # Check if persona is already set\n        if os.path.exists('persona_config.txt'):\n            with open('persona_config.txt', 'r') as f:\n                persona = f.read().strip()\n            if persona == \"Alfred\":\n                tts = TTS(model_name=\"tts_models/en/ljspeech/tacotron2-DDC\")  # Male-like voice",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "train_voice_model",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def train_voice_model():\n    \"\"\"Load or train the voice model.\"\"\"\n    global model\n    try:\n        model = joblib.load('voice_model.pkl')\n        speak(\"Voice model loaded successfully.\")\n    except FileNotFoundError:\n        speak(\"I need to learn your voice. Please say 10 phrases after each prompt.\")\n        if not os.path.exists('voice_samples/my_voice'):\n            os.makedirs('voice_samples/my_voice')",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "switch_persona",
+        "kind": 2,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "def switch_persona(new_persona):\n    \"\"\"Switch to a different assistant persona.\"\"\"\n    try:\n        # Check if the persona exists\n        if new_persona.lower() not in [\"alfred\", \"beatrice\"]:\n            speak(f\"Sorry, I don't have a persona named {new_persona}.\")\n            return False\n        # Save the new persona choice\n        with open('persona_config.txt', 'w') as f:\n            f.write(new_persona.capitalize())",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "adjust_volume",
+        "kind": 2,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "def adjust_volume(direction):\n    \"\"\"Adjust the system volume up or down.\"\"\"\n    global volume_level\n    try:\n        # Determine the direction\n        if direction.lower() in [\"up\", \"increase\", \"higher\", \"louder\"]:\n            # Increase volume by 10%\n            volume_level = min(100, volume_level + 10)\n            direction_text = \"up\"\n        elif direction.lower() in [\"down\", \"decrease\", \"lower\", \"quieter\"]:",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "sleep_mode",
+        "kind": 2,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "def sleep_mode(duration_str):\n    \"\"\"Temporarily disable wake word detection for a specified time period.\"\"\"\n    global sleep_until\n    try:\n        # Parse the duration string (e.g., \"5 minutes\", \"1 hour\")\n        duration_seconds = 0\n        if \"hour\" in duration_str:\n            hours = int(duration_str.split(\"hour\")[0].strip().split()[-1])\n            duration_seconds += hours * 3600\n        if \"minute\" in duration_str:",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "wake_up_after_sleep",
+        "kind": 2,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "def wake_up_after_sleep(duration_seconds):\n    \"\"\"Wake up after the specified sleep duration.\"\"\"\n    try:\n        time.sleep(duration_seconds)\n        global sleep_until\n        sleep_until = None\n        speak(\"I'm awake and listening again.\")\n    except Exception as e:\n        logging.error(f\"Wake Up Error: {e}\")\n        # Reset sleep_until in case of error",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "is_sleeping",
+        "kind": 2,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "def is_sleeping():\n    \"\"\"Check if the system is currently in sleep mode.\"\"\"\n    if sleep_until is None:\n        return False\n    return datetime.now() < sleep_until\ndef check_for_updates():\n    \"\"\"Check for and install updates to GrokVIS.\"\"\"\n    try:\n        # In a real implementation, this would check a GitHub repository or other source\n        # For demonstration, we'll simulate an update check",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "check_for_updates",
+        "kind": 2,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "def check_for_updates():\n    \"\"\"Check for and install updates to GrokVIS.\"\"\"\n    try:\n        # In a real implementation, this would check a GitHub repository or other source\n        # For demonstration, we'll simulate an update check\n        speak(\"Checking for updates...\")\n        # Simulate a network request\n        time.sleep(2)\n        # Randomly determine if an update is available (for demonstration)\n        import random",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "sleep_until",
+        "kind": 5,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "sleep_until = None\nvolume_level = 50  # Default volume level (0-100)\ndef switch_persona(new_persona):\n    \"\"\"Switch to a different assistant persona.\"\"\"\n    try:\n        # Check if the persona exists\n        if new_persona.lower() not in [\"alfred\", \"beatrice\"]:\n            speak(f\"Sorry, I don't have a persona named {new_persona}.\")\n            return False\n        # Save the new persona choice",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "volume_level",
+        "kind": 5,
+        "importPath": "grokvis.system",
+        "description": "grokvis.system",
+        "peekOfCode": "volume_level = 50  # Default volume level (0-100)\ndef switch_persona(new_persona):\n    \"\"\"Switch to a different assistant persona.\"\"\"\n    try:\n        # Check if the persona exists\n        if new_persona.lower() not in [\"alfred\", \"beatrice\"]:\n            speak(f\"Sorry, I don't have a persona named {new_persona}.\")\n            return False\n        # Save the new persona choice\n        with open('persona_config.txt', 'w') as f:",
+        "detail": "grokvis.system",
+        "documentation": {}
+    },
+    {
+        "label": "load_user_apps",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def load_user_apps():\n    \"\"\"Load user-defined application shortcuts from file.\"\"\"\n    global user_apps\n    try:\n        if os.path.exists(USER_APPS_FILE):\n            with open(USER_APPS_FILE, 'r') as f:\n                user_apps = json.load(f)\n    except Exception as e:\n        logging.error(f\"Error loading user apps: {e}\")\n        user_apps = {}",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "save_user_apps",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def save_user_apps():\n    \"\"\"Save user-defined application shortcuts to file.\"\"\"\n    try:\n        with open(USER_APPS_FILE, 'w') as f:\n            json.dump(user_apps, f, indent=2)\n    except Exception as e:\n        logging.error(f\"Error saving user apps: {e}\")\ndef get_platform():\n    \"\"\"Get the current operating system platform.\"\"\"\n    system = platform.system().lower()",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "get_platform",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def get_platform():\n    \"\"\"Get the current operating system platform.\"\"\"\n    system = platform.system().lower()\n    if system == \"darwin\":\n        return \"macos\"\n    elif system == \"windows\":\n        return \"windows\"\n    else:\n        return \"linux\"\ndef launch_application(app_name):",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "launch_application",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def launch_application(app_name):\n    \"\"\"Launch an application by name.\"\"\"\n    try:\n        # Normalize app name\n        app_name = app_name.lower().strip()\n        # Get current platform\n        current_platform = get_platform()\n        # Check if it's a user-defined app\n        if app_name in user_apps:\n            app_path = user_apps[app_name]",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "close_application",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def close_application(app_name):\n    \"\"\"Close an application by name.\"\"\"\n    try:\n        # Normalize app name\n        app_name = app_name.lower().strip()\n        # Map of common app names to process names\n        process_map = {\n            \"chrome\": [\"chrome\", \"googlechrome\"],\n            \"firefox\": [\"firefox\", \"mozilla firefox\"],\n            \"edge\": [\"msedge\", \"microsoft edge\"],",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "take_screenshot",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def take_screenshot():\n    \"\"\"Take a screenshot and save it to the desktop.\"\"\"\n    try:\n        from PIL import ImageGrab\n        import datetime\n        # Create filename with timestamp\n        timestamp = datetime.datetime.now().strftime(\"%Y%m%d_%H%M%S\")\n        desktop = os.path.join(os.path.expanduser(\"~\"), \"Desktop\")\n        filename = os.path.join(desktop, f\"screenshot_{timestamp}.png\")\n        # Take screenshot",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "lock_computer",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def lock_computer():\n    \"\"\"Lock the computer.\"\"\"\n    try:\n        current_platform = get_platform()\n        if current_platform == \"windows\":\n            subprocess.call('rundll32.exe user32.dll,LockWorkStation')\n        elif current_platform == \"macos\":\n            subprocess.call('pmset displaysleepnow', shell=True)\n        else:  # Linux\n            subprocess.call('gnome-screensaver-command --lock', shell=True)",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "shutdown_computer",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def shutdown_computer(delay=0):\n    \"\"\"Shutdown the computer with optional delay in minutes.\"\"\"\n    try:\n        current_platform = get_platform()\n        if delay > 0:\n            speak(f\"Scheduling shutdown in {delay} minutes\")\n        else:\n            speak(\"Shutting down your computer\")\n        if current_platform == \"windows\":\n            if delay > 0:",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "restart_computer",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def restart_computer():\n    \"\"\"Restart the computer.\"\"\"\n    try:\n        current_platform = get_platform()\n        speak(\"Restarting your computer\")\n        if current_platform == \"windows\":\n            subprocess.call('shutdown /r /t 0', shell=True)\n        elif current_platform == \"macos\":\n            subprocess.call('sudo shutdown -r now', shell=True)\n        else:  # Linux",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "get_system_status",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def get_system_status():\n    \"\"\"Get system status information.\"\"\"\n    try:\n        # Get CPU usage\n        cpu_percent = psutil.cpu_percent(interval=1)\n        # Get memory usage\n        memory = psutil.virtual_memory()\n        memory_percent = memory.percent\n        memory_used = memory.used / (1024 * 1024 * 1024)  # Convert to GB\n        memory_total = memory.total / (1024 * 1024 * 1024)  # Convert to GB",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "find_files",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def find_files(query, location=None):\n    \"\"\"Find files matching a query.\"\"\"\n    try:\n        if location is None:\n            # Default to user's home directory\n            location = os.path.expanduser(\"~\")\n        speak(f\"Searching for {query} in {location}\")\n        # Get list of files matching query\n        results = []\n        for root, dirs, files in os.walk(location):",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "open_file",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def open_file(filepath):\n    \"\"\"Open a file with the default application.\"\"\"\n    try:\n        current_platform = get_platform()\n        if current_platform == \"windows\":\n            os.startfile(filepath)\n        elif current_platform == \"macos\":\n            subprocess.call(['open', filepath])\n        else:  # Linux\n            subprocess.call(['xdg-open', filepath])",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "create_folder",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def create_folder(folder_name, location=None):\n    \"\"\"Create a new folder.\"\"\"\n    try:\n        if location is None:\n            # Default to user's home directory\n            location = os.path.expanduser(\"~\")\n        # Create full path\n        folder_path = os.path.join(location, folder_name)\n        # Create folder if it doesn't exist\n        if not os.path.exists(folder_path):",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "add_app_shortcut",
+        "kind": 2,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "def add_app_shortcut(app_name, app_path):\n    \"\"\"Add a user-defined application shortcut.\"\"\"\n    try:\n        # Normalize app name\n        app_name = app_name.lower().strip()\n        # Check if path exists\n        if not os.path.exists(app_path):\n            speak(f\"I couldn't find an application at {app_path}.\")\n            return False\n        # Add to user apps",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "APP_PATHS",
+        "kind": 5,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "APP_PATHS = {\n    \"windows\": {\n        \"chrome\": r\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\",\n        \"firefox\": r\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\",\n        \"edge\": r\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\",\n        \"word\": r\"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE\",\n        \"excel\": r\"C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE\",\n        \"powerpoint\": r\"C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE\",\n        \"notepad\": r\"C:\\Windows\\System32\\notepad.exe\",\n        \"calculator\": r\"C:\\Windows\\System32\\calc.exe\",",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "USER_APPS_FILE",
+        "kind": 5,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "USER_APPS_FILE = \"user_apps.json\"\nuser_apps = {}\ndef load_user_apps():\n    \"\"\"Load user-defined application shortcuts from file.\"\"\"\n    global user_apps\n    try:\n        if os.path.exists(USER_APPS_FILE):\n            with open(USER_APPS_FILE, 'r') as f:\n                user_apps = json.load(f)\n    except Exception as e:",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "user_apps",
+        "kind": 5,
+        "importPath": "grokvis.system_control",
+        "description": "grokvis.system_control",
+        "peekOfCode": "user_apps = {}\ndef load_user_apps():\n    \"\"\"Load user-defined application shortcuts from file.\"\"\"\n    global user_apps\n    try:\n        if os.path.exists(USER_APPS_FILE):\n            with open(USER_APPS_FILE, 'r') as f:\n                user_apps = json.load(f)\n    except Exception as e:\n        logging.error(f\"Error loading user apps: {e}\")",
+        "detail": "grokvis.system_control",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_weather",
+        "kind": 2,
+        "importPath": "grokvis.weather",
+        "description": "grokvis.weather",
+        "peekOfCode": "def fetch_weather(city):\n    \"\"\"Fetch weather data synchronously for threading.\"\"\"\n    api_key = \"YOUR_API_KEY\"  # Replace with your OpenWeatherMap API key\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric\"\n    response = requests.get(url).json()\n    return response['main']['temp'], response['weather'][0]['description']\ndef get_weather(city):\n    \"\"\"Fetch and announce weather asynchronously.\"\"\"\n    try:\n        future = executor.submit(fetch_weather, city)",
+        "detail": "grokvis.weather",
+        "documentation": {}
+    },
+    {
+        "label": "get_weather",
+        "kind": 2,
+        "importPath": "grokvis.weather",
+        "description": "grokvis.weather",
+        "peekOfCode": "def get_weather(city):\n    \"\"\"Fetch and announce weather asynchronously.\"\"\"\n    try:\n        future = executor.submit(fetch_weather, city)\n        temp, desc = future.result()\n        speak(f\"{city}: {temp}°C, {desc}.\")\n        return {\"temp\": temp, \"desc\": desc}\n    except Exception as e:\n        logging.error(f\"Weather API Error: {e}\")\n        speak(\"Sorry, I couldn't fetch the weather.\")",
+        "detail": "grokvis.weather",
+        "documentation": {}
+    },
+    {
+        "label": "get_forecast",
+        "kind": 2,
+        "importPath": "grokvis.weather",
+        "description": "grokvis.weather",
+        "peekOfCode": "def get_forecast(city, days=5):\n    \"\"\"Get a multi-day weather forecast.\"\"\"\n    try:\n        api_key = \"YOUR_API_KEY\"  # Replace with your OpenWeatherMap API key\n        url = f\"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric&cnt={days*8}\"\n        response = requests.get(url).json()\n        # Process the forecast data (every 3 hours for 5 days)\n        daily_forecasts = {}\n        for item in response['list']:\n            date = item['dt_txt'].split(' ')[0]",
+        "detail": "grokvis.weather",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "grokvis.web",
+        "description": "grokvis.web",
+        "peekOfCode": "def dashboard():\n    \"\"\"Render the GROK-VIS dashboard.\"\"\"\n    try:\n        # Fetch scheduled jobs\n        jobs = scheduler.get_jobs()\n        scheduled_tasks = [(job.next_run_time.strftime('%Y-%m-%d %H:%M'), job.args[0]) for job in jobs]\n        # Fetch recent commands\n        try:\n            with open(\"command_log.txt\", \"r\") as f:\n                commands = f.readlines()[-10:]  # Last 10 commands",
+        "detail": "grokvis.web",
+        "documentation": {}
+    },
+    {
+        "label": "health_check",
+        "kind": 2,
+        "importPath": "grokvis.web",
+        "description": "grokvis.web",
+        "peekOfCode": "def health_check():\n    \"\"\"Simple health check endpoint.\"\"\"\n    return {\"status\": \"ok\", \"version\": \"1.0.0\"}\n@app.route('/stats')\ndef system_stats():\n    \"\"\"Display system statistics.\"\"\"\n    try:\n        import psutil\n        import pynvml\n        # CPU stats",
+        "detail": "grokvis.web",
+        "documentation": {}
+    },
+    {
+        "label": "system_stats",
+        "kind": 2,
+        "importPath": "grokvis.web",
+        "description": "grokvis.web",
+        "peekOfCode": "def system_stats():\n    \"\"\"Display system statistics.\"\"\"\n    try:\n        import psutil\n        import pynvml\n        # CPU stats\n        cpu_percent = psutil.cpu_percent(interval=1)\n        memory = psutil.virtual_memory()\n        memory_percent = memory.percent\n        # GPU stats",
+        "detail": "grokvis.web",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "grokvis.web",
+        "description": "grokvis.web",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef dashboard():\n    \"\"\"Render the GROK-VIS dashboard.\"\"\"\n    try:\n        # Fetch scheduled jobs\n        jobs = scheduler.get_jobs()\n        scheduled_tasks = [(job.next_run_time.strftime('%Y-%m-%d %H:%M'), job.args[0]) for job in jobs]\n        # Fetch recent commands\n        try:",
+        "detail": "grokvis.web",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def speak(text):\n    \"\"\"Speak the given text aloud using Coqui TTS.\"\"\"\n    try:\n        print(text)\n        tts.tts_to_file(text=text, file_path=\"output.wav\")\n        audio_data, samplerate = sd.read(\"output.wav\")\n        sd.play(audio_data, samplerate=samplerate)\n        sd.wait()\n    except Exception as e:\n        logging.error(f\"TTS Error: {e}\")",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "record_clip",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:\n                f.write(audio.get_wav_data())\n    except Exception as e:",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "extract_mfcc",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def extract_mfcc(file_path):\n    \"\"\"Extract MFCC features from an audio file.\"\"\"\n    try:\n        audio, sample_rate = librosa.load(file_path, sr=16000)\n        mfcc = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=13)\n        return np.mean(mfcc.T, axis=0)\n    except Exception as e:\n        logging.error(f\"MFCC Extraction Error: {e}\")\n        return None\ndef train_one_class_model(directory):",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "train_one_class_model",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def train_one_class_model(directory):\n    \"\"\"Train a One-Class SVM model on voice samples.\"\"\"\n    try:\n        files = glob.glob(f\"{directory}/*.wav\")\n        X = [extract_mfcc(f) for f in files if extract_mfcc(f) is not None]\n        model = OneClassSVM(kernel='rbf', gamma='auto')\n        model.fit(X)\n        joblib.dump(model, 'voice_model.pkl')\n        return model\n    except Exception as e:",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "listen",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def listen():\n    \"\"\"Listen for a command and verify the speaker's voice.\"\"\"\n    global model\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Listening...\")\n            audio = recognizer.listen(source)\n            with open(\"temp.wav\", \"wb\") as f:\n                f.write(audio.get_wav_data())",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "wake_word_listener",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def wake_word_listener():\n    \"\"\"Listen for the wake word 'Hey GrokVis' using Porcupine.\"\"\"\n    global wake_word_handle\n    try:\n        access_key = \"YOUR_PICOVOICE_ACCESS_KEY\"  # Replace with your Picovoice key\n        keywords = [\"Hey GrokVis\"]\n        wake_word_handle = pvporcupine.create(access_key=access_key, keywords=keywords, sensitivities=[0.5])\n        def audio_callback(indata, frames, time, status):\n            pcm = struct.pack('<' + ('h' * len(indata)), *indata)\n            if wake_word_handle.process(pcm) >= 0:",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "store_memory",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def store_memory(command, response):\n    \"\"\"Store a command and response in the memory database.\"\"\"\n    try:\n        timestamp = datetime.datetime.now().strftime(\"%Y-%m-%d %H:%M\")\n        embedding = memory_model.encode(command + \" \" + response).tobytes()\n        conn.execute(\"INSERT INTO memory (timestamp, command, response, embedding) VALUES (?, ?, ?, ?)\",\n                     (timestamp, command, response, embedding))\n        conn.commit()\n    except Exception as e:\n        logging.error(f\"Memory Storage Error: {e}\")",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "recall_memory",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def recall_memory(query, top_k=1):\n    \"\"\"Recall the most similar past command and response.\"\"\"\n    try:\n        query_emb = memory_model.encode(query)\n        cursor = conn.execute(\"SELECT command, response, embedding FROM memory\")\n        results = []\n        for cmd, resp, emb_blob in cursor:\n            emb = np.frombuffer(emb_blob, dtype=np.float32)\n            similarity = cosine_similarity([query_emb], [emb])[0][0]\n            results.append((similarity, cmd, resp))",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "handle_memory",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def handle_memory(command):\n    \"\"\"Handle memory-related commands.\"\"\"\n    if \"remember\" in command:\n        parts = command.split(\"remember\")[-1].strip()\n        store_memory(parts, \"Noted.\")\n        speak(f\"Got it, I’ll remember: {parts}.\")\n    elif \"what did i\" in command or \"recall\" in command:\n        query = command.split(\"about\")[-1].strip() if \"about\" in command else command\n        recalled = recall_memory(query)\n        if recalled:",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "add_event",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def add_event(time_str, task):\n    \"\"\"Schedule an event using APScheduler.\"\"\"\n    try:\n        event_time = datetime.datetime.strptime(time_str, \"%H:%M\")\n        event_time = event_time.replace(year=datetime.datetime.now().year,\n                                        month=datetime.datetime.now().month,\n                                        day=datetime.datetime.now().day)\n        if event_time < datetime.datetime.now():\n            event_time += datetime.timedelta(days=1)\n        scheduler.add_job(speak, 'date', run_date=event_time, args=[f\"Reminder: {task} now.\"])",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "wake_pc",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def wake_pc(mac_address=\"YOUR_PC_MAC\"):\n    \"\"\"Wake a PC using Wake-on-LAN.\"\"\"\n    try:\n        wakeonlan.send_magic_packet(mac_address)\n        speak(\"PC waking up. Don’t fry it.\")\n    except Exception as e:\n        logging.error(f\"Wake-on-LAN Error: {e}\")\n        speak(\"Sorry, I couldn’t wake the PC.\")\ndef control_device(device, action):\n    \"\"\"Simulate controlling a smart device.\"\"\"",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "control_device",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def control_device(device, action):\n    \"\"\"Simulate controlling a smart device.\"\"\"\n    try:\n        speak(f\"{action}ing the {device}. Need more?\")\n    except Exception as e:\n        logging.error(f\"Device Control Error: {e}\")\n        speak(\"Sorry, I couldn’t control the device.\")\n# Async Weather Fetching\ndef fetch_weather(city):\n    \"\"\"Fetch weather data synchronously for threading.\"\"\"",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_weather",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def fetch_weather(city):\n    \"\"\"Fetch weather data synchronously for threading.\"\"\"\n    api_key = \"YOUR_API_KEY\"  # Replace with your OpenWeatherMap API key\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric\"\n    response = requests.get(url).json()\n    return response['main']['temp'], response['weather'][0]['description']\ndef get_weather(city):\n    \"\"\"Fetch and announce weather asynchronously.\"\"\"\n    try:\n        future = executor.submit(fetch_weather, city)",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "get_weather",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def get_weather(city):\n    \"\"\"Fetch and announce weather asynchronously.\"\"\"\n    try:\n        future = executor.submit(fetch_weather, city)\n        temp, desc = future.result()\n        speak(f\"{city}: {temp}°C, {desc}.\")\n        return {\"temp\": temp, \"desc\": desc}\n    except Exception as e:\n        logging.error(f\"Weather API Error: {e}\")\n        speak(\"Sorry, I couldn’t fetch the weather.\")",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def dashboard():\n    \"\"\"Render the GROK-VIS dashboard.\"\"\"\n    try:\n        # Fetch scheduled jobs\n        jobs = scheduler.get_jobs()\n        scheduled_tasks = [(job.next_run_time.strftime('%Y-%m-%d %H:%M'), job.args[0]) for job in jobs]\n        # Fetch recent commands\n        with open(\"command_log.txt\", \"r\") as f:\n            commands = f.readlines()[-10:]  # Last 10 commands\n        html = \"\"\"",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "process_command",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def process_command(command):\n    \"\"\"Process the spoken command.\"\"\"\n    try:\n        if not command:\n            return\n        # Log command for future LLM training\n        with open(\"command_log.txt\", \"a\") as f:\n            f.write(f\"{command}\\n\")\n        if \"turn on my pc\" in command:\n            wake_pc()",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "grokvis_run",
+        "kind": 2,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "def grokvis_run():\n    \"\"\"Run the main GROK-VIS loop with wake word detection.\"\"\"\n    global model\n    try:\n        # Load or train the voice model\n        if model is None:\n            try:\n                model = joblib.load('voice_model.pkl')\n                speak(\"Voice model loaded successfully.\")\n            except FileNotFoundError:",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "memory_model",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "memory_model = SentenceTransformer('all-MiniLM-L6-v2')\nnlp = spacy.load(\"en_core_web_sm\")\npynvml.nvmlInit()\nconn = sqlite3.connect(\"grokvis_memory.db\")\ntts = TTS(model_name=\"tts_models/en/ljspeech/tacotron2-DDC\")\nexecutor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks\n# APScheduler setup\njobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}\nscheduler = BackgroundScheduler(jobstores=jobstores)\nscheduler.start()",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "nlp",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "nlp = spacy.load(\"en_core_web_sm\")\npynvml.nvmlInit()\nconn = sqlite3.connect(\"grokvis_memory.db\")\ntts = TTS(model_name=\"tts_models/en/ljspeech/tacotron2-DDC\")\nexecutor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks\n# APScheduler setup\njobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}\nscheduler = BackgroundScheduler(jobstores=jobstores)\nscheduler.start()\n# Flask app setup",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "conn = sqlite3.connect(\"grokvis_memory.db\")\ntts = TTS(model_name=\"tts_models/en/ljspeech/tacotron2-DDC\")\nexecutor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks\n# APScheduler setup\njobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}\nscheduler = BackgroundScheduler(jobstores=jobstores)\nscheduler.start()\n# Flask app setup\napp = Flask(__name__)\n# Personality quips",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "tts",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "tts = TTS(model_name=\"tts_models/en/ljspeech/tacotron2-DDC\")\nexecutor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks\n# APScheduler setup\njobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}\nscheduler = BackgroundScheduler(jobstores=jobstores)\nscheduler.start()\n# Flask app setup\napp = Flask(__name__)\n# Personality quips\njarvis_quips = [",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "executor",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "executor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks\n# APScheduler setup\njobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}\nscheduler = BackgroundScheduler(jobstores=jobstores)\nscheduler.start()\n# Flask app setup\napp = Flask(__name__)\n# Personality quips\njarvis_quips = [\n    \"At your service—Stark would be jealous.\",",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "jobstores",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "jobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}\nscheduler = BackgroundScheduler(jobstores=jobstores)\nscheduler.start()\n# Flask app setup\napp = Flask(__name__)\n# Personality quips\njarvis_quips = [\n    \"At your service—Stark would be jealous.\",\n    \"Task complete. Shall I polish your armor next?\",\n    \"I’m no android, but I’ve got your back.\"",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "scheduler = BackgroundScheduler(jobstores=jobstores)\nscheduler.start()\n# Flask app setup\napp = Flask(__name__)\n# Personality quips\njarvis_quips = [\n    \"At your service—Stark would be jealous.\",\n    \"Task complete. Shall I polish your armor next?\",\n    \"I’m no android, but I’ve got your back.\"\n]",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "app = Flask(__name__)\n# Personality quips\njarvis_quips = [\n    \"At your service—Stark would be jealous.\",\n    \"Task complete. Shall I polish your armor next?\",\n    \"I’m no android, but I’ve got your back.\"\n]\n# Global variables\nmodel = None\nwake_word_handle = None",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "jarvis_quips",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "jarvis_quips = [\n    \"At your service—Stark would be jealous.\",\n    \"Task complete. Shall I polish your armor next?\",\n    \"I’m no android, but I’ve got your back.\"\n]\n# Global variables\nmodel = None\nwake_word_handle = None\n# Core Functions\ndef speak(text):",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "model = None\nwake_word_handle = None\n# Core Functions\ndef speak(text):\n    \"\"\"Speak the given text aloud using Coqui TTS.\"\"\"\n    try:\n        print(text)\n        tts.tts_to_file(text=text, file_path=\"output.wav\")\n        audio_data, samplerate = sd.read(\"output.wav\")\n        sd.play(audio_data, samplerate=samplerate)",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "wake_word_handle",
+        "kind": 5,
+        "importPath": "grokvis",
+        "description": "grokvis",
+        "peekOfCode": "wake_word_handle = None\n# Core Functions\ndef speak(text):\n    \"\"\"Speak the given text aloud using Coqui TTS.\"\"\"\n    try:\n        print(text)\n        tts.tts_to_file(text=text, file_path=\"output.wav\")\n        audio_data, samplerate = sd.read(\"output.wav\")\n        sd.play(audio_data, samplerate=samplerate)\n        sd.wait()",
+        "detail": "grokvis",
+        "documentation": {}
+    },
+    {
+        "label": "reset_persona",
+        "kind": 2,
+        "importPath": "reset_persona",
+        "description": "reset_persona",
+        "peekOfCode": "def reset_persona():\n    \"\"\"Delete the persona_config.txt file if it exists.\"\"\"\n    if os.path.exists('persona_config.txt'):\n        try:\n            os.remove('persona_config.txt')\n            print(\"Persona choice reset successfully. GrokVIS will ask for a persona choice on next run.\")\n        except Exception as e:\n            print(f\"Error resetting persona choice: {e}\")\n    else:\n        print(\"No persona choice found. GrokVIS will ask for a persona choice on next run.\")",
+        "detail": "reset_persona",
+        "documentation": {}
+    }
+]
