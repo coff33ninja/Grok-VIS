@@ -6,6 +6,7 @@ GrokVIS is a modular voice assistant with memory, scheduling, and home automatio
 
 - **Voice Recognition**: Listens for wake word "Hey GrokVIS" and processes voice commands
 - **Speaker Verification**: Uses voice biometrics to ensure only authorized users can issue commands
+- **Personality Selection**: Choose between Alfred (male butler) or Beatrice (female assistant) personas
 - **Memory System**: Stores and recalls conversations using semantic search
 - **Scheduling**: Sets reminders and manages events
 - **Home Automation**: Controls smart devices and supports Wake-on-LAN
@@ -61,9 +62,10 @@ python main.py
 
 The system will:
 1. Initialize all components
-2. Train or load your voice model
-3. Start the web dashboard at http://localhost:5000
-4. Begin listening for the wake word "Hey GrokVIS"
+2. Ask you to choose a persona (Alfred or Beatrice) on first run
+3. Train or load your voice model
+4. Start the web dashboard at http://localhost:5000
+5. Begin listening for the wake word "Hey GrokVIS"
 
 ## Voice Commands
 
@@ -81,6 +83,14 @@ Access the dashboard at http://localhost:5000 to:
 - Monitor system statistics
 
 ## Key Enhancements
+
+### Personality System
+
+- **What's Done**: Added a personality selection system with two distinct personas:
+  - **Alfred**: A male butler-like assistant with a formal, professional tone
+  - **Beatrice**: A female assistant with an elegant, warm tone
+- **How It Works**: On first run, GrokVIS asks you to choose a persona. Your choice is saved to `persona_config.txt` and used for all future interactions.
+- **Impact**: Creates a more personalized experience with voice and language style matching your preference.
 
 ### Async Handling
 
@@ -105,6 +115,10 @@ Access the dashboard at http://localhost:5000 to:
 - Add new commands by extending the `process_command()` function in `commands.py`
 - Customize the wake word in `speech.py`
 - Add new web dashboard features in `web.py`
+- Add new personality options by:
+  1. Adding new TTS voice models in `speech.py`
+  2. Creating new quips lists in `core.py`
+  3. Updating the `setup_personality()` function to include your new option
 
 ## Package Structure
 grokvis/
@@ -117,6 +131,14 @@ grokvis/
 ├── weather.py        # Weather services
 ├── web.py            # Web dashboard
 └── commands.py       # Command processing
+
+
+## How to Test
+- Run python main.py to start GrokVIS
+- On first run, it will ask you to choose between Alfred and Beatrice
+- Speak your choice
+- GrokVIS will confirm your selection and continue with initialization
+- To change your persona later, run python reset_persona.py and restart GrokVIS
 
 ## License
 

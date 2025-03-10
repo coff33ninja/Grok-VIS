@@ -6,7 +6,7 @@ import logging
 from flask import Flask, render_template_string
 
 # Import from core module
-from grokvis.core import scheduler
+from grokvis.core import scheduler, persona
 
 # Flask app setup
 app = Flask(__name__)
@@ -67,6 +67,7 @@ def dashboard():
             <body>
                 <div class="container">
                     <h1>GROK-VIS Control Panel</h1>
+                    <h2>Assistant: {{ persona }}</h2>
                     <h2>Scheduled Tasks</h2>
                     <ul>
                         {% if tasks %}
@@ -87,7 +88,7 @@ def dashboard():
             </body>
         </html>
         """
-        return render_template_string(html, tasks=scheduled_tasks, commands=commands)
+        return render_template_string(html, tasks=scheduled_tasks, commands=commands, persona=persona)
     except Exception as e:
         logging.error(f"Dashboard Error: {e}")
         return "Error loading dashboard."

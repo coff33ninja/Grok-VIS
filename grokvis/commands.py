@@ -6,7 +6,7 @@ import logging
 import random
 
 # Import from other modules
-from grokvis.core import jarvis_quips, scheduler, executor
+from grokvis.core import jarvis_quips, alfred_quips, beatrice_quips, scheduler, executor, persona
 from grokvis.speech import speak
 from grokvis.memory import store_memory, handle_memory
 from grokvis.scheduler import add_event, list_events, remove_event
@@ -73,7 +73,11 @@ def process_command(command):
         # Default response
         else:
             store_memory(command, "Processed.")
-            speak(random.choice(jarvis_quips))
+            # Use persona-specific quips
+            if persona == "Beatrice":
+                speak(random.choice(beatrice_quips))
+            else:  # Default to Alfred
+                speak(random.choice(alfred_quips))
     except Exception as e:
         logging.error(f"Command Processing Error: {e}")
         speak("Sorry, I couldn't process that command.")
