@@ -1,105 +1,116 @@
-# GROK-VIS Setup and Installation
+# GrokVIS - Voice Interactive System
 
-## Necessary Imports
+GrokVIS is a modular voice assistant with memory, scheduling, and home automation capabilities. It features a web dashboard, weather services, and voice recognition with speaker verification.
 
-Here are all the imports required for the script:
+## Features
 
-```python
-import speech_recognition as sr
-import requests
-import datetime
-import random
-import wakeonlan
-import socket
-import spacy
-import sqlite3
-import cv2
-import psutil
-import pynvml
-import subprocess
-import numpy as np
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-import librosa
-from sklearn.svm import OneClassSVM
-import joblib
-import glob
-import os
-import pvporcupine
-import struct
-import sounddevice as sd
-from TTS.api import TTS
-from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
-import logging
-from concurrent.futures import ThreadPoolExecutor
-from flask import Flask, render_template_string
-import threading
+- **Voice Recognition**: Listens for wake word "Hey GrokVIS" and processes voice commands
+- **Speaker Verification**: Uses voice biometrics to ensure only authorized users can issue commands
+- **Memory System**: Stores and recalls conversations using semantic search
+- **Scheduling**: Sets reminders and manages events
+- **Home Automation**: Controls smart devices and supports Wake-on-LAN
+- **Weather Services**: Fetches current weather and forecasts
+- **Web Dashboard**: Provides a browser-based interface for monitoring and control
+
+## Project Structure
+
+The project has been modularized into the following components:
+
+```
+grokvis/
+├── __init__.py       # Package initialization
+├── core.py           # Core functionality and initialization
+├── speech.py         # Speech recognition and TTS
+├── memory.py         # Memory storage and retrieval
+├── scheduler.py      # Event scheduling
+├── home_automation.py # Device control
+├── weather.py        # Weather services
+├── web.py            # Web dashboard
+└── commands.py       # Command processing
 ```
 
-## Setup Instructions
+## Installation
 
-### Install Dependencies
-
-Run this command to install everything you need:
-
+1. Clone the repository:
 ```bash
-pip install speechrecognition requests wakeonlan spacy sqlite3 opencv-python psutil pynvml numpy sentence-transformers scikit-learn librosa joblib pvporcupine sounddevice TTS apscheduler SQLAlchemy flask
+git clone https://github.com/yourusername/Grok-VIS.git
+cd Grok-VIS
 ```
 
-Then download the spaCy model:
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
+3. Download the spaCy model:
 ```bash
 python -m spacy download en_core_web_sm
 ```
 
-### API Keys and Customizations
+4. Configure API keys:
+   - Replace `YOUR_PICOVOICE_ACCESS_KEY` in `speech.py` with your Picovoice key
+   - Replace `YOUR_API_KEY` in `weather.py` with your OpenWeatherMap API key
+   - Replace `YOUR_PC_MAC` in `home_automation.py` with your PC's MAC address
 
-- Replace "YOUR_PICOVOICE_ACCESS_KEY" with your Picovoice access key (get it from the Picovoice Console).
-- Replace "YOUR_API_KEY" with your OpenWeatherMap API key (sign up at openweathermap.org).
-- Update "YOUR_PC_MAC" with your PC’s MAC address (e.g., "00:11:22:33:44:55") for Wake-on-LAN.
+## Usage
 
-## Run the Script
-
-Save as `grokvis.py` and run:
-
+Run the application:
 ```bash
-python grokvis.py
+python main.py
 ```
 
-After starting the script, try these commands:
+The system will:
+1. Initialize all components
+2. Train or load your voice model
+3. Start the web dashboard at http://localhost:5000
+4. Begin listening for the wake word "Hey GrokVIS"
 
-- **Voice Command**: Say "Hey GrokVis" followed by commands like:
-    - "Turn on my PC"
-    - "What’s the weather in London?"
-    - "Schedule a reminder at 15:00 for tea"
-    - "Quit"
-- **Dashboard**: Open your browser to [http://localhost:5000](http://localhost:5000) to see the dashboard.
+## Voice Commands
+
+- **Weather**: "What's the weather in [city]?" or "Give me the forecast for [city]"
+- **Scheduling**: "Schedule [task] at [time]", "Show my schedule", "Remove [task]"
+- **Memory**: "Remember [information]", "What did I say about [topic]?"
+- **Home Automation**: "Turn on/off [device]", "Check if [device] is online"
+- **System**: "Quit" or "Shutdown"
+
+## Web Dashboard
+
+Access the dashboard at http://localhost:5000 to:
+- View scheduled tasks
+- See recent commands
+- Monitor system statistics
 
 ## Key Enhancements
 
 ### Async Handling
 
-- **What’s Done**: Added a ThreadPoolExecutor with 2 workers to handle API calls asynchronously. The get_weather function now uses executor.submit to fetch weather data in a separate thread, keeping the main loop responsive.
-- **Impact**: No more waiting around when you ask for the weather—GROK-VIS stays snappy.
+- **What's Done**: Added a ThreadPoolExecutor with 2 workers to handle API calls asynchronously. The get_weather function now uses executor.submit to fetch weather data in a separate thread, keeping the main loop responsive.
+- **Impact**: No more waiting around when you ask for the weather—GrokVIS stays snappy.
 
 ### UI Dashboard
 
-- **What’s Done**: Integrated a Flask web server running on localhost:5000. The dashboard shows:
-    - Scheduled Tasks: Pulls upcoming jobs from APScheduler’s jobs.db.
+- **What's Done**: Integrated a Flask web server running on localhost:5000. The dashboard shows:
+    - Scheduled Tasks: Pulls upcoming jobs from APScheduler's jobs.db.
     - Recent Commands: Displays the last 10 commands from command_log.txt.
-- **How It Looks**: A simple HTML page with two lists—tasks (e.g., "2025-03-11 15:00 - Reminder: tea now") and commands (e.g., "weather in London").
-- **Impact**: You’ve got a pro-level control panel to monitor GROK-VIS in real time.
+    - System Statistics: Shows CPU, memory, and GPU usage (if available)
+- **Impact**: You've got a pro-level control panel to monitor GrokVIS in real time.
 
 ### Voice Model
 
-- **What’s Done**: Left the One-Class SVM as-is—it’s reliable and lightweight for now.
-- **Future**: Ready to upgrade to Deep Speaker when you’ve got more data or GPU power.
+- **What's Done**: One-Class SVM for speaker verification—it's reliable and lightweight.
+- **Future**: Ready to upgrade to more advanced models when you've got more data or GPU power.
 
-## Testing It Out
+## Customization
 
-- **Wake Word**: Say “Hey GrokVis” and watch it spring to life.
-- **Weather**: Ask for the weather in a city—it’ll fetch it in the background while staying responsive.
-- **Dashboard**: Visit [http://localhost:5000](http://localhost:5000) in your browser to see your tasks and commands.
+- Add new commands by extending the `process_command()` function in `commands.py`
+- Customize the wake word in `speech.py`
+- Add new web dashboard features in `web.py`
 
-GROK-VIS is now a lean, mean, responsive machine with a slick UI—your digital butler just got a turbo boost! What’s next, DJ—tweak the dashboard, add MQTT for home automation, or something wilder? Let’s keep this symphony rocking!
+## License
+
+[MIT License](LICENSE)
+
+## Acknowledgments
+
+- This project uses various open-source libraries and APIs
+- Inspired by JARVIS from the Iron Man movies
