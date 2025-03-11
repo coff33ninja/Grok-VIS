@@ -1,7 +1,6 @@
 speechrecognition>=3.8.1
 requests>=2.25.1
 wakeonlan>=2.0.1
-spacy>=3.0.0
 # sqlite3>=2.6.0
 opencv-python>=4.5.1
 psutil>=5.8.0
@@ -20,5 +19,7 @@ beautifulsoup4>=4.9.3
 joblib>=1.0.1
 sqlalchemy>=1.4.15
 pillow>=8.2.0
+pynvml>=11.0.0
 # platform>=1.0.8
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+spacy>=3.0.0
+# en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz

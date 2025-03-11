@@ -57,6 +57,7 @@ pip install -r requirements.txt
 3. Download the spaCy model:
 ```bash
 python -m spacy download en_core_web_sm
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
 ```
 
 4. Configure API keys:
