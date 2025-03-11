@@ -17,7 +17,6 @@ import pvporcupine
 
 # Import from core module
 from grokvis.core import tts, model, wake_word_handle, jarvis_quips, persona
-from grokvis.commands import process_command
 
 def speak(text):
     """Speak the given text aloud using Coqui TTS."""
@@ -105,6 +104,8 @@ def wake_word_listener():
                 print("Wake word detected!")
                 command = listen()
                 if command:
+                    # Import here to avoid circular import
+                    from grokvis.commands import process_command
                     process_command(command)
 
         with sd.InputStream(callback=audio_callback, channels=1, samplerate=16000, blocksize=512):

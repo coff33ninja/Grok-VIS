@@ -967,14 +967,6 @@
         "documentation": {}
     },
     {
-        "label": "process_command",
-        "importPath": "grokvis.commands",
-        "description": "grokvis.commands",
-        "isExtraImport": true,
-        "detail": "grokvis.commands",
-        "documentation": {}
-    },
-    {
         "label": "subprocess",
         "kind": 6,
         "isExtraImport": true,
@@ -1042,6 +1034,50 @@
         "documentation": {}
     },
     {
+        "label": "importlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "importlib",
+        "description": "importlib",
+        "detail": "importlib",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
         "label": "cv2",
         "kind": 6,
         "isExtraImport": true,
@@ -1056,15 +1092,6 @@
         "description": "grokvis",
         "isExtraImport": true,
         "detail": "grokvis",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
         "documentation": {}
     },
     {
@@ -1893,6 +1920,132 @@
         "description": "grokvis.web",
         "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef dashboard():\n    \"\"\"Render the GROK-VIS dashboard.\"\"\"\n    try:\n        # Fetch scheduled jobs\n        jobs = scheduler.get_jobs()\n        scheduled_tasks = [(job.next_run_time.strftime('%Y-%m-%d %H:%M'), job.args[0]) for job in jobs]\n        # Fetch recent commands\n        try:",
         "detail": "grokvis.web",
+        "documentation": {}
+    },
+    {
+        "label": "check_dependency",
+        "kind": 2,
+        "importPath": "tests.check_dependency",
+        "description": "tests.check_dependency",
+        "peekOfCode": "def check_dependency(package_name):\n    \"\"\"\n    Check if a specific package is installed.\n    Args:\n        package_name (str): The name of the package to check.\n    Returns:\n        bool: True if the package is installed, False otherwise.\n    \"\"\"\n    try:\n        # Handle special case for opencv-python",
+        "detail": "tests.check_dependency",
+        "documentation": {}
+    },
+    {
+        "label": "check_python_version",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def check_python_version():\n    \"\"\"Check if the Python version is compatible with Grok-VIS.\"\"\"\n    python_version = platform.python_version()\n    logging.info(f\"Python version: {python_version}\")\n    # Check if the Python version is at least 3.8\n    major, minor, _ = map(int, python_version.split('.'))\n    if major < 3 or (major == 3 and minor < 8):\n        logging.error(\"Python version is too old. Grok-VIS requires Python 3.8 or newer.\")\n        return False\n    return True",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "check_system_info",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def check_system_info():\n    \"\"\"Check system information.\"\"\"\n    logging.info(f\"Operating System: {platform.system()} {platform.release()}\")\n    logging.info(f\"Machine: {platform.machine()}\")\n    logging.info(f\"Processor: {platform.processor()}\")\n    # Check if the system is compatible with Grok-VIS\n    if platform.system() not in ['Windows', 'Linux', 'Darwin']:\n        logging.warning(\"Unsupported operating system. Grok-VIS is designed for Windows, Linux, and macOS.\")\ndef check_dependencies():\n    \"\"\"Check if all required dependencies are installed.\"\"\"",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "check_dependencies",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def check_dependencies():\n    \"\"\"Check if all required dependencies are installed.\"\"\"\n    required_packages = [\n        'joblib',\n        'numpy',\n        'sentence_transformers',\n        'spacy',\n        'pynvml',\n        'TTS',\n        'apscheduler',",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "check_spacy_model",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def check_spacy_model():\n    \"\"\"Check if the spaCy model is installed.\"\"\"\n    try:\n        import spacy\n        nlp = spacy.load(\"en_core_web_sm\")\n        logging.info(\"✅ spaCy model 'en_core_web_sm' is installed\")\n        return True\n    except ImportError:\n        logging.error(\"❌ spaCy is NOT installed\")\n        return False",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "check_grokvis_imports",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def check_grokvis_imports():\n    \"\"\"Check if the Grok-VIS package can be imported.\"\"\"\n    try:\n        import grokvis\n        logging.info(\"✅ grokvis package can be imported\")\n        # Check if core modules can be imported\n        from grokvis import core\n        logging.info(\"✅ grokvis.core module can be imported\")\n        return True\n    except ImportError as e:",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "check_file_permissions",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def check_file_permissions():\n    \"\"\"Check if the necessary files have the correct permissions.\"\"\"\n    try:\n        # Check if the main.py file exists and is readable\n        if os.path.isfile('../main.py'):\n            with open('../main.py', 'r') as f:\n                f.read(1)  # Try to read one byte\n            logging.info(\"✅ main.py is readable\")\n        else:\n            logging.error(\"❌ main.py does not exist\")",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "check_log_files",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def check_log_files():\n    \"\"\"Check if log files exist and are writable.\"\"\"\n    try:\n        # Check if the grokvis_errors.log file is writable\n        with open('../grokvis_errors.log', 'a') as f:\n            f.write('')\n        logging.info(\"✅ grokvis_errors.log is writable\")\n        return True\n    except FileNotFoundError:\n        # This is okay, the file will be created when needed",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "run_diagnosis",
+        "kind": 2,
+        "importPath": "tests.error_diagnosis",
+        "description": "tests.error_diagnosis",
+        "peekOfCode": "def run_diagnosis():\n    \"\"\"Run all diagnostic checks.\"\"\"\n    logging.info(\"Starting Grok-VIS error diagnosis...\")\n    # Check Python version\n    python_version_ok = check_python_version()\n    # Check system information\n    check_system_info()\n    # Check dependencies\n    dependencies_ok = check_dependencies()\n    # Check spaCy model",
+        "detail": "tests.error_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "run_tests",
+        "kind": 2,
+        "importPath": "tests.run_tests",
+        "description": "tests.run_tests",
+        "peekOfCode": "def run_tests():\n    \"\"\"Run all tests in the tests directory.\"\"\"\n    # Discover and run all tests\n    test_loader = unittest.TestLoader()\n    test_suite = test_loader.discover(os.path.dirname(__file__), pattern=\"test_*.py\")\n    # Run the tests\n    test_runner = unittest.TextTestRunner(verbosity=2)\n    result = test_runner.run(test_suite)\n    # Return the number of failures and errors\n    return len(result.failures) + len(result.errors)",
+        "detail": "tests.run_tests",
+        "documentation": {}
+    },
+    {
+        "label": "TestCore",
+        "kind": 6,
+        "importPath": "tests.test_core",
+        "description": "tests.test_core",
+        "peekOfCode": "class TestCore(unittest.TestCase):\n    \"\"\"Test cases for core functionality.\"\"\"\n    def setUp(self):\n        \"\"\"Set up test fixtures.\"\"\"\n        # Any setup code goes here\n        pass\n    def tearDown(self):\n        \"\"\"Tear down test fixtures.\"\"\"\n        # Any cleanup code goes here\n        pass",
+        "detail": "tests.test_core",
+        "documentation": {}
+    },
+    {
+        "label": "TestDependencies",
+        "kind": 6,
+        "importPath": "tests.test_dependencies",
+        "description": "tests.test_dependencies",
+        "peekOfCode": "class TestDependencies(unittest.TestCase):\n    \"\"\"Test cases for checking dependencies.\"\"\"\n    def test_required_packages(self):\n        \"\"\"Test that all required packages can be imported.\"\"\"\n        required_packages = [\n            'joblib',\n            'numpy',\n            'sentence_transformers',\n            'spacy',\n            'pynvml',",
+        "detail": "tests.test_dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "TestErrorHandling",
+        "kind": 6,
+        "importPath": "tests.test_errors",
+        "description": "tests.test_errors",
+        "peekOfCode": "class TestErrorHandling(unittest.TestCase):\n    \"\"\"Test cases for error handling.\"\"\"\n    def setUp(self):\n        \"\"\"Set up test fixtures.\"\"\"\n        # Capture logging output\n        self.log_capture = StringIO()\n        self.log_handler = logging.StreamHandler(self.log_capture)\n        self.log_handler.setLevel(logging.ERROR)\n        logging.getLogger().addHandler(self.log_handler)\n        logging.getLogger().setLevel(logging.ERROR)",
+        "detail": "tests.test_errors",
+        "documentation": {}
+    },
+    {
+        "label": "TestSpeech",
+        "kind": 6,
+        "importPath": "tests.test_speech",
+        "description": "tests.test_speech",
+        "peekOfCode": "class TestSpeech(unittest.TestCase):\n    \"\"\"Test cases for speech functionality.\"\"\"\n    def test_speech_module_import(self):\n        \"\"\"Test that the speech module can be imported.\"\"\"\n        try:\n            from grokvis import speech\n            self.assertTrue(True)\n        except ImportError as e:\n            self.fail(f\"Failed to import speech module: {e}\")\n    def test_tts_initialization(self):",
+        "detail": "tests.test_speech",
         "documentation": {}
     },
     {

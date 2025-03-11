@@ -38,14 +38,21 @@ class TestDependencies(unittest.TestCase):
             'pillow'
         ]
         
+        # Map package names to their import names
+        package_import_map = {
+            'scikit-learn': 'sklearn',
+            'beautifulsoup4': 'bs4',
+            'pillow': 'PIL',
+            'opencv-python': 'cv2',
+            'speech_recognition': 'speech_recognition'
+        }
+        
         missing_packages = []
         for package in required_packages:
             try:
-                # Handle special case for opencv-python
-                if package == 'opencv-python':
-                    importlib.import_module('cv2')
-                else:
-                    importlib.import_module(package)
+                # Use the import name if it's in the map, otherwise use the package name
+                import_name = package_import_map.get(package, package)
+                importlib.import_module(import_name)
             except ImportError:
                 missing_packages.append(package)
         

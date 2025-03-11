@@ -45,7 +45,7 @@ grokvis/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Grok-VIS.git
+git clone https://github.com/coff33ninja/Grok-VIS.git
 cd Grok-VIS
 ```
 
