@@ -59,7 +59,7 @@ def setup_logging():
 def initialize_components():
     """Initialize core components of GrokVIS."""
     global memory_model, nlp, conn, executor, scheduler, persona
-    
+
     # Initialize core components
     memory_model = SentenceTransformer('all-MiniLM-L6-v2')
     nlp = spacy.load("en_core_web_sm")
@@ -79,24 +79,24 @@ def grokvis_run():
     try:
         # Setup logging
         setup_logging()
-        
+
         # Initialize components
         initialize_components()
-        
+
         # Import modules here to avoid circular imports
         from grokvis.speech import speak, train_voice_model, wake_word_listener, setup_personality
         from grokvis.web import app
-        
+
         # Setup personality first
         global persona
         persona = setup_personality()
-        
+
         # Now that TTS is initialized, we can properly greet the user
         if persona == "Alfred":
             speak("Greetings, I'm Alfred, your loyal assistant.")
         elif persona == "Beatrice":
             speak("Hello, I'm Beatrice, here to assist you with grace.")
-        
+
         # Load or train the voice model
         train_voice_model()
 

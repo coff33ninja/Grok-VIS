@@ -211,12 +211,54 @@ Access the dashboard at http://localhost:5000 to:
 
 
 
-## How to Test
-- Run python main.py to start GrokVIS
+## Testing Framework
+
+The Grok-VIS project includes a comprehensive testing framework to ensure all components work correctly and dependencies are properly installed.
+
+### Test Structure
+
+The testing framework consists of:
+
+- **Core Tests**: Verify the basic structure and imports of the project
+- **Dependency Tests**: Check if all required packages are installed
+- **Speech Tests**: Validate speech recognition and synthesis components
+- **Utility Scripts**: Tools for running tests and checking dependencies
+
+### Running Tests
+
+Several batch files are provided to simplify testing:
+
+1. **Run All Tests**:
+   ```
+   run_tests.bat
+   ```
+
+2. **Check Dependencies**:
+   ```
+   check_dependencies.bat
+   ```
+
+3. **Install Dependencies**:
+   ```
+   install_dependencies.bat
+   ```
+
+4. **Run Specific Test**:
+   ```
+   run_specific_test.bat test_core
+   ```
+
+For detailed information about the testing framework, see:
+- [TESTING.md](TESTING.md) - Comprehensive testing documentation
+- [tests/README.md](tests/README.md) - Specific test file documentation
+
+## How to Run Grok-VIS
+
+- Run `python main.py` to start GrokVIS
 - On first run, it will ask you to choose between Alfred and Beatrice
 - Speak your choice
 - GrokVIS will confirm your selection and continue with initialization
-- To change your persona later, run python reset_persona.py and restart GrokVIS
+- To change your persona later, run `python reset_persona.py` and restart GrokVIS
 
 ## License
 
