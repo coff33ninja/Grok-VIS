@@ -222,7 +222,8 @@ The testing framework consists of:
 - **Core Tests**: Verify the basic structure and imports of the project
 - **Dependency Tests**: Check if all required packages are installed
 - **Speech Tests**: Validate speech recognition and synthesis components
-- **Utility Scripts**: Tools for running tests and checking dependencies
+- **Error Handling Tests**: Ensure errors are properly caught and logged
+- **Utility Scripts**: Tools for running tests, checking dependencies, and diagnosing errors
 
 ### Running Tests
 
@@ -246,6 +247,11 @@ Several batch files are provided to simplify testing:
 4. **Run Specific Test**:
    ```
    run_specific_test.bat test_core
+   ```
+
+5. **Diagnose Errors**:
+   ```
+   diagnose_errors.bat
    ```
 
 For detailed information about the testing framework, see:

@@ -50,6 +50,19 @@ Tests the speech functionality components of Grok-VIS.
 **Purpose:**  
 Ensures that the speech recognition and synthesis components are properly set up.
 
+### 4. `test_errors.py`
+
+Tests the error handling capabilities of Grok-VIS.
+
+**Test Cases:**
+- `test_logging_setup`: Verifies that logging is set up correctly
+- `test_error_logging`: Checks if errors are properly logged
+- `test_exception_handling`: Tests that exceptions are properly handled
+- `test_missing_dependency_error`: Tests how the system handles missing dependencies
+
+**Purpose:**  
+Ensures that the system can properly handle and log errors, making it easier to diagnose and fix issues.
+
 ## Utility Scripts
 
 ### 1. `run_tests.py`
@@ -80,6 +93,18 @@ python tests/check_dependency.py joblib
 
 **Purpose:**  
 Allows for checking individual dependencies to troubleshoot installation issues.
+
+### 3. `error_diagnosis.py`
+
+A comprehensive diagnostic tool that checks the entire Grok-VIS installation for issues.
+
+**Usage:**
+```python
+python tests/error_diagnosis.py
+```
+
+**Purpose:**  
+Provides detailed information about the system, dependencies, and potential issues to help diagnose and fix problems.
 
 ## Batch Files
 
@@ -131,6 +156,18 @@ run_specific_test.bat dependencies
 ```
 (The "test_" prefix is optional, and the ".py" extension is also optional)
 
+### 5. `diagnose_errors.bat`
+
+Runs a comprehensive error diagnosis to identify issues with the Grok-VIS installation.
+
+**Usage:**
+```
+diagnose_errors.bat
+```
+
+**Purpose:**
+Provides detailed information about the system, dependencies, and potential issues to help diagnose and fix problems.
+
 ## Running Tests
 
 ### Running All Tests
@@ -181,10 +218,12 @@ To install all required dependencies:
 
 If you encounter issues with the tests:
 
-1. **Missing Dependencies**: Run `install_dependencies.bat` to install all required dependencies
-2. **Python Path Issues**: Ensure that the correct Python environment is activated
-3. **spaCy Model Missing**: Run `python -m spacy download en_core_web_sm` to install the required language model
-4. **Test Failures**: Check the error messages for specific issues and fix them accordingly
+1. **Run Error Diagnosis**: Run `diagnose_errors.bat` to get a comprehensive analysis of your Grok-VIS installation
+2. **Missing Dependencies**: Run `install_dependencies.bat` to install all required dependencies
+3. **Python Path Issues**: Ensure that the correct Python environment is activated
+4. **spaCy Model Missing**: Run `python -m spacy download en_core_web_sm` to install the required language model
+5. **Test Failures**: Check the error messages for specific issues and fix them accordingly
+6. **Check Error Logs**: Review the `grokvis_errors.log` and `error_diagnosis.log` files for detailed error information
 
 ## Adding New Tests
 

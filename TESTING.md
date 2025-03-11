@@ -8,9 +8,10 @@ This document provides detailed information about the testing framework for the 
 2. [Test Files](#test-files)
 3. [Batch Files](#batch-files)
 4. [Running Tests](#running-tests)
-5. [Troubleshooting](#troubleshooting)
-6. [Adding New Tests](#adding-new-tests)
-7. [Continuous Integration](#continuous-integration)
+5. [Error Handling and Diagnosis](#error-handling-and-diagnosis)
+6. [Troubleshooting](#troubleshooting)
+7. [Adding New Tests](#adding-new-tests)
+8. [Continuous Integration](#continuous-integration)
 
 ## Testing Framework Overview
 
@@ -56,6 +57,19 @@ Tests the speech functionality components of Grok-VIS.
 
 **Purpose:**  
 Ensures that the speech recognition and synthesis components are properly set up.
+
+### Error Handling Tests (`test_errors.py`)
+
+Tests the error handling capabilities of Grok-VIS.
+
+**Test Cases:**
+- `test_logging_setup`: Verifies that logging is set up correctly
+- `test_error_logging`: Checks if errors are properly logged
+- `test_exception_handling`: Tests that exceptions are properly handled
+- `test_missing_dependency_error`: Tests how the system handles missing dependencies
+
+**Purpose:**  
+Ensures that the system can properly handle and log errors, making it easier to diagnose and fix issues.
 
 ## Batch Files
 
@@ -126,6 +140,21 @@ run_specific_test.bat dependencies
 2. Runs the specified test file
 3. Displays the test results
 
+### `diagnose_errors.bat`
+
+Runs a comprehensive error diagnosis to identify issues with the Grok-VIS installation.
+
+**Usage:**
+```
+diagnose_errors.bat
+```
+
+**What it does:**
+1. Checks if Python is available in the PATH
+2. Runs the error diagnosis script
+3. Displays detailed information about the system, dependencies, and potential issues
+4. Creates a log file with the diagnosis results
+
 ## Running Tests
 
 ### Running All Tests
@@ -172,6 +201,73 @@ To install all required dependencies:
    install_dependencies.bat
    ```
 
+### Diagnosing Errors
+
+To run a comprehensive error diagnosis:
+
+1. Open a command prompt
+2. Navigate to the Grok-VIS project directory
+3. Run the batch file:
+   ```
+   diagnose_errors.bat
+   ```
+4. Review the output and the error_diagnosis.log file for detailed information
+
+## Error Handling and Diagnosis
+
+Grok-VIS includes a comprehensive error handling and diagnosis system to help identify and fix issues.
+
+### Error Handling
+
+The error handling system in Grok-VIS is designed to:
+
+1. **Catch and Log Errors**: All errors are caught and logged to the `grokvis_errors.log` file
+2. **Provide Helpful Error Messages**: Error messages include detailed information about what went wrong
+3. **Gracefully Handle Exceptions**: The system can recover from many types of errors without crashing
+
+### Error Diagnosis
+
+The error diagnosis system helps identify issues with the Grok-VIS installation:
+
+1. **System Information**: Checks the operating system, Python version, and hardware
+2. **Dependency Verification**: Ensures all required packages are installed
+3. **File Permissions**: Verifies that all necessary files are readable and writable
+4. **Import Testing**: Tests that all Grok-VIS modules can be imported
+5. **Log File Checking**: Ensures that log files can be created and written to
+
+### Using the Error Diagnosis Tool
+
+The `error_diagnosis.py` script provides a comprehensive analysis of your Grok-VIS installation:
+
+```
+python tests/error_diagnosis.py
+```
+
+Or use the batch file:
+
+```
+diagnose_errors.bat
+```
+
+The script will:
+1. Check your Python version
+2. Display system information
+3. Verify all dependencies
+4. Check the spaCy model
+5. Test Grok-VIS imports
+6. Check file permissions
+7. Verify log files
+8. Provide a summary of any issues found
+
+### Error Logs
+
+Grok-VIS logs errors to the following files:
+
+- `grokvis_errors.log`: Contains errors from the main application
+- `error_diagnosis.log`: Contains detailed information from the error diagnosis tool
+
+These logs can be helpful when troubleshooting issues.
+
 ## Troubleshooting
 
 ### Common Issues
@@ -183,7 +279,7 @@ To install all required dependencies:
 - The application crashes when trying to import a module
 
 **Solution:**
-1. Run `check_dependencies.bat` to identify missing dependencies
+1. Run `diagnose_errors.bat` to identify the specific missing dependencies
 2. Run `install_dependencies.bat` to install all required dependencies
 3. If specific dependencies still fail to install, try installing them manually:
    ```
