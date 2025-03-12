@@ -94,8 +94,8 @@ def wake_word_listener():
     """Listen for the wake word 'Hey GrokVis' using Porcupine."""
     global wake_word_handle
     try:
-        access_key = "YOUR_PICOVOICE_ACCESS_KEY"  # Replace with your Picovoice key
-        keywords = ["Hey GrokVis"]
+        access_key = "YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w=="  # Replace with your Picovoice key
+        keywords = ["Hey Grok"]
         wake_word_handle = pvporcupine.create(access_key=access_key, keywords=keywords, sensitivities=[0.5])
 
         def audio_callback(indata, frames, time, status):
