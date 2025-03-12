@@ -227,6 +227,38 @@
         "documentation": {}
     },
     {
+        "label": "train_voice_model",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "wake_word_listener",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "setup_personality",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "isExtraImport": true,
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
         "label": "speak",
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
@@ -803,6 +835,14 @@
         "documentation": {}
     },
     {
+        "label": "TTS",
+        "importPath": "TTS.api",
+        "description": "TTS.api",
+        "isExtraImport": true,
+        "detail": "TTS.api",
+        "documentation": {}
+    },
+    {
         "label": "BackgroundScheduler",
         "importPath": "apscheduler.schedulers.background",
         "description": "apscheduler.schedulers.background",
@@ -832,6 +872,14 @@
         "description": "apscheduler.jobstores.sqlalchemy",
         "isExtraImport": true,
         "detail": "apscheduler.jobstores.sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "grokvis.web",
+        "description": "grokvis.web",
+        "isExtraImport": true,
+        "detail": "grokvis.web",
         "documentation": {}
     },
     {
@@ -1877,7 +1925,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def wake_word_listener():\n    \"\"\"Listen for the wake word 'Hey GrokVis' using Porcupine.\"\"\"\n    global wake_word_handle\n    try:\n        access_key = \"YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w==\"  # Replace with your Picovoice key\n        keywords = [\"Hey Grok\"]\n        wake_word_handle = pvporcupine.create(access_key=access_key, keywords=keywords, sensitivities=[0.5])\n        def audio_callback(indata, frames, time, status):\n            pcm = struct.pack('<' + ('h' * len(indata)), *indata)\n            if wake_word_handle.process(pcm) >= 0:",
+        "peekOfCode": "def wake_word_listener():\n    \"\"\"Listen for the wake word 'Hey GrokVis' using Porcupine.\"\"\"\n    global wake_word_handle\n    try:\n        # Better to use environment variable or config file\n        access_key = os.environ.get(\n            \"PICOVOICE_ACCESS_KEY\",\n            \"YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w==\",\n        )\n        keywords = [\"Hey Grok\"]",
         "detail": "grokvis.speech",
         "documentation": {}
     },

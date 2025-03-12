@@ -1,0 +1,357 @@
+{
+  "imports": {
+    "grokvis/core.py": [
+      "logging",
+      "os",
+      "datetime",
+      "random",
+      "joblib",
+      "threading",
+      "numpy as np",
+      "concurrent.futures.ThreadPoolExecutor",
+      "sentence_transformers.SentenceTransformer",
+      "spacy",
+      "pynvml",
+      "sqlite3",
+      "TTS.api.TTS",
+      "apscheduler.schedulers.background.BackgroundScheduler",
+      "apscheduler.jobstores.sqlalchemy.SQLAlchemyJobStore",
+      "grokvis.speech.speak",
+      "grokvis.speech.train_voice_model",
+      "grokvis.speech.wake_word_listener",
+      "grokvis.speech.setup_personality",
+      "grokvis.web.app"
+    ],
+    "grokvis/__init__.py": [
+      "grokvis.core.grokvis_run"
+    ],
+    "main.py": [
+      "grokvis.core.grokvis_run"
+    ],
+    "reset_persona.py": [
+      "os",
+      "json",
+      "sqlite3"
+    ],
+    "grokvis/weather.py": [
+      "requests",
+      "json",
+      "os",
+      "datetime"
+    ],
+    "grokvis/scheduler.py": [
+      "datetime",
+      "time",
+      "threading",
+      "apscheduler.schedulers.background.BackgroundScheduler",
+      "apscheduler.jobstores.sqlalchemy.SQLAlchemyJobStore"
+    ],
+    "grokvis/home_automation.py": [
+      "requests",
+      "json",
+      "os",
+      "time"
+    ],
+    "grokvis/productivity.py": [
+      "os",
+      "sys",
+      "json",
+      "datetime",
+      "subprocess",
+      "webbrowser",
+      "requests",
+      "pyautogui",
+      "time",
+      "threading"
+    ],
+    "grokvis/entertainment.py": [
+      "requests",
+      "json",
+      "webbrowser",
+      "random",
+      "os",
+      "time",
+      "subprocess"
+    ],
+    "grokvis/memory.py": [
+      "sqlite3",
+      "datetime",
+      "json",
+      "numpy as np",
+      "sentence_transformers"
+    ],
+    "grokvis/knowledge.py": [
+      "os",
+      "json",
+      "sqlite3",
+      "datetime",
+      "numpy as np",
+      "sentence_transformers.SentenceTransformer",
+      "sklearn.metrics.pairwise.cosine_similarity"
+    ],
+    "grokvis/speech.py": [
+      "os",
+      "sys",
+      "time",
+      "json",
+      "random",
+      "threading",
+      "numpy as np",
+      "sounddevice as sd",
+      "scipy.io.wavfile",
+      "librosa",
+      "torch",
+      "transformers",
+      "TTS.api.TTS",
+      "pvporcupine",
+      "whisper",
+      "grokvis.commands.process_command"
+    ],
+    "grokvis/system.py": [
+      "os",
+      "sys",
+      "platform",
+      "psutil",
+      "subprocess",
+      "datetime",
+      "time",
+      "json",
+      "threading",
+      "pynvml"
+    ],
+    "grokvis/commands.py": [
+      "os",
+      "sys",
+      "re",
+      "json",
+      "datetime",
+      "random",
+      "time",
+      "threading",
+      "grokvis.speech.speak",
+      "grokvis.memory.store_interaction",
+      "grokvis.memory.retrieve_memory",
+      "grokvis.knowledge.query_knowledge_base",
+      "grokvis.system.get_system_status",
+      "grokvis.weather.get_weather",
+      "grokvis.productivity.create_reminder",
+      "grokvis.productivity.open_application",
+      "grokvis.productivity.search_web",
+      "grokvis.home_automation.control_device",
+      "grokvis.entertainment.play_music",
+      "grokvis.entertainment.recommend_movie"
+    ],
+    "grokvis/system_control.py": [
+      "os",
+      "sys",
+      "platform",
+      "psutil",
+      "subprocess",
+      "datetime",
+      "time",
+      "json",
+      "threading",
+      "pynvml",
+      "pyautogui",
+      "keyboard",
+      "ctypes",
+      "win32api",
+      "win32con",
+      "win32gui"
+    ],
+    "grokvis/web.py": [
+      "flask",
+      "flask.Flask",
+      "flask.render_template",
+      "flask.jsonify",
+      "flask.request",
+      "flask.send_from_directory",
+      "datetime",
+      "json",
+      "os",
+      "threading",
+      "grokvis.system.get_system_status",
+      "grokvis.memory.retrieve_recent_interactions",
+      "grokvis.speech.speak"
+    ]
+  }
+}
+
+{
+  "imports": {
+    "grokvis/core.py": [
+      "logging",
+      "os",
+      "datetime",
+      "random",
+      "joblib",
+      "threading",
+      "numpy as np",
+      "concurrent.futures.ThreadPoolExecutor",
+      "sentence_transformers.SentenceTransformer",
+      "spacy",
+      "pynvml",
+      "sqlite3",
+      "TTS.api.TTS",
+      "apscheduler.schedulers.background.BackgroundScheduler",
+      "apscheduler.jobstores.sqlalchemy.SQLAlchemyJobStore",
+      "grokvis.speech.speak",
+      "grokvis.speech.train_voice_model",
+      "grokvis.speech.wake_word_listener",
+      "grokvis.speech.setup_personality",
+      "grokvis.web.app"
+    ],
+    "grokvis/__init__.py": [
+      "grokvis.core.grokvis_run"
+    ],
+    "main.py": [
+      "grokvis.core.grokvis_run"
+    ],
+    "reset_persona.py": [
+      "os",
+      "json",
+      "sqlite3"
+    ],
+    "grokvis/weather.py": [
+      "requests",
+      "json",
+      "os",
+      "datetime"
+    ],
+    "grokvis/scheduler.py": [
+      "datetime",
+      "time",
+      "threading",
+      "apscheduler.schedulers.background.BackgroundScheduler",
+      "apscheduler.jobstores.sqlalchemy.SQLAlchemyJobStore"
+    ],
+    "grokvis/home_automation.py": [
+      "requests",
+      "json",
+      "os",
+      "time"
+    ],
+    "grokvis/productivity.py": [
+      "os",
+      "sys",
+      "json",
+      "datetime",
+      "subprocess",
+      "webbrowser",
+      "requests",
+      "pyautogui",
+      "time",
+      "threading"
+    ],
+    "grokvis/entertainment.py": [
+      "requests",
+      "json",
+      "webbrowser",
+      "random",
+      "os",
+      "time",
+      "subprocess"
+    ],
+    "grokvis/memory.py": [
+      "sqlite3",
+      "datetime",
+      "json",
+      "numpy as np",
+      "sentence_transformers"
+    ],
+    "grokvis/knowledge.py": [
+      "os",
+      "json",
+      "sqlite3",
+      "datetime",
+      "numpy as np",
+      "sentence_transformers.SentenceTransformer",
+      "sklearn.metrics.pairwise.cosine_similarity"
+    ],
+    "grokvis/speech.py": [
+      "os",
+      "sys",
+      "time",
+      "json",
+      "random",
+      "threading",
+      "numpy as np",
+      "sounddevice as sd",
+      "scipy.io.wavfile",
+      "librosa",
+      "torch",
+      "transformers",
+      "TTS.api.TTS",
+      "pvporcupine",
+      "whisper",
+      "grokvis.commands.process_command"
+    ],
+    "grokvis/system.py": [
+      "os",
+      "sys",
+      "platform",
+      "psutil",
+      "subprocess",
+      "datetime",
+      "time",
+      "json",
+      "threading",
+      "pynvml"
+    ],
+    "grokvis/commands.py": [
+      "os",
+      "sys",
+      "re",
+      "json",
+      "datetime",
+      "random",
+      "time",
+      "threading",
+      "grokvis.speech.speak",
+      "grokvis.memory.store_interaction",
+      "grokvis.memory.retrieve_memory",
+      "grokvis.knowledge.query_knowledge_base",
+      "grokvis.system.get_system_status",
+      "grokvis.weather.get_weather",
+      "grokvis.productivity.create_reminder",
+      "grokvis.productivity.open_application",
+      "grokvis.productivity.search_web",
+      "grokvis.home_automation.control_device",
+      "grokvis.entertainment.play_music",
+      "grokvis.entertainment.recommend_movie"
+    ],
+    "grokvis/system_control.py": [
+      "os",
+      "sys",
+      "platform",
+      "psutil",
+      "subprocess",
+      "datetime",
+      "time",
+      "json",
+      "threading",
+      "pynvml",
+      "pyautogui",
+      "keyboard",
+      "ctypes",
+      "win32api",
+      "win32con",
+      "win32gui"
+    ],
+    "grokvis/web.py": [
+      "flask",
+      "flask.Flask",
+      "flask.render_template",
+      "flask.jsonify",
+      "flask.request",
+      "flask.send_from_directory",
+      "datetime",
+      "json",
+      "os",
+      "threading",
+      "grokvis.system.get_system_status",
+      "grokvis.memory.retrieve_recent_interactions",
+      "grokvis.speech.speak"
+    ]
+  }
+}

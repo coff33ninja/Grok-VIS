@@ -17,6 +17,8 @@ import sqlite3
 from TTS.api import TTS
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
+from grokvis.speech import speak, train_voice_model, wake_word_listener, setup_personality
+from grokvis.web import app
 
 # Global variables
 memory_model = None
@@ -110,3 +112,4 @@ def grokvis_run():
         logging.error(f"Main Loop Error: {e}")
         from grokvis.speech import speak
         speak("Sorry, something went wrong with the main loop.")
+        

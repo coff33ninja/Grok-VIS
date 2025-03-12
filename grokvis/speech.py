@@ -6,6 +6,7 @@ import os
 import datetime
 import logging
 import struct
+from TTS.api import TTS
 import speech_recognition as sr
 import sounddevice as sd
 import librosa
@@ -90,31 +91,83 @@ def listen():
         speak("Sorry, I couldn't process that command.")
         return ""
 
+
 def wake_word_listener():
     """Listen for the wake word 'Hey GrokVis' using Porcupine."""
     global wake_word_handle
     try:
-        access_key = "YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w=="  # Replace with your Picovoice key
+        # Better to use environment variable or config file
+        access_key = os.environ.get(
+            "PICOVOICE_ACCESS_KEY",
+            "YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w==",
+        )
         keywords = ["Hey Grok"]
-        wake_word_handle = pvporcupine.create(access_key=access_key, keywords=keywords, sensitivities=[0.5])
+
+        # Create the wake word detector with proper error handling
+        try:
+            wake_word_handle = pvporcupine.create(
+                access_key=access_key, keywords=keywords, sensitivities=[0.5]
+            )
+        except pvporcupine.PorcupineInvalidArgumentError as e:
+            logging.error(f"Invalid argument for Porcupine: {e}")
+            speak("Wake word detection failed due to invalid configuration.")
+            return
+        except pvporcupine.PorcupineActivationError as e:
+            logging.error(f"Porcupine activation error: {e}")
+            speak("Wake word detection failed due to invalid access key.")
+            return
 
         def audio_callback(indata, frames, time, status):
-            pcm = struct.pack('<' + ('h' * len(indata)), *indata)
-            if wake_word_handle.process(pcm) >= 0:
+            if status:
+                logging.warning(f"Audio callback status: {status}")
+                return
+
+            # Properly convert numpy array to PCM data
+            pcm = indata.flatten().astype(np.int16)
+
+            # Process the PCM data
+            keyword_index = wake_word_handle.process(pcm)
+            if keyword_index >= 0:
                 print("Wake word detected!")
+                # Stop the stream temporarily to avoid feedback
+                sd.stop()
                 command = listen()
                 if command:
                     # Import here to avoid circular import
                     from grokvis.commands import process_command
-                    process_command(command)
 
-        with sd.InputStream(callback=audio_callback, channels=1, samplerate=16000, blocksize=512):
-            print("Listening for wake word...")
-            while True:
-                pass
+                    process_command(command)
+                # Restart the stream after processing
+                sd.start()
+
+        # Add a way to exit the loop
+        print("Listening for wake word... (Press Ctrl+C to exit)")
+        with sd.InputStream(
+            callback=audio_callback,
+            channels=1,
+            samplerate=wake_word_handle.sample_rate,
+            blocksize=wake_word_handle.frame_length,
+            dtype=np.int16,
+        ):
+            try:
+                while True:
+                    sd.sleep(100)  # Sleep to reduce CPU usage
+            except KeyboardInterrupt:
+                print("Wake word detection stopped.")
+            finally:
+                # Clean up resources
+                if wake_word_handle:
+                    wake_word_handle.delete()
+                    wake_word_handle = None
+
     except Exception as e:
         logging.error(f"Wake Word Detection Error: {e}")
         speak("Sorry, wake word detection failed.")
+        # Clean up resources in case of error
+        if wake_word_handle:
+            wake_word_handle.delete()
+            wake_word_handle = None
+
 
 def setup_personality():
     """First-time setup to choose between Alfred (male) or Beatrice (female) persona."""
