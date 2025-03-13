@@ -1,5 +1,4 @@
-"""
-Core functionality for the GrokVIS assistant.
+"""Core functionality for the GrokVIS assistant.
 Contains initialization, model loading, and main execution loop.
 """
 import logging
@@ -14,7 +13,8 @@ from sentence_transformers import SentenceTransformer
 import spacy
 import pynvml
 import sqlite3
-from grokvis.speech import train_voice_model, wake_word_listener, setup_personality
+import speech_recognition as sr
+from grokvis.speech import train_voice_model, wake_word_listener, setup_personality, speak
 from grokvis.web import app
 from grokvis.shared import model, wake_word_handle, persona, jarvis_quips, alfred_quips, beatrice_quips
 
@@ -48,6 +48,41 @@ def initialize_components():
     scheduler = BackgroundScheduler(jobstores=jobstores)
     scheduler.start()
 
+def greet_user():
+    """Greet the user and ask for their desired persona."""
+    speak("Hello! What persona would you like to use? You can choose Alfred, Beatrice, or any other available persona.")
+
+    # Initialize the recognizer
+    recognizer = sr.Recognizer()
+
+    with sr.Microphone() as source:
+        print("Listening for your response...")
+        audio = recognizer.listen(source)
+
+    try:
+        # Recognize speech using Google Web Speech API
+        response = recognizer.recognize_google(audio)
+        print(f"You said: {response}")
+
+        # Set persona based on recognized response
+        global persona
+        if "Alfred" in response:
+            persona = "Alfred"
+            speak("You have chosen Alfred.")
+        elif "Beatrice" in response:
+            persona = "Beatrice"
+            speak("You have chosen Beatrice.")
+        else:
+            persona = "Default"  # Fallback persona
+            speak("You have chosen a default persona.")
+
+    except sr.UnknownValueError:
+        speak("Sorry, I could not understand what you said.")
+        persona = "Default"  # Fallback persona
+    except sr.RequestError as e:
+        speak("Could not request results from the speech recognition service.")
+        persona = "Default"  # Fallback persona
+
 # Main Function
 def grokvis_run():
     """Run the main GROK-VIS loop with wake word detection."""
@@ -58,13 +93,8 @@ def grokvis_run():
         # Initialize components
         initialize_components()
 
-        # Import modules here to avoid circular imports
-        from grokvis.speech import speak, train_voice_model, wake_word_listener, setup_personality
-        from grokvis.web import app
-
-        # Setup personality first
-        global persona
-        persona = setup_personality()
+        # Greet the user and ask for persona
+        greet_user()
 
         # Now that TTS is initialized, we can properly greet the user
         if persona == "Alfred":
@@ -83,5 +113,4 @@ def grokvis_run():
         wake_word_listener()
     except Exception as e:
         logging.error(f"Main Loop Error: {e}")
-        from grokvis.speech import speak
         speak("Sorry, something went wrong with the main loop.")
