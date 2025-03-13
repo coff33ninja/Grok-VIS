@@ -21,7 +21,8 @@ from grokvis.shared import model, wake_word_handle, jarvis_quips, persona
 from grokvis.tts_manager import speak
 
 def record_clip(filename):
-    """Record a short audio clip and save it to a file."""
+    """Record a short audio clip and save it to a file. If an error occurs, provide feedback."""
+
     try:
         recognizer = sr.Recognizer()
         with sr.MMicrophone() as source:
@@ -31,7 +32,8 @@ def record_clip(filename):
                 f.write(audio.get_wav_data())
     except Exception as e:
         logging.error(f"Recording Error: {e}")
-        speak("Sorry, I couldn't record that.")
+        speak("Sorry, I couldn't record that. Please try again.")
+
 
 def extract_mfcc(file_path):
     """Extract MFCC features from an audio file."""
@@ -44,7 +46,8 @@ def extract_mfcc(file_path):
         return None
 
 def train_one_class_model(directory):
-    """Train a One-Class SVM model on voice samples."""
+    """Train a One-Class SVM model on voice samples. Provide feedback if an error occurs."""
+
     try:
         files = glob.glob(f"{directory}/*.wav")
         X = [extract_mfcc(f) for f in files if extract_mfcc(f) is not None]
@@ -54,11 +57,13 @@ def train_one_class_model(directory):
         return model
     except Exception as e:
         logging.error(f"Model Training Error: {e}")
-        speak("Sorry, I couldn't train the voice model.")
+        speak("Sorry, I couldn't train the voice model. Please check your samples and try again.")
         return None
 
+
 def listen():
-    """Listen for a command and verify the speaker's voice."""
+    """Listen for a command and verify the speaker's voice. Provide feedback if an error occurs."""
+
     try:
         recognizer = sr.Recognizer()
         with sr.MMicrophone() as source:
@@ -73,15 +78,18 @@ def listen():
             command = recognizer.recognize_google(audio).lower()
             return command
     except sr.UnknownValueError:
-        speak("Sorry, I didn't catch that.")
+        speak("Sorry, I didn't catch that. Please repeat your command.")
+
         return ""
     except Exception as e:
         logging.error(f"Listening Error: {e}")
-        speak("Sorry, I couldn't process that command.")
+        speak("Sorry, I couldn't process that command. Please try again.")
+
         return ""
 
-def wake_word_listener():
-    """Listen for the wake word 'Hey GrokVis' using Porcupine."""
+def wake_word_listener(sensitivity=0.5):
+    """Listen for the wake word 'Hey GrokVis' using Porcupine. Sensitivity can be adjusted."""
+
     global wake_word_handle
     try:
         access_key = os.environ.get(
@@ -92,7 +100,7 @@ def wake_word_listener():
 
         try:
             wake_word_handle = pvporcupine.create(
-                access_key=access_key, keywords=keywords, sensitivities=[0.5]
+                access_key=access_key, keywords=keywords, sensitivities=[sensitivity]
             )
         except pvporcupine.PorcupineInvalidArgumentError as e:
             logging.error(f"Invalid argument for Porcupine: {e}")
@@ -111,7 +119,7 @@ def wake_word_listener():
             pcm = indata.flatten().astype(np.int16)
             keyword_index = wake_word_handle.process(pcm)
             if keyword_index >= 0:
-                print("Wake word detected!")
+                print("Wake word detected! Executing command...")
                 sd.stop()
                 command = listen()
                 if command:
@@ -119,7 +127,7 @@ def wake_word_listener():
                     process_command(command)
                 sd.start()
 
-        print("Listening for wake word... (Press Ctrl+C to exit)")
+        print(f"Listening for wake word with sensitivity {sensitivity}... (Press Ctrl+C to exit)")
         with sd.InputStream(
             callback=audio_callback,
             channels=1,
@@ -185,19 +193,23 @@ def setup_personality():
         print("Sorry, something went wrong during setup. Defaulting to Alfred.")
         return "Alfred"
 
-def train_voice_model():
-    """Load or train the voice model."""
+def train_voice_model(retrain=False):
+    """Load or train the voice model. Optionally retrain with new samples."""
+
     global model
     try:
         model = joblib.load('voice_model.pkl')
         speak("Voice model loaded successfully.")
     except FileNotFoundError:
-        speak("I need to learn your voice. Please say 10 phrases after each prompt.")
+        if retrain:
+            speak("I need to learn your voice. Please say 10 new phrases after each prompt.")
+        else:
+            speak("I need to learn your voice. Please say 10 phrases after each prompt.")
         if not os.path.exists('voice_samples/my_voice'):
             os.makedirs('voice_samples/my_voice')
         for i in range(10):
             speak(f"Phrase {i+1}:")
             record_clip(f"voice_samples/my_voice/sample_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.wav")
-        model = train_one_class_model('voice_samples/my_voice')
+        model = train_one_class_model('voice_samples/my_voice', retrain=retrain)
         speak("Voice model trained. I'll only listen to you now!")
     return model
