@@ -5,8 +5,8 @@ Provides a Flask-based web interface for monitoring and control.
 import logging
 from flask import Flask, render_template_string
 
-# Import from core module
-from grokvis.core import scheduler, persona
+# Import from shared module
+from grokvis.shared import scheduler, persona
 
 # Flask app setup
 app = Flask(__name__)
@@ -104,12 +104,12 @@ def system_stats():
     try:
         import psutil
         import pynvml
-        
+
         # CPU stats
         cpu_percent = psutil.cpu_percent(interval=1)
         memory = psutil.virtual_memory()
         memory_percent = memory.percent
-        
+
         # GPU stats
         try:
             pynvml.nvmlInit()
@@ -121,7 +121,7 @@ def system_stats():
         except:
             gpu_percent = "N/A"
             gpu_memory_percent = "N/A"
-        
+
         html = """
         <!DOCTYPE html>
         <html>
@@ -173,7 +173,7 @@ def system_stats():
             <body>
                 <div class="container">
                     <h1>System Statistics</h1>
-                    
+
                     <div class="stat-box">
                         <div class="stat-title">CPU Usage</div>
                         <div class="progress-bar">
@@ -182,7 +182,7 @@ def system_stats():
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="stat-box">
                         <div class="stat-title">Memory Usage</div>
                         <div class="progress-bar">
@@ -191,7 +191,7 @@ def system_stats():
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="stat-box">
                         <div class="stat-title">GPU Usage</div>
                         {% if gpu_percent != "N/A" %}
@@ -204,7 +204,7 @@ def system_stats():
                         <p>No GPU detected or NVIDIA GPU required</p>
                         {% endif %}
                     </div>
-                    
+
                     <div class="stat-box">
                         <div class="stat-title">GPU Memory</div>
                         {% if gpu_memory_percent != "N/A" %}
@@ -222,8 +222,8 @@ def system_stats():
         </html>
         """
         return render_template_string(
-            html, 
-            cpu_percent=cpu_percent, 
+            html,
+            cpu_percent=cpu_percent,
             memory_percent=memory_percent,
             gpu_percent=gpu_percent,
             gpu_memory_percent=gpu_memory_percent

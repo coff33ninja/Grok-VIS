@@ -16,26 +16,15 @@ import glob
 from sklearn.svm import OneClassSVM
 import pvporcupine
 
-# Import from core module
-from grokvis.core import tts, model, wake_word_handle, jarvis_quips, persona
-
-def speak(text):
-    """Speak the given text aloud using Coqui TTS."""
-    try:
-        print(text)
-        tts.tts_to_file(text=text, file_path="output.wav")
-        audio_data, samplerate = sd.read("output.wav")
-        sd.play(audio_data, samplerate=samplerate)
-        sd.wait()
-    except Exception as e:
-        logging.error(f"TTS Error: {e}")
-        print("Sorry, I couldn't speak right now.")
+# Import from shared module
+from grokvis.shared import model, wake_word_handle, jarvis_quips, persona
+from grokvis.tts_manager import speak
 
 def record_clip(filename):
     """Record a short audio clip and save it to a file."""
     try:
         recognizer = sr.Recognizer()
-        with sr.Microphone() as source:
+        with sr.MMicrophone() as source:
             print("Say something...")
             audio = recognizer.listen(source)
             with open(filename, "wb") as f:
@@ -72,7 +61,7 @@ def listen():
     """Listen for a command and verify the speaker's voice."""
     try:
         recognizer = sr.Recognizer()
-        with sr.Microphone() as source:
+        with sr.MMicrophone() as source:
             print("Listening...")
             audio = recognizer.listen(source)
             with open("temp.wav", "wb") as f:
@@ -91,19 +80,16 @@ def listen():
         speak("Sorry, I couldn't process that command.")
         return ""
 
-
 def wake_word_listener():
     """Listen for the wake word 'Hey GrokVis' using Porcupine."""
     global wake_word_handle
     try:
-        # Better to use environment variable or config file
         access_key = os.environ.get(
             "PICOVOICE_ACCESS_KEY",
             "YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w==",
         )
         keywords = ["Hey Grok"]
 
-        # Create the wake word detector with proper error handling
         try:
             wake_word_handle = pvporcupine.create(
                 access_key=access_key, keywords=keywords, sensitivities=[0.5]
@@ -122,25 +108,17 @@ def wake_word_listener():
                 logging.warning(f"Audio callback status: {status}")
                 return
 
-            # Properly convert numpy array to PCM data
             pcm = indata.flatten().astype(np.int16)
-
-            # Process the PCM data
             keyword_index = wake_word_handle.process(pcm)
             if keyword_index >= 0:
                 print("Wake word detected!")
-                # Stop the stream temporarily to avoid feedback
                 sd.stop()
                 command = listen()
                 if command:
-                    # Import here to avoid circular import
                     from grokvis.commands import process_command
-
                     process_command(command)
-                # Restart the stream after processing
                 sd.start()
 
-        # Add a way to exit the loop
         print("Listening for wake word... (Press Ctrl+C to exit)")
         with sd.InputStream(
             callback=audio_callback,
@@ -151,11 +129,10 @@ def wake_word_listener():
         ):
             try:
                 while True:
-                    sd.sleep(100)  # Sleep to reduce CPU usage
+                    sd.sleep(100)
             except KeyboardInterrupt:
                 print("Wake word detection stopped.")
             finally:
-                # Clean up resources
                 if wake_word_handle:
                     wake_word_handle.delete()
                     wake_word_handle = None
@@ -163,43 +140,23 @@ def wake_word_listener():
     except Exception as e:
         logging.error(f"Wake Word Detection Error: {e}")
         speak("Sorry, wake word detection failed.")
-        # Clean up resources in case of error
         if wake_word_handle:
             wake_word_handle.delete()
             wake_word_handle = None
 
-
 def setup_personality():
     """First-time setup to choose between Alfred (male) or Beatrice (female) persona."""
-    global tts
     try:
-        # Check if persona is already set
         if os.path.exists('persona_config.txt'):
             with open('persona_config.txt', 'r') as f:
                 persona = f.read().strip()
-            if persona == "Alfred":
-                tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC")  # Male-like voice
-                print("Greetings, I'm Alfred, your loyal assistant.")
-                # We'll speak after TTS is fully initialized
-            elif persona == "Beatrice":
-                tts = TTS(model_name="tts_models/en/vctk/vits", speaker="p228")  # Female voice
-                print("Hello, I'm Beatrice, here to assist you with grace.")
-                # We'll speak after TTS is fully initialized
+            print(f"Welcome back, I'm {persona}.")
             return persona
 
-        # First-time setup - use a temporary TTS for the initial prompt
-        temp_tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC")
-        temp_tts.tts_to_file(
-            text="Welcome! I need a persona. Would you prefer Alfred, the gentleman, or Beatrice, the lady? Say 'Alfred' or 'Beatrice'.",
-            file_path="output.wav"
-        )
-        audio_data, samplerate = sd.read("output.wav")
-        sd.play(audio_data, samplerate=samplerate)
-        sd.wait()
-        
-        # Listen for response
+        speak("Welcome! I need a persona. Would you prefer Alfred, the gentleman, or Beatrice, the lady? Say 'Alfred' or 'Beatrice'.")
+
         recognizer = sr.Recognizer()
-        with sr.Microphone() as source:
+        with sr.MMicrophone() as source:
             print("Listening for persona choice...")
             audio = recognizer.listen(source)
             try:
@@ -208,29 +165,24 @@ def setup_personality():
             except:
                 choice = ""
                 print("Couldn't recognize choice")
-        
+
         if "alfred" in choice.lower():
-            tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC")  # Male-like voice
             persona = "Alfred"
             print("Very well, I'm Alfred, at your service.")
         elif "beatrice" in choice.lower():
-            tts = TTS(model_name="tts_models/en/vctk/vits", speaker="p228")  # Female voice, speaker p228
             persona = "Beatrice"
             print("Delighted! I'm Beatrice, ready to assist with elegance.")
         else:
             print("I didn't catch that. Defaulting to Alfred for now.")
-            tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC")
             persona = "Alfred"
-        
-        # Save the choice
+
         with open('persona_config.txt', 'w') as f:
             f.write(persona)
-            
+
         return persona
     except Exception as e:
         logging.error(f"Persona Setup Error: {e}")
         print("Sorry, something went wrong during setup. Defaulting to Alfred.")
-        tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC")
         return "Alfred"
 
 def train_voice_model():

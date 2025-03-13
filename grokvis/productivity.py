@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 
 # Import from core module
 from grokvis.speech import speak
-from grokvis.core import scheduler
+from grokvis.shared import scheduler
 
 # Global variables
 timers = {}
@@ -25,11 +25,11 @@ def start_timer(duration_str):
     try:
         # Parse the duration string (e.g., "5 minutes", "1 hour 30 minutes")
         duration_seconds = 0
-        
+
         if "hour" in duration_str:
             hours = int(duration_str.split("hour")[0].strip().split()[-1])
             duration_seconds += hours * 3600
-            
+
         if "minute" in duration_str:
             if "hour" in duration_str:
                 minutes_part = duration_str.split("hour")[1]
@@ -37,7 +37,7 @@ def start_timer(duration_str):
                 minutes_part = duration_str
             minutes = int(minutes_part.split("minute")[0].strip().split()[-1])
             duration_seconds += minutes * 60
-            
+
         if "second" in duration_str:
             if "minute" in duration_str:
                 seconds_part = duration_str.split("minute")[1]
@@ -47,7 +47,7 @@ def start_timer(duration_str):
                 seconds_part = duration_str
             seconds = int(seconds_part.split("second")[0].strip().split()[-1])
             duration_seconds += seconds
-            
+
         if duration_seconds == 0:
             # If no specific time units found, try to parse as a number of minutes
             try:
@@ -56,22 +56,22 @@ def start_timer(duration_str):
             except:
                 speak("I couldn't understand the timer duration. Please specify like '5 minutes' or '1 hour 30 minutes'.")
                 return
-        
+
         # Create a unique ID for this timer
         timer_id = f"timer_{int(time.time())}"
         end_time = datetime.now() + timedelta(seconds=duration_seconds)
-        
+
         # Store the timer
         timers[timer_id] = {
             "end_time": end_time,
             "duration": duration_seconds,
             "remaining": duration_seconds
         }
-        
+
         # Format the duration for speech
         hours, remainder = divmod(duration_seconds, 3600)
         minutes, seconds = divmod(remainder, 60)
-        
+
         duration_speech = ""
         if hours > 0:
             duration_speech += f"{hours} hour{'s' if hours > 1 else ''} "
@@ -79,9 +79,9 @@ def start_timer(duration_str):
             duration_speech += f"{minutes} minute{'s' if minutes > 1 else ''} "
         if seconds > 0 and hours == 0:  # Only mention seconds if less than an hour
             duration_speech += f"{seconds} second{'s' if seconds > 1 else ''}"
-            
+
         speak(f"Timer set for {duration_speech.strip()}.")
-        
+
         # Schedule the timer to go off
         scheduler.add_job(
             timer_complete,
@@ -90,7 +90,7 @@ def start_timer(duration_str):
             args=[timer_id],
             id=timer_id
         )
-        
+
         return timer_id
     except Exception as e:
         logging.error(f"Timer Error: {e}")
@@ -111,13 +111,13 @@ def start_stopwatch():
     try:
         # Create a unique ID for this stopwatch
         stopwatch_id = f"stopwatch_{int(time.time())}"
-        
+
         # Store the stopwatch
         stopwatches[stopwatch_id] = {
             "start_time": datetime.now(),
             "running": True
         }
-        
+
         speak("Stopwatch started.")
         return stopwatch_id
     except Exception as e:
@@ -131,27 +131,27 @@ def stop_stopwatch(stopwatch_id=None):
         # If no ID provided, stop the most recent stopwatch
         if stopwatch_id is None and stopwatches:
             stopwatch_id = list(stopwatches.keys())[-1]
-            
+
         if stopwatch_id in stopwatches:
             stopwatch = stopwatches[stopwatch_id]
-            
+
             if stopwatch["running"]:
                 elapsed = datetime.now() - stopwatch["start_time"]
                 stopwatch["running"] = False
                 stopwatch["elapsed"] = elapsed
-                
+
                 # Format the elapsed time for speech
                 total_seconds = int(elapsed.total_seconds())
                 hours, remainder = divmod(total_seconds, 3600)
                 minutes, seconds = divmod(remainder, 60)
-                
+
                 elapsed_speech = ""
                 if hours > 0:
                     elapsed_speech += f"{hours} hour{'s' if hours > 1 else ''} "
                 if minutes > 0:
                     elapsed_speech += f"{minutes} minute{'s' if minutes > 1 else ''} "
                 elapsed_speech += f"{seconds} second{'s' if seconds > 1 else ''}"
-                
+
                 speak(f"Stopwatch stopped. Elapsed time: {elapsed_speech.strip()}.")
                 return elapsed
             else:
@@ -171,17 +171,17 @@ def add_to_shopping_list(item, list_name="default"):
         # Initialize the list if it doesn't exist
         if list_name not in shopping_lists:
             shopping_lists[list_name] = []
-            
+
         # Add the item to the list
         shopping_lists[list_name].append({
             "item": item,
             "added": datetime.now().isoformat(),
             "completed": False
         })
-        
+
         # Save the shopping lists to a file
         save_shopping_lists()
-        
+
         speak(f"Added {item} to your {list_name} shopping list.")
     except Exception as e:
         logging.error(f"Shopping List Error: {e}")
@@ -193,13 +193,13 @@ def show_shopping_list(list_name="default"):
         if list_name not in shopping_lists or not shopping_lists[list_name]:
             speak(f"Your {list_name} shopping list is empty.")
             return
-            
+
         items = [item["item"] for item in shopping_lists[list_name] if not item["completed"]]
-        
+
         if not items:
             speak(f"All items in your {list_name} shopping list are marked as completed.")
             return
-            
+
         speak(f"Here's your {list_name} shopping list:")
         for i, item in enumerate(items):
             speak(f"{i+1}. {item}")
@@ -235,13 +235,13 @@ def take_note(content):
             "timestamp": datetime.now().isoformat(),
             "id": len(notes) + 1
         }
-        
+
         # Add it to the notes list
         notes.append(note)
-        
+
         # Save the notes to a file
         save_notes()
-        
+
         speak(f"Note saved: {content}")
     except Exception as e:
         logging.error(f"Take Note Error: {e}")
@@ -253,9 +253,9 @@ def show_notes(count=5):
         if not notes:
             speak("You don't have any notes yet.")
             return
-            
+
         recent_notes = sorted(notes, key=lambda x: x["timestamp"], reverse=True)[:count]
-        
+
         speak(f"Here are your {len(recent_notes)} most recent notes:")
         for i, note in enumerate(recent_notes):
             timestamp = datetime.fromisoformat(note["timestamp"]).strftime("%B %d, %Y at %I:%M %p")
@@ -288,10 +288,10 @@ def location_reminder(task, location):
     try:
         # In a real implementation, this would use geofencing or location services
         # For demonstration, we'll just save it to a database
-        
+
         conn = sqlite3.connect("location_reminders.db")
         cursor = conn.cursor()
-        
+
         # Create table if it doesn't exist
         cursor.execute('''
         CREATE TABLE IF NOT EXISTS location_reminders (
@@ -302,16 +302,16 @@ def location_reminder(task, location):
             completed INTEGER
         )
         ''')
-        
+
         # Insert the reminder
         cursor.execute(
             "INSERT INTO location_reminders (task, location, created_at, completed) VALUES (?, ?, ?, ?)",
             (task, location, datetime.now().isoformat(), 0)
         )
-        
+
         conn.commit()
         conn.close()
-        
+
         speak(f"I'll remind you to {task} when you get to {location}.")
     except Exception as e:
         logging.error(f"Location Reminder Error: {e}")
