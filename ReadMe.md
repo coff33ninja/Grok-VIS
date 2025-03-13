@@ -28,6 +28,7 @@ grokvis/
 ├── __init__.py       # Package initialization
 ├── core.py           # Core functionality and initialization
 ├── speech.py         # Speech recognition and TTS
+├── tts_manager.py    # Text-to-speech management
 ├── memory.py         # Memory storage and retrieval
 ├── scheduler.py      # Event scheduling
 ├── home_automation.py # Device control
@@ -35,11 +36,18 @@ grokvis/
 ├── web.py            # Web dashboard
 ├── commands.py       # Command processing
 ├── knowledge.py      # Information retrieval and language services
-├── entertainment.py  # Fun and entertainment features
-├── productivity.py   # Time management and organization tools
-├── system.py         # System control and configuration
-└── system_control.py # Application and file management
+├── entertainment.py   # Fun and entertainment features
+├── productivity.py    # Time management and organization tools
+├── system.py          # System control and configuration
+├── system_control.py  # Application and file management
+└── shared.py          # Shared utilities and functions
 ```
+
+## Prerequisites
+- Python 3.8 or higher
+- Windows, macOS, or Linux operating system
+- Microphone and speakers/headphones
+- Internet connection for weather services and knowledge features
 
 ## Installation
 
@@ -64,6 +72,12 @@ pip install https://github.com/explosion/spacy-models/releases/download/en_core_
    - Replace `YOUR_PICOVOICE_ACCESS_KEY` in `speech.py` with your Picovoice key
    - Replace `YOUR_API_KEY` in `weather.py` with your OpenWeatherMap API key
    - Replace `YOUR_PC_MAC` in `home_automation.py` with your PC's MAC address
+
+## Configuration
+GrokVIS uses several configuration files:
+- `persona_config.txt`: Stores your chosen personality
+- `voice_model.pkl`: Contains your trained voice verification model
+- `config.json`: (Create this file manually) Contains additional configuration options
 
 ## Usage
 
@@ -208,49 +222,43 @@ Access the dashboard at http://localhost:5000 to:
   - Add network management features
   - Create system monitoring capabilities
 
+The testing framework consists of the following files:
 
-
-
-## Testing Framework
-
-The Grok-VIS project includes a comprehensive testing framework to ensure all components work correctly and dependencies are properly installed.
-
-### Test Structure
-
-The testing framework consists of:
-
-- **Core Tests**: Verify the basic structure and imports of the project
-- **Dependency Tests**: Check if all required packages are installed
-- **Speech Tests**: Validate speech recognition and synthesis components
-- **Error Handling Tests**: Ensure errors are properly caught and logged
-- **Utility Scripts**: Tools for running tests, checking dependencies, and diagnosing errors
+- **`__init__.py`**: Initializes the tests package.
+- **`check_dependency.py`**: Tests to verify that all required dependencies are installed.
+- **`error_diagnosis.py`**: Tests for error handling and diagnosis functionality.
+- **`run_tests.py`**: Script to run all tests in the project.
+- **`test_core.py`**: Tests for core functionalities of the GrokVIS system.
+- **`test_dependencies.py`**: Tests to check if all dependencies are correctly installed and functioning.
+- **`test_errors.py`**: Tests for error handling mechanisms within the application.
+- **`test_speech.py`**: Tests for speech recognition and text-to-speech functionalities.
 
 ### Running Tests
 
 Several batch files are provided to simplify testing:
 
 1. **Run All Tests**:
-   ```
+   ```bash
    run_tests.bat
    ```
 
 2. **Check Dependencies**:
-   ```
+   ```bash
    check_dependencies.bat
    ```
 
 3. **Install Dependencies**:
-   ```
+   ```bash
    install_dependencies.bat
    ```
 
 4. **Run Specific Test**:
-   ```
+   ```bash
    run_specific_test.bat test_core
    ```
 
 5. **Diagnose Errors**:
-   ```
+   ```bash
    diagnose_errors.bat
    ```
 
@@ -266,6 +274,44 @@ For detailed information about the testing framework, see:
 - GrokVIS will confirm your selection and continue with initialization
 - To change your persona later, run `python reset_persona.py` and restart GrokVIS
 
+## Troubleshooting
+
+### Common Issues
+- **Microphone not detected**: Ensure your microphone is properly connected and set as the default recording device
+- **"Access denied" errors**: Run the application with appropriate permissions
+- **Wake word not detected**: Try speaking more clearly or adjusting your microphone settings
+- **API errors**: Verify your API keys are correctly configured
+- **TTS not working**: Check that the required TTS models are installed correctly
+
+### Logs
+Log files are stored in the `logs/` directory and can help diagnose issues.
+
+## Security
+- Voice biometric data is stored locally and never transmitted
+- API keys are stored in plain text files - keep these secure
+- Web dashboard is accessible only from localhost by default
+- Consider using environment variables for sensitive API keys in production
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Development Roadmap
+- Mobile application integration
+- Multi-language support
+- Advanced NLP capabilities
+- Cloud synchronization options
+- Smart home device expansion
+- Integration with more third-party services
+- Improved voice recognition accuracy
+
+## Screenshots
+[Coming soon - Screenshots of the web dashboard and system in action]
+
 ## License
 
 [MIT License](LICENSE)
@@ -274,3 +320,4 @@ For detailed information about the testing framework, see:
 
 - This project uses various open-source libraries and APIs
 - Inspired by JARVIS from the Iron Man movies
+- Thanks to all contributors and testers
