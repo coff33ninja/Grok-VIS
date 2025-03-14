@@ -6,6 +6,8 @@ opencv-python>=4.5.1
 psutil>=5.8.0
 pynvml>=11.0.0
 numpy>=1.20.1
+transformers
+torch
 sentence-transformers>=2.0.0
 scikit-learn>=0.24.1
 librosa>=0.8.0
@@ -23,7 +25,6 @@ sounddevice
 pynvml>=11.0.0
 pytest>=8.3.5
 joblib>=1.0.1
-SpeechRecognition>=3.14.1
 # platform>=1.0.8
 spacy>=3.0.0
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
