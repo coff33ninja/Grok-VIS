@@ -11,6 +11,9 @@ if %ERRORLEVEL% neq 0 (
     exit /b 1
 )
 
+REM Set console to UTF-8 encoding
+chcp 65001 > nul
+
 echo Using Python from:
 where python
 echo.

@@ -10,8 +10,9 @@ from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 # Global variables
 model = None
 wake_word_handle = None
-persona = None
-scheduler = None
+persona = "Default"
+scheduler = BackgroundScheduler()
+scheduler.start()
 
 # Personality quips
 alfred_quips = [

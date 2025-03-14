@@ -1,0 +1,61 @@
+# Core dependencies
+# Essential libraries required for the project to function across all platforms
+speechrecognition
+requests
+wakeonlan
+pytest
+opencv-python
+psutil
+numpy
+transformers
+torch
+torchvision
+torchaudio
+sentence-transformers
+scikit-learn
+librosa
+pvporcupine
+sounddevice
+TTS
+apscheduler
+flask
+wikipedia
+beautifulsoup4
+joblib
+sqlalchemy
+pillow
+spacy
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+pyaudio
+webrtcvad
+onnxruntime
+tensorboard
+aiohttp
+flask-socketio
+pyyaml
+tqdm
+
+# Hardware detection dependencies
+# Libraries for detecting and managing hardware capabilities across platforms
+py-cpuinfo
+pynvml
+GPUtil
+
+# Platform-specific dependencies
+# Required only on specific operating systems
+
+# Windows-specific dependencies
+# For hardware detection (WMI) and DirectML GPU support
+wmi;platform_system=="Windows"
+torch-directml;platform_system=="Windows"
+
+# Linux-specific dependencies
+# For hardware detection and optimized GPU/audio support
+lscpu;platform_system=="Linux"
+pyalsa;platform_system=="Linux"
+pyudev;platform_system=="Linux"
+
+# macOS-specific dependencies
+# For Metal Performance Shaders (MPS) and optimized audio
+pyobjc-framework-Metal;platform_system=="Darwin"
+soundfile;platform_system=="Darwin"

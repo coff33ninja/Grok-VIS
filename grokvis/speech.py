@@ -20,6 +20,10 @@ import pvporcupine
 from grokvis.shared import model, wake_word_handle, jarvis_quips, persona
 from grokvis.tts_manager import speak
 
+
+def speak(text):
+    print(f"Speaking: {text}")
+
 def record_clip(filename):
     """Record a short audio clip and save it to a file. If an error occurs, provide feedback."""
 
@@ -210,6 +214,6 @@ def train_voice_model(retrain=False):
         for i in range(10):
             speak(f"Phrase {i+1}:")
             record_clip(f"voice_samples/my_voice/sample_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.wav")
-        model = train_one_class_model('voice_samples/my_voice', retrain=retrain)
+        model = train_one_class_model('voice_samples/my_voice')
         speak("Voice model trained. I'll only listen to you now!")
     return model

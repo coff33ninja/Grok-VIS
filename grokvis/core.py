@@ -1,121 +1,153 @@
 """Core functionality for the GrokVIS assistant.
 Contains initialization, model loading, and main execution loop.
 """
+
 import logging
 import os
-import datetime
-import random
-import joblib
 import threading
-import numpy as np
-from concurrent.futures import ThreadPoolExecutor
-from sentence_transformers import SentenceTransformer
-import spacy
-import pynvml
 import sqlite3
 import speech_recognition as sr
-from grokvis.speech import train_voice_model, wake_word_listener, setup_personality, speak
+import pynvml
+import spacy
+import numpy as np  # Not currently used but kept for potential future use
+from concurrent.futures import ThreadPoolExecutor
+from sentence_transformers import SentenceTransformer
+from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 
-from grokvis.web import app
-from grokvis.shared import model, wake_word_handle, persona, jarvis_quips, alfred_quips, beatrice_quips
+
+# Delayed imports to avoid circular dependencies
+def _import_grokvis_modules():
+    from grokvis.speech import (
+        train_voice_model,
+        wake_word_listener,
+        setup_personality,
+        speak,
+    )
+    from grokvis.web import app
+    from grokvis.hardware_manager import get_hardware_manager
+    from grokvis.shared import persona, jarvis_quips, alfred_quips, beatrice_quips
+
+    return (
+        train_voice_model,
+        wake_word_listener,
+        setup_personality,
+        speak,
+        app,
+        get_hardware_manager,
+        persona,
+    )
+
 
 # Global variables
 memory_model = None
 nlp = None
 conn = None
 executor = None
+scheduler = None
+persona = "Default"  # Default persona
 
-# Initialize logging
+
 def setup_logging():
     """Set up logging configuration."""
-    logging.basicConfig(filename='grokvis_errors.log', level=logging.ERROR,
-                        format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(
+        filename="grokvis_errors.log",
+        level=logging.ERROR,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        encoding="utf-8",  # Ensure UTF-8 encoding for Windows compatibility
+    )
 
-# Global variables and initialization
+
 def initialize_components():
-    from grokvis.hardware_manager import get_hardware_manager
-
     """Initialize core components of GrokVIS."""
-    global memory_model, nlp, conn, executor, scheduler, persona
+    global memory_model, nlp, conn, executor, scheduler
 
-    # Initialize core components
-    memory_model = SentenceTransformer('all-MiniLM-L6-v2')
-    nlp = spacy.load("en_core_web_sm")
-    pynvml.nvmlInit()
-    conn = sqlite3.connect("grokvis_memory.db")
-    executor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks
+    # Load core components
+    try:
+        memory_model = SentenceTransformer("all-MiniLM-L6-v2")
+        nlp = spacy.load("en_core_web_sm")
+        pynvml.nvmlInit()
+        conn = sqlite3.connect("grokvis_memory.db")
+        executor = ThreadPoolExecutor(max_workers=2)
 
-    # Initialize hardware manager
-    hw_manager = get_hardware_manager()
+        # APScheduler setup
+        jobstores = {"default": SQLAlchemyJobStore(url="sqlite:///jobs.db")}
+        scheduler = BackgroundScheduler(jobstores=jobstores)
+        scheduler.start()
+        logging.info("Core components initialized successfully")
+    except Exception as e:
+        logging.error(f"Initialization error: {e}")
+        raise
 
-    # APScheduler setup
-
-    from grokvis.shared import scheduler
-    jobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}
-    from apscheduler.schedulers.background import BackgroundScheduler
-    scheduler = BackgroundScheduler(jobstores=jobstores)
-    scheduler.start()
 
 def greet_user():
     """Greet the user and ask for their desired persona."""
-    speak("Hello! What persona would you like to use? You can choose Alfred, Beatrice, or any other available persona.")
+    # Delayed import of speak
+    _, _, _, speak, _, _, _ = _import_grokvis_modules()
 
-    # Initialize the recognizer
+    speak(
+        "Hello! What persona would you like to use? You can choose Alfred, Beatrice, or any other available persona."
+    )
+
     recognizer = sr.Recognizer()
-
     with sr.Microphone() as source:
         print("Listening for your response...")
         audio = recognizer.listen(source)
 
     try:
-        # Recognize speech using Google Web Speech API
         response = recognizer.recognize_google(audio)
         print(f"You said: {response}")
 
-        # Set persona based on recognized response
         global persona
-        if "Alfred" in response:
+        if "alfred" in response.lower():
             persona = "Alfred"
             speak("You have chosen Alfred.")
-        elif "Beatrice" in response:
+        elif "beatrice" in response.lower():
             persona = "Beatrice"
             speak("You have chosen Beatrice.")
         else:
-            persona = "Default"  # Fallback persona
+            persona = "Default"
             speak("You have chosen a default persona.")
-
     except sr.UnknownValueError:
         speak("Sorry, I could not understand what you said.")
-        persona = "Default"  # Fallback persona
+        persona = "Default"
     except sr.RequestError as e:
-        speak("Could not request results from the speech recognition service.")
-        persona = "Default"  # Fallback persona
+        speak(f"Could not request results: {e}")
+        persona = "Default"
 
-# Main Function
+
 def grokvis_run():
     """Run the main GROK-VIS loop with wake word detection."""
+    setup_logging()
+    initialize_components()
+
+    # Import modules after initialization to avoid circular imports
+    train_voice_model, wake_word_listener, _, speak, app, get_hardware_manager, _ = (
+        _import_grokvis_modules()
+    )
+
     try:
-        # Setup logging
-        setup_logging()
-
-        # Initialize components
-        initialize_components()
-
-        # Greet the user and ask for persona
+        # Greet user
         greet_user()
 
-        # Now that TTS is initialized, we can properly greet the user
+        # Persona-specific greeting
         if persona == "Alfred":
             speak("Greetings, I'm Alfred, your loyal assistant.")
         elif persona == "Beatrice":
             speak("Hello, I'm Beatrice, here to assist you with grace.")
+        else:
+            speak("Hello, I'm your assistant, ready to help.")
 
-        # Load or train the voice model
+        # Initialize hardware manager
+        hw_manager = get_hardware_manager()
+
+        # Train voice model
         train_voice_model()
 
-        # Start Flask in a separate thread
-        threading.Thread(target=app.run, kwargs={'host': '0.0.0.0', 'port': 5000}, daemon=True).start()
+        # Start Flask app in a separate thread
+        threading.Thread(
+            target=app.run, kwargs={"host": "0.0.0.0", "port": 5000}, daemon=True
+        ).start()
         speak("Dashboard running at http://localhost:5000")
 
         # Start wake word listener
@@ -123,3 +155,16 @@ def grokvis_run():
     except Exception as e:
         logging.error(f"Main Loop Error: {e}")
         speak("Sorry, something went wrong with the main loop.")
+    finally:
+        # Cleanup
+        if executor:
+            executor.shutdown()
+        if scheduler:
+            scheduler.shutdown()
+        if conn:
+            conn.close()
+        pynvml.nvmlShutdown()
+
+
+if __name__ == "__main__":
+    grokvis_run()
