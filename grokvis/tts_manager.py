@@ -20,26 +20,46 @@ def get_tts_instance():
     global _tts_instance
     if _tts_instance is None:
         try:
-            logger.info("Initializing TTS instance...")
+            # Import hardware manager here to avoid circular imports
+            from grokvis.hardware_manager import get_hardware_manager
+            
+            # Get hardware-optimized TTS configuration
+            hw_manager = get_hardware_manager()
+            tts_config = hw_manager.get_tts_config()
+            
+            logger.info(f"Initializing TTS instance with config: {tts_config}")
+            logger.info(f"Hardware detected: {hw_manager.get_summary()}")
+            
+            _tts_instance = TTS(**tts_config)
+            
+            # Log which device is being used
+            device_type = "GPU" if tts_config['gpu'] else "CPU"
+            logger.info(f"TTS initialized using {device_type}")
+            
+        except Exception as e:
+            logger.error("Failed to initialize TTS: %s", e)
+            # Fallback to CPU-only configuration if hardware detection fails
+            logger.info("Falling back to CPU-only configuration")
             _tts_instance = TTS(
                 model_name="tts_models/en/ljspeech/tacotron2-DDC",
                 progress_bar=False,
                 gpu=False
             )
-        except Exception as e:
-            logger.error("Failed to initialize TTS: %s", e)
-            raise
     return _tts_instance
 
-def speak(text, persona, command):
+def speak(text, persona="Default", command=None):
     """
     Synthesize speech from text, save it as a WAV file, and play it.
     
     Parameters:
         text (str): The text to be synthesized.
-        persona (str): Identifier for organizing voice samples.
-        command (str): Command or label used to name the output file.
+        persona (str, optional): Identifier for organizing voice samples. Defaults to "Default".
+        command (str, optional): Command or label used to name the output file. If None, a timestamp will be used.
     """
+    # If command is not provided, use a timestamp
+    if command is None:
+        import datetime
+        command = f"speech_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
     # Construct the directory and file path
     directory = os.path.join("voice_samples", persona)
     file_path = os.path.join(directory, f"{command}.wav")

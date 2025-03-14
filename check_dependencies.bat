@@ -16,7 +16,7 @@ where python
 echo.
 
 REM List of dependencies to check
-set DEPENDENCIES=joblib numpy sentence_transformers spacy pynvml sqlite3 TTS apscheduler sqlalchemy requests wakeonlan opencv-python psutil scikit-learn librosa pvporcupine sounddevice flask wikipedia beautifulsoup4 pillow
+set DEPENDENCIES=joblib numpy sentence_transformers spacy pynvml sqlite3 TTS apscheduler sqlalchemy requests wakeonlan opencv-python psutil scikit-learn librosa pvporcupine sounddevice flask wikipedia beautifulsoup4 pillow py-cpuinfo wmi torch torch_directml
 
 echo Checking dependencies...
 echo ===================================

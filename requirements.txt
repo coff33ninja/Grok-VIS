@@ -23,3 +23,10 @@ sqlalchemy>=1.4.15
 pillow>=8.2.0
 spacy>=3.0.0
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+# Hardware detection dependencies
+py-cpuinfo>=8.0.0
+wmi>=1.5.1;platform_system=="Windows"
+
+py-cpuinfo>=8.0.0
+wmi>=1.5.1;platform_system=="Windows"
+torch-directml>=0.1.13;platform_system=="Windows"

@@ -34,6 +34,8 @@ def setup_logging():
 
 # Global variables and initialization
 def initialize_components():
+    from grokvis.hardware_manager import get_hardware_manager
+
     """Initialize core components of GrokVIS."""
     global memory_model, nlp, conn, executor, scheduler, persona
 
@@ -44,7 +46,11 @@ def initialize_components():
     conn = sqlite3.connect("grokvis_memory.db")
     executor = ThreadPoolExecutor(max_workers=2)  # Thread pool for async tasks
 
+    # Initialize hardware manager
+    hw_manager = get_hardware_manager()
+
     # APScheduler setup
+
     from grokvis.shared import scheduler
     jobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}
     from apscheduler.schedulers.background import BackgroundScheduler
