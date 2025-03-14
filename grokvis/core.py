@@ -15,6 +15,8 @@ import pynvml
 import sqlite3
 import speech_recognition as sr
 from grokvis.speech import train_voice_model, wake_word_listener, setup_personality, speak
+from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
+
 from grokvis.web import app
 from grokvis.shared import model, wake_word_handle, persona, jarvis_quips, alfred_quips, beatrice_quips
 
@@ -45,6 +47,7 @@ def initialize_components():
     # APScheduler setup
     from grokvis.shared import scheduler
     jobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.db')}
+    from apscheduler.schedulers.background import BackgroundScheduler
     scheduler = BackgroundScheduler(jobstores=jobstores)
     scheduler.start()
 
