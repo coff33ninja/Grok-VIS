@@ -5508,6 +5508,51 @@
         "documentation": {}
     },
     {
+        "label": "play_trivia",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def play_trivia(category=None):\n    \"\"\"Play a trivia game with questions from OpenTrivia API.\"\"\"\n    try:\n        # Category mapping (simplified for demo, full list at https://opentdb.com/api_config.php)\n        categories = {\n            \"general\": 9,\n            \"history\": 23,\n            \"science\": 17,\n            \"movies\": 11,\n            \"music\": 12,",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "play_rock_paper_scissors",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def play_rock_paper_scissors():\n    \"\"\"Play a game of rock-paper-scissors.\"\"\"\n    try:\n        choices = [\"rock\", \"paper\", \"scissors\"]\n        ai_choice = random.choice(choices)\n        speak(\"Let's play rock-paper-scissors! I'll make my choice... ready?\")\n        time.sleep(1)\n        speak(f\"I chose {ai_choice}. Imagine you picked one too!\")\n        speak(\n            \"For fun, if you picked rock, paper beats it; if paper, scissors beats it; if scissors, rock beats it.\"",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "tell_story",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def tell_story(genre=None):\n    \"\"\"Tell a short public domain story using Gutendex API.\"\"\"\n    try:\n        # Simplified genre mapping for demo (Gutendex uses subjects)\n        url = \"https://gutendex.com/books?mime_type=text/plain&sort=popular\"\n        response = requests.get(url)\n        story_data = response.json()\n        if story_data[\"results\"]:\n            book = random.choice(story_data[\"results\"])\n            title = book[\"title\"]",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "recommend_book",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def recommend_book(genre=None):\n    \"\"\"Recommend a book based on genre using Open Library API.\"\"\"\n    try:\n        genres = {\n            \"fiction\": \"fiction\",\n            \"mystery\": \"mystery\",\n            \"science fiction\": \"science+fiction\",\n            \"fantasy\": \"fantasy\",\n            \"history\": \"history\",\n        }",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
+        "label": "tell_riddle",
+        "kind": 2,
+        "importPath": "grokvis.entertainment",
+        "description": "grokvis.entertainment",
+        "peekOfCode": "def tell_riddle():\n    \"\"\"Tell a riddle and reveal the answer.\"\"\"\n    try:\n        url = \"https://riddles-api.vercel.app/random\"\n        response = requests.get(url)\n        riddle_data = response.json()\n        if \"riddle\" in riddle_data and \"answer\" in riddle_data:\n            riddle = riddle_data[\"riddle\"]\n            answer = riddle_data[\"answer\"]\n            speak(f\"Here's a riddle: {riddle}\")",
+        "detail": "grokvis.entertainment",
+        "documentation": {}
+    },
+    {
         "label": "HardwareManager",
         "kind": 6,
         "importPath": "grokvis.hardware_manager",

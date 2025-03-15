@@ -103,7 +103,7 @@ def share_random_fact():
         url = "https://uselessfacts.jsph.pl/random.json?language=en"
         response = requests.get(url)
         fact_data = response.json()
-        
+
         if 'text' in fact_data:
             fact = fact_data['text']
             speak(f"Here's a random fact: {fact}")
@@ -120,3 +120,161 @@ def share_random_fact():
     except Exception as e:
         logging.error(f"Random Fact API Error: {e}")
         speak("Sorry, my fact generator is taking a break right now.")
+
+
+def play_trivia(category=None):
+    """Play a trivia game with questions from OpenTrivia API."""
+    try:
+        # Category mapping (simplified for demo, full list at https://opentdb.com/api_config.php)
+        categories = {
+            "general": 9,
+            "history": 23,
+            "science": 17,
+            "movies": 11,
+            "music": 12,
+        }
+
+        category_id = (
+            categories.get(category.lower())
+            if category and category.lower() in categories
+            else None
+        )
+        url = f"https://opentdb.com/api.php?amount=1&type=multiple{'&category=' + str(category_id) if category_id else ''}"
+        response = requests.get(url)
+        trivia_data = response.json()
+
+        if trivia_data["response_code"] == 0 and trivia_data["results"]:
+            question_data = trivia_data["results"][0]
+            question = question_data["question"]
+            correct_answer = question_data["correct_answer"]
+            options = question_data["incorrect_answers"] + [correct_answer]
+            random.shuffle(options)
+
+            speak(f"Here's your trivia question: {question}")
+            time.sleep(1)
+            speak("Here are your options:")
+            for i, option in enumerate(options, 1):
+                speak(f"{i}. {option}")
+            time.sleep(1)
+            speak(f"The correct answer is: {correct_answer}")
+        else:
+            # Fallback question
+            fallback = {
+                "question": "What is the capital of France?",
+                "options": ["Paris", "London", "Berlin", "Madrid"],
+                "correct": "Paris",
+            }
+            speak(f"Here's a trivia question: {fallback['question']}")
+            for i, option in enumerate(fallback["options"], 1):
+                speak(f"{i}. {option}")
+            time.sleep(1)
+            speak(f"The correct answer is: {fallback['correct']}")
+    except Exception as e:
+        logging.error(f"Trivia API Error: {e}")
+        speak("Sorry, I couldn't fetch a trivia question right now.")
+
+
+def play_rock_paper_scissors():
+    """Play a game of rock-paper-scissors."""
+    try:
+        choices = ["rock", "paper", "scissors"]
+        ai_choice = random.choice(choices)
+
+        speak("Let's play rock-paper-scissors! I'll make my choice... ready?")
+        time.sleep(1)
+        speak(f"I chose {ai_choice}. Imagine you picked one too!")
+        speak(
+            "For fun, if you picked rock, paper beats it; if paper, scissors beats it; if scissors, rock beats it."
+        )
+        speak("Did I win, or did you? Let's call it a tie for now!")
+    except Exception as e:
+        logging.error(f"Rock-Paper-Scissors Error: {e}")
+        speak("Oops, something went wrong with our game!")
+
+
+def tell_story(genre=None):
+    """Tell a short public domain story using Gutendex API."""
+    try:
+        # Simplified genre mapping for demo (Gutendex uses subjects)
+        url = "https://gutendex.com/books?mime_type=text/plain&sort=popular"
+        response = requests.get(url)
+        story_data = response.json()
+
+        if story_data["results"]:
+            book = random.choice(story_data["results"])
+            title = book["title"]
+            author = book["authors"][0]["name"] if book["authors"] else "Unknown Author"
+            # Simulate fetching a short excerpt (API doesn't provide full text directly)
+            speak(f"Here's a story: {title} by {author}.")
+            speak(
+                "Once upon a time, in a land far away, there was a curious adventurer... Imagine the tale unfolding!"
+            )
+        else:
+            speak(
+                "Here's a short tale: Once, a clever fox tricked a crow into dropping its cheese. The end!"
+            )
+    except Exception as e:
+        logging.error(f"Storytelling API Error: {e}")
+        speak(
+            "Sorry, I couldn't fetch a story right now. How about imagining your own adventure?"
+        )
+
+
+def recommend_book(genre=None):
+    """Recommend a book based on genre using Open Library API."""
+    try:
+        genres = {
+            "fiction": "fiction",
+            "mystery": "mystery",
+            "science fiction": "science+fiction",
+            "fantasy": "fantasy",
+            "history": "history",
+        }
+
+        search_term = (
+            genres.get(genre.lower())
+            if genre and genre.lower() in genres
+            else "fiction"
+        )
+        url = f"https://openlibrary.org/search.json?q={search_term}&limit=5"
+        response = requests.get(url)
+        book_data = response.json()
+
+        if book_data["docs"]:
+            book = random.choice(book_data["docs"])
+            title = book.get("title", "Unknown Title")
+            author = book.get("author_name", ["Unknown Author"])[0]
+            speak(f"I recommend: {title} by {author}. Enjoy your reading!")
+        else:
+            speak(
+                "I suggest: 'To Kill a Mockingbird' by Harper Lee. A classic for any reader!"
+            )
+    except Exception as e:
+        logging.error(f"Book Recommendation API Error: {e}")
+        speak("Sorry, I couldn't find a book recommendation right now.")
+
+
+def tell_riddle():
+    """Tell a riddle and reveal the answer."""
+    try:
+        url = "https://riddles-api.vercel.app/random"
+        response = requests.get(url)
+        riddle_data = response.json()
+
+        if "riddle" in riddle_data and "answer" in riddle_data:
+            riddle = riddle_data["riddle"]
+            answer = riddle_data["answer"]
+            speak(f"Here's a riddle: {riddle}")
+            time.sleep(2)  # Pause for thinking
+            speak(f"The answer is: {answer}")
+        else:
+            fallback = {
+                "riddle": "I speak without a mouth and hear without ears. What am I?",
+                "answer": "An echo",
+            }
+            speak(f"Here's a riddle: {fallback['riddle']}")
+            time.sleep(2)
+            speak(f"The answer is: {fallback['answer']}")
+    except Exception as e:
+        logging.error(f"Riddle API Error: {e}")
+        speak("Sorry, my riddle box is empty right now!")
