@@ -650,14 +650,6 @@
         "documentation": {}
     },
     {
-        "label": "jarvis_quips",
-        "importPath": "grokvis.shared",
-        "description": "grokvis.shared",
-        "isExtraImport": true,
-        "detail": "grokvis.shared",
-        "documentation": {}
-    },
-    {
         "label": "persona",
         "importPath": "grokvis.shared",
         "description": "grokvis.shared",
@@ -1478,36 +1470,19 @@
         "documentation": {}
     },
     {
-        "label": "struct",
-        "kind": 6,
+        "label": "download_wakeword_file",
+        "importPath": "grokvis.setup_wakeword",
+        "description": "grokvis.setup_wakeword",
         "isExtraImport": true,
-        "importPath": "struct",
-        "description": "struct",
-        "detail": "struct",
+        "detail": "grokvis.setup_wakeword",
         "documentation": {}
     },
     {
-        "label": "TTS",
-        "importPath": "TTS.api",
-        "description": "TTS.api",
+        "label": "extract_wakeword_file",
+        "importPath": "grokvis.setup_wakeword",
+        "description": "grokvis.setup_wakeword",
         "isExtraImport": true,
-        "detail": "TTS.api",
-        "documentation": {}
-    },
-    {
-        "label": "TTS",
-        "importPath": "TTS.api",
-        "description": "TTS.api",
-        "isExtraImport": true,
-        "detail": "TTS.api",
-        "documentation": {}
-    },
-    {
-        "label": "TTS",
-        "importPath": "TTS.api",
-        "description": "TTS.api",
-        "isExtraImport": true,
-        "detail": "TTS.api",
+        "detail": "grokvis.setup_wakeword",
         "documentation": {}
     },
     {
@@ -1562,6 +1537,22 @@
         "documentation": {}
     },
     {
+        "label": "TTS",
+        "importPath": "TTS.api",
+        "description": "TTS.api",
+        "isExtraImport": true,
+        "detail": "TTS.api",
+        "documentation": {}
+    },
+    {
+        "label": "TTS",
+        "importPath": "TTS.api",
+        "description": "TTS.api",
+        "isExtraImport": true,
+        "detail": "TTS.api",
+        "documentation": {}
+    },
+    {
         "label": "soundfile",
         "kind": 6,
         "isExtraImport": true,
@@ -1609,6 +1600,15 @@
         "importPath": "cv2",
         "description": "cv2",
         "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "struct",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
         "documentation": {}
     },
     {
@@ -5962,7 +5962,7 @@
         "kind": 2,
         "importPath": "grokvis.setup_wakeword",
         "description": "grokvis.setup_wakeword",
-        "peekOfCode": "def ensure_directory(directory):\n    \"\"\"Ensure the directory exists\"\"\"\n    if not os.path.exists(directory):\n        os.makedirs(directory)\n        print(f\"Created directory: {directory}\")\n    return directory\ndef download_wakeword_file():\n    \"\"\"Download the wake word file if it doesn't exist\"\"\"\n    # Define paths\n    models_dir = ensure_directory(Path(\"models\"))",
+        "peekOfCode": "def ensure_directory(directory):\n    \"\"\"Ensure the directory exists\"\"\"\n    if not os.path.exists(directory):\n        os.makedirs(directory)\n        print(f\"Created directory: {directory}\")\n    return directory\ndef download_wakeword_file():\n    \"\"\"Download or locate the wake word file if it doesn't exist\"\"\"\n    # Define paths\n    models_dir = ensure_directory(Path(\"models\"))",
         "detail": "grokvis.setup_wakeword",
         "documentation": {}
     },
@@ -5971,7 +5971,7 @@
         "kind": 2,
         "importPath": "grokvis.setup_wakeword",
         "description": "grokvis.setup_wakeword",
-        "peekOfCode": "def download_wakeword_file():\n    \"\"\"Download the wake word file if it doesn't exist\"\"\"\n    # Define paths\n    models_dir = ensure_directory(Path(\"models\"))\n    wakeword_dir = ensure_directory(Path(\"models/wakeword\"))\n    wakeword_zip = wakeword_dir / \"Hey--Grok_en_windows_v3_0_0.zip\"\n    # Check if the wake word file already exists in the models directory\n    if os.path.exists(wakeword_zip):\n        print(f\"Wake word file already exists at: {wakeword_zip}\")\n        return wakeword_zip",
+        "peekOfCode": "def download_wakeword_file():\n    \"\"\"Download or locate the wake word file if it doesn't exist\"\"\"\n    # Define paths\n    models_dir = ensure_directory(Path(\"models\"))\n    wakeword_dir = ensure_directory(Path(\"models/wakeword\"))\n    wakeword_zip = wakeword_dir / \"Hey--Grok_en_windows_v3_0_0.zip\"\n    # Check if the wake word file already exists in the models directory\n    if os.path.exists(wakeword_zip):\n        print(f\"Wake word file already exists at: {wakeword_zip}\")\n        return wakeword_zip",
         "detail": "grokvis.setup_wakeword",
         "documentation": {}
     },
@@ -5980,7 +5980,7 @@
         "kind": 2,
         "importPath": "grokvis.setup_wakeword",
         "description": "grokvis.setup_wakeword",
-        "peekOfCode": "def extract_wakeword_file(zip_path):\n    \"\"\"Extract the wake word file\"\"\"\n    if zip_path and os.path.exists(zip_path):\n        try:\n            # Extract the zip file\n            with zipfile.ZipFile(zip_path, 'r') as zip_ref:\n                zip_ref.extractall(os.path.dirname(zip_path))\n            print(f\"Successfully extracted wake word file to {os.path.dirname(zip_path)}\")\n            return True\n        except Exception as e:",
+        "peekOfCode": "def extract_wakeword_file(zip_path):\n    \"\"\"Extract the wake word file and verify the .ppn file exists\"\"\"\n    if zip_path and os.path.exists(zip_path):\n        try:\n            # Extract the zip file\n            with zipfile.ZipFile(zip_path, \"r\") as zip_ref:\n                zip_ref.extractall(os.path.dirname(zip_path))\n            print(\n                f\"Successfully extracted wake word file to {os.path.dirname(zip_path)}\"\n            )",
         "detail": "grokvis.setup_wakeword",
         "documentation": {}
     },
@@ -5989,7 +5989,7 @@
         "kind": 2,
         "importPath": "grokvis.setup_wakeword",
         "description": "grokvis.setup_wakeword",
-        "peekOfCode": "def update_code_references():\n    \"\"\"Update code references to point to the new model locations\"\"\"\n    # Update speech.py\n    speech_py = Path(\"grokvis/speech.py\")\n    if os.path.exists(speech_py):\n        with open(speech_py, 'r') as f:\n            content = f.read()\n        # Update wake word path references\n        if \"model_path=\" not in content:\n            content = content.replace(",
+        "peekOfCode": "def update_code_references():\n    \"\"\"Update code references to point to the new model location\"\"\"\n    speech_py = Path(\"grokvis/speech.py\")\n    if os.path.exists(speech_py):\n        with open(speech_py, \"r\") as f:\n            content = f.read()\n        # Check if model_path is already present\n        if \"model_path=\" not in content:\n            # Create a backup\n            backup_path = speech_py.with_suffix(\".py.bak\")",
         "detail": "grokvis.setup_wakeword",
         "documentation": {}
     },
@@ -6057,29 +6057,11 @@
         "documentation": {}
     },
     {
-        "label": "speak",
-        "kind": 2,
-        "importPath": "grokvis.speech",
-        "description": "grokvis.speech",
-        "peekOfCode": "def speak(text):\n    print(f\"Speaking: {text}\")\ndef record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file. If an error occurs, log the error and provide feedback.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:",
-        "detail": "grokvis.speech",
-        "documentation": {}
-    },
-    {
-        "label": "record_clip",
-        "kind": 2,
-        "importPath": "grokvis.speech",
-        "description": "grokvis.speech",
-        "peekOfCode": "def record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file. If an error occurs, log the error and provide feedback.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:\n                f.write(audio.get_wav_data())\n    except Exception as e:",
-        "detail": "grokvis.speech",
-        "documentation": {}
-    },
-    {
         "label": "extract_mfcc",
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def extract_mfcc(file_path):\n    \"\"\"Extract MFCC features from an audio file.\"\"\"\n    try:\n        audio, sample_rate = librosa.load(file_path, sr=16000)\n        mfcc = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=13)\n        return np.mean(mfcc.T, axis=0)\n    except Exception as e:\n        logging.error(f\"MFCC Extraction Error: {e}\")\n        return None\ndef train_one_class_model(directory):",
+        "peekOfCode": "def extract_mfcc(filename):\n    \"\"\"Extract MFCC features from an audio file.\"\"\"\n    try:\n        y, sr = librosa.load(filename, sr=None)\n        mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)\n        return np.mean(mfcc.T, axis=0)\n    except Exception as e:\n        logging.error(f\"MFCC Extraction Error: {e}\")\n        return None\ndef train_one_class_model(directory):",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -6088,7 +6070,25 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def train_one_class_model(directory):\n    \"\"\"Train a One-Class SVM model on voice samples. Provide feedback if an error occurs.\"\"\"\n    try:\n        files = glob.glob(f\"{directory}/*.wav\")\n        X = [extract_mfcc(f) for f in files if extract_mfcc(f) is not None]\n        model = OneClassSVM(kernel='rbf', gamma='auto')\n        model.fit(X)\n        joblib.dump(model, 'models/voice/voice_model.pkl')\n        return model\n    except Exception as e:",
+        "peekOfCode": "def train_one_class_model(directory):\n    \"\"\"Train a one-class SVM model on voice samples.\"\"\"\n    try:\n        features = []\n        for file in glob.glob(f\"{directory}/*.wav\"):\n            mfcc = extract_mfcc(file)\n            if mfcc is not None:\n                features.append(mfcc)\n        if not features:\n            raise ValueError(\"No valid audio samples found for training.\")",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "train_voice_model",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def train_voice_model(retrain=False):\n    \"\"\"Load or train the voice model. Optionally retrain with new samples.\"\"\"\n    global model\n    try:\n        if retrain or not os.path.exists('models/voice/voice_model.pkl'):\n            raise FileNotFoundError(\"Forcing retrain or model not found.\")\n        model = joblib.load('models/voice/voice_model.pkl')\n        speak(\"Voice model loaded successfully.\")\n    except FileNotFoundError:\n        speak(\"I need to learn your voice. Please say 10 phrases after each prompt.\")",
+        "detail": "grokvis.speech",
+        "documentation": {}
+    },
+    {
+        "label": "record_clip",
+        "kind": 2,
+        "importPath": "grokvis.speech",
+        "description": "grokvis.speech",
+        "peekOfCode": "def record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:\n                f.write(audio.get_wav_data())\n    except Exception as e:",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -6097,7 +6097,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def listen():\n    \"\"\"Listen for a command and verify the speaker's voice. Provide feedback if an error occurs.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Listening...\")\n            audio = recognizer.listen(source)\n            with open(\"temp.wav\", \"wb\") as f:\n                f.write(audio.get_wav_data())\n            mfcc = extract_mfcc(\"temp.wav\")",
+        "peekOfCode": "def listen():\n    \"\"\"Listen for a command and verify the speaker's voice.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Listening...\")\n            audio = recognizer.listen(source)\n            with open(\"temp.wav\", \"wb\") as f:\n                f.write(audio.get_wav_data())\n            mfcc = extract_mfcc(\"temp.wav\")",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -6106,7 +6106,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def wake_word_listener(sensitivity=0.5):\n    \"\"\"Listen for the wake word 'Hey GrokVis' using Porcupine. Sensitivity can be adjusted.\"\"\"\n    global wake_word_handle\n    try:\n        access_key = os.environ.get(\n            \"PICOVOICE_ACCESS_KEY\",\n            \"YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w==\",\n        )\n        keywords = [\"Hey Grok\"]\n        try:",
+        "peekOfCode": "def wake_word_listener(sensitivity=0.5):\n    \"\"\"Listen for the wake word 'Hey Grok' using Porcupine.\"\"\"\n    global wake_word_handle\n    try:\n        access_key = os.environ.get(\"PICOVOICE_ACCESS_KEY\", \"YpmwAcCDdDu82WlIAbZWMn840MiaGELoTIt+Ssh3LivetKM1k+Nw3w==\")\n        keywords = [\"Hey Grok\"]\n        zip_path = download_wakeword_file()\n        if zip_path:\n            extract_wakeword_file(zip_path)\n        try:",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -6116,15 +6116,6 @@
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
         "peekOfCode": "def setup_personality():\n    \"\"\"First-time setup to choose between Alfred (male) or Beatrice (female) persona.\"\"\"\n    try:\n        if os.path.exists('persona_config.txt'):\n            with open('persona_config.txt', 'r') as f:\n                persona = f.read().strip()\n            print(f\"Welcome back, I'm {persona}.\")\n            return persona\n        speak(\"Welcome! I need a persona. Would you prefer Alfred, the gentleman, or Beatrice, the lady? Say 'Alfred' or 'Beatrice'.\")\n        recognizer = sr.Recognizer()",
-        "detail": "grokvis.speech",
-        "documentation": {}
-    },
-    {
-        "label": "train_voice_model",
-        "kind": 2,
-        "importPath": "grokvis.speech",
-        "description": "grokvis.speech",
-        "peekOfCode": "def train_voice_model(retrain=False):\n    \"\"\"Load or train the voice model. Optionally retrain with new samples.\"\"\"\n    global model\n    try:\n        model = joblib.load('models/voice/voice_model.pkl')\n        speak(\"Voice model loaded successfully.\")\n    except FileNotFoundError:\n        if retrain:\n            speak(\"I need to learn your voice. Please say 10 new phrases after each prompt.\")\n        else:",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -6367,7 +6358,7 @@
         "kind": 2,
         "importPath": "grokvis.tts_manager",
         "description": "grokvis.tts_manager",
-        "peekOfCode": "def speak(text, persona=\"Default\", command=None):\n    \"\"\"\n    Synthesize speech from text and play it in real-time.\n    Parameters:\n        text (str): The text to be synthesized.\n        persona (str, optional): Identifier for organizing voice samples. Defaults to \"Default\".\n        command (str, optional): Command or label used to name the output file. If None, a timestamp will be used.\n    \"\"\"\n    # If command is not provided, use a timestamp\n    if command is None:",
+        "peekOfCode": "def speak(text, persona=\"Default\", command=None):  # Consolidated speak function\n    \"\"\"\n    Synthesize speech from text and play it in real-time.\n    Parameters:\n        text (str): The text to be synthesized.\n        persona (str, optional): Identifier for organizing voice samples. Defaults to \"Default\".\n        command (str, optional): Command or label used to name the output file. If None, a timestamp will be used.\n    \"\"\"\n    # If command is not provided, use a timestamp for file naming\n    if command is None:",
         "detail": "grokvis.tts_manager",
         "documentation": {}
     },

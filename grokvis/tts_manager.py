@@ -5,8 +5,9 @@ Handles lazy TTS initialization and speech synthesis.
 import os
 import logging
 from TTS.api import TTS
-import sounddevice as sd
+import sounddevice as sd  # type: ignore
 import soundfile as sf
+
 
 # Configure logging to keep track of the system’s groove
 logger = logging.getLogger(__name__)
@@ -37,7 +38,8 @@ def get_tts_instance():
             logger.info(f"TTS initialized using {device_type}")
             
         except Exception as e:
-            logger.error("Failed to initialize TTS: %s", e)
+            logger.error("Failed to initialize TTS: %s. Check your TTS configuration.", e)
+
             # Fallback to CPU-only configuration if hardware detection fails
             logger.info("Falling back to CPU-only configuration")
             _tts_instance = TTS(
@@ -47,7 +49,8 @@ def get_tts_instance():
             )
     return _tts_instance
 
-def speak(text, persona="Default", command=None):
+def speak(text, persona="Default", command=None):  # Consolidated speak function
+
     """
     Synthesize speech from text and play it in real-time.
     
@@ -56,7 +59,7 @@ def speak(text, persona="Default", command=None):
         persona (str, optional): Identifier for organizing voice samples. Defaults to "Default".
         command (str, optional): Command or label used to name the output file. If None, a timestamp will be used.
     """
-    # If command is not provided, use a timestamp
+    # If command is not provided, use a timestamp for file naming
     if command is None:
         import datetime
         command = f"speech_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
@@ -67,7 +70,8 @@ def speak(text, persona="Default", command=None):
     # Create the directory if it doesn't exist
     os.makedirs(directory, exist_ok=True)
 
-    # Synthesize and play the audio in real-time
+    # Synthesize speech and save it as a WAV file if it doesn't exist
+
     try:
         tts = get_tts_instance()
         logger.info("Synthesizing speech for text: '%s'", text)
@@ -95,11 +99,14 @@ def speak(text, persona="Default", command=None):
     # Construct the directory and file path
     directory = os.path.join("models/voice", persona)
     file_path = os.path.join(directory, f"{command}.wav")
+    logger.info(f"Saving audio to: {file_path}")  # Now using file_path
+
 
     # Create the directory if it doesn't exist
     os.makedirs(directory, exist_ok=True)
 
-    # If the file isn't already synthesized, generate it
+    # If the file doesn't exist, generate it
+
     if not os.path.isfile(file_path):
         try:
             tts = get_tts_instance()
@@ -109,7 +116,8 @@ def speak(text, persona="Default", command=None):
             logger.error("Failed to synthesize speech: %s", e)
             raise
 
-    # Play the audio file using sounddevice
+    # Play the synthesized audio using sounddevice
+
     try:
         data, fs = sf.read(file_path, dtype='float32')
         logger.info("Playing audio file: %s", file_path)
