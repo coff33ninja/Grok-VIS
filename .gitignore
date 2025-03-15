@@ -28,3 +28,38 @@ debug.log
 # macOS and Windows system files
 .DS_Store
 Thumbs.db
+
+# Models and downloaded/generated model files
+/models/
+!/models/README.md
+!/models/voice/
+!/models/wakeword/
+!/models/tts/
+/models/voice/*
+/models/wakeword/*
+/models/tts/*
+!/models/voice/README.md
+!/models/wakeword/README.md
+!/models/tts/README.md
+
+# Audio recordings and voice samples
+/voice_samples/
+!/voice_samples/README.md
+!/voice_samples/Default/
+!/voice_samples/my_voice/
+!/voice_samples/test/
+/voice_samples/Default/*
+/voice_samples/my_voice/*
+/voice_samples/test/*
+!/voice_samples/Default/README.md
+!/voice_samples/my_voice/README.md
+!/voice_samples/test/README.md
+
+# Temporary audio files
+*.wav
+*.mp3
+
+# Model files
+*.pkl
+*.ppn
+*.zip

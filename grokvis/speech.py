@@ -25,18 +25,18 @@ def speak(text):
     print(f"Speaking: {text}")
 
 def record_clip(filename):
-    """Record a short audio clip and save it to a file. If an error occurs, provide feedback."""
-
+    """Record a short audio clip and save it to a file. If an error occurs, log the error and provide feedback."""
     try:
         recognizer = sr.Recognizer()
-        with sr.MMicrophone() as source:
+        with sr.Microphone() as source:
             print("Say something...")
             audio = recognizer.listen(source)
             with open(filename, "wb") as f:
                 f.write(audio.get_wav_data())
     except Exception as e:
         logging.error(f"Recording Error: {e}")
-        speak("Sorry, I couldn't record that. Please try again.")
+        speak("Sorry, I couldn't record that. Please check your microphone and try again.")
+
 
 
 def extract_mfcc(file_path):
@@ -57,7 +57,7 @@ def train_one_class_model(directory):
         X = [extract_mfcc(f) for f in files if extract_mfcc(f) is not None]
         model = OneClassSVM(kernel='rbf', gamma='auto')
         model.fit(X)
-        joblib.dump(model, 'voice_model.pkl')
+        joblib.dump(model, 'models/voice/voice_model.pkl')
         return model
     except Exception as e:
         logging.error(f"Model Training Error: {e}")
@@ -70,7 +70,7 @@ def listen():
 
     try:
         recognizer = sr.Recognizer()
-        with sr.MMicrophone() as source:
+        with sr.Microphone() as source:
             print("Listening...")
             audio = recognizer.listen(source)
             with open("temp.wav", "wb") as f:
@@ -103,7 +103,7 @@ def wake_word_listener(sensitivity=0.5):
         keywords = ["Hey Grok"]
 
         try:
-            wake_word_handle = pvporcupine.create(
+            wake_word_handle = pvporcupine.create(model_path='models/wakeword/Hey--Grok_en_windows_v3_0_0.ppn',
                 access_key=access_key, keywords=keywords, sensitivities=[sensitivity]
             )
         except pvporcupine.PorcupineInvalidArgumentError as e:
@@ -168,7 +168,7 @@ def setup_personality():
         speak("Welcome! I need a persona. Would you prefer Alfred, the gentleman, or Beatrice, the lady? Say 'Alfred' or 'Beatrice'.")
 
         recognizer = sr.Recognizer()
-        with sr.MMicrophone() as source:
+        with sr.Microphone() as source:
             print("Listening for persona choice...")
             audio = recognizer.listen(source)
             try:
@@ -202,7 +202,7 @@ def train_voice_model(retrain=False):
 
     global model
     try:
-        model = joblib.load('voice_model.pkl')
+        model = joblib.load('models/voice/voice_model.pkl')
         speak("Voice model loaded successfully.")
     except FileNotFoundError:
         if retrain:

@@ -1303,6 +1303,62 @@
         "documentation": {}
     },
     {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -1503,14 +1559,6 @@
         "importPath": "psutil",
         "description": "psutil",
         "detail": "psutil",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -5397,6 +5445,33 @@
         "documentation": {}
     },
     {
+        "label": "ensure_directory",
+        "kind": 2,
+        "importPath": "grokvis.download_wakeword",
+        "description": "grokvis.download_wakeword",
+        "peekOfCode": "def ensure_directory(directory):\n    \"\"\"Ensure the directory exists\"\"\"\n    if not os.path.exists(directory):\n        os.makedirs(directory)\n        print(f\"Created directory: {directory}\")\n    else:\n        print(f\"Directory already exists: {directory}\")\ndef download_wakeword_file():\n    \"\"\"Download the wake word file from GitHub\"\"\"\n    # Define paths",
+        "detail": "grokvis.download_wakeword",
+        "documentation": {}
+    },
+    {
+        "label": "download_wakeword_file",
+        "kind": 2,
+        "importPath": "grokvis.download_wakeword",
+        "description": "grokvis.download_wakeword",
+        "peekOfCode": "def download_wakeword_file():\n    \"\"\"Download the wake word file from GitHub\"\"\"\n    # Define paths\n    voice_samples_dir = Path(\"voice_samples\")\n    default_dir = voice_samples_dir / \"Default\"\n    wakeword_zip = default_dir / \"Hey--Grok_en_windows_v3_0_0.zip\"\n    # Ensure directories exist\n    ensure_directory(voice_samples_dir)\n    ensure_directory(default_dir)\n    # Check if the zip file already exists",
+        "detail": "grokvis.download_wakeword",
+        "documentation": {}
+    },
+    {
+        "label": "extract_wakeword_file",
+        "kind": 2,
+        "importPath": "grokvis.download_wakeword",
+        "description": "grokvis.download_wakeword",
+        "peekOfCode": "def extract_wakeword_file(zip_path):\n    \"\"\"Extract the wake word file if it exists as a zip\"\"\"\n    if zip_path and os.path.exists(zip_path):\n        try:\n            # Extract the zip file\n            with zipfile.ZipFile(zip_path, 'r') as zip_ref:\n                zip_ref.extractall(os.path.dirname(zip_path))\n            print(f\"Successfully extracted wake word file to {os.path.dirname(zip_path)}\")\n            return True\n        except Exception as e:",
+        "detail": "grokvis.download_wakeword",
+        "documentation": {}
+    },
+    {
         "label": "tell_joke",
         "kind": 2,
         "importPath": "grokvis.entertainment",
@@ -5577,6 +5652,60 @@
         "documentation": {}
     },
     {
+        "label": "ensure_directory",
+        "kind": 2,
+        "importPath": "grokvis.organize_models",
+        "description": "grokvis.organize_models",
+        "peekOfCode": "def ensure_directory(directory):\n    \"\"\"Ensure the directory exists\"\"\"\n    if not os.path.exists(directory):\n        os.makedirs(directory)\n        print(f\"Created directory: {directory}\")\n    return directory\ndef organize_wakeword_files():\n    \"\"\"Move wake word files to models/wakeword directory\"\"\"\n    # Define paths\n    source_dir = Path(\"voice_samples/Default\")",
+        "detail": "grokvis.organize_models",
+        "documentation": {}
+    },
+    {
+        "label": "organize_wakeword_files",
+        "kind": 2,
+        "importPath": "grokvis.organize_models",
+        "description": "grokvis.organize_models",
+        "peekOfCode": "def organize_wakeword_files():\n    \"\"\"Move wake word files to models/wakeword directory\"\"\"\n    # Define paths\n    source_dir = Path(\"voice_samples/Default\")\n    target_dir = Path(\"models/wakeword\")\n    # Ensure target directory exists\n    ensure_directory(target_dir)\n    # Check for wake word files in source directory\n    wakeword_zip = source_dir / \"Hey--Grok_en_windows_v3_0_0.zip\"\n    wakeword_ppn = source_dir / \"Hey--Grok_en_windows_v3_0_0.ppn\"",
+        "detail": "grokvis.organize_models",
+        "documentation": {}
+    },
+    {
+        "label": "organize_voice_model",
+        "kind": 2,
+        "importPath": "grokvis.organize_models",
+        "description": "grokvis.organize_models",
+        "peekOfCode": "def organize_voice_model():\n    \"\"\"Move voice model to models/voice directory\"\"\"\n    # Define paths\n    source_file = Path(\"voice_model.pkl\")\n    target_dir = Path(\"models/voice\")\n    # Ensure target directory exists\n    ensure_directory(target_dir)\n    # Move voice model if it exists\n    if os.path.exists(source_file):\n        target_file = target_dir / source_file.name",
+        "detail": "grokvis.organize_models",
+        "documentation": {}
+    },
+    {
+        "label": "update_code_references",
+        "kind": 2,
+        "importPath": "grokvis.organize_models",
+        "description": "grokvis.organize_models",
+        "peekOfCode": "def update_code_references():\n    \"\"\"Update code references to point to the new model locations\"\"\"\n    # Update speech.py\n    speech_py = Path(\"grokvis/speech.py\")\n    if os.path.exists(speech_py):\n        with open(speech_py, 'r') as f:\n            content = f.read()\n        # Update voice model path\n        content = content.replace(\"joblib.load('voice_model.pkl')\", \"joblib.load('models/voice/voice_model.pkl')\")\n        content = content.replace(\"joblib.dump(model, 'voice_model.pkl')\", \"joblib.dump(model, 'models/voice/voice_model.pkl')\")",
+        "detail": "grokvis.organize_models",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_directory",
+        "kind": 2,
+        "importPath": "grokvis.place_wakeword",
+        "description": "grokvis.place_wakeword",
+        "peekOfCode": "def ensure_directory(directory):\n    \"\"\"Ensure the directory exists\"\"\"\n    if not os.path.exists(directory):\n        os.makedirs(directory)\n        print(f\"Created directory: {directory}\")\n    else:\n        print(f\"Directory already exists: {directory}\")\ndef place_wakeword_file():\n    \"\"\"Place the wake word file in the correct location\"\"\"\n    # Define paths",
+        "detail": "grokvis.place_wakeword",
+        "documentation": {}
+    },
+    {
+        "label": "place_wakeword_file",
+        "kind": 2,
+        "importPath": "grokvis.place_wakeword",
+        "description": "grokvis.place_wakeword",
+        "peekOfCode": "def place_wakeword_file():\n    \"\"\"Place the wake word file in the correct location\"\"\"\n    # Define paths\n    voice_samples_dir = Path(\"voice_samples\")\n    default_dir = voice_samples_dir / \"Default\"\n    wakeword_zip = default_dir / \"Hey--Grok_en_windows_v3_0_0.zip\"\n    # Ensure directories exist\n    ensure_directory(voice_samples_dir)\n    ensure_directory(default_dir)\n    # Check if the zip file already exists",
+        "detail": "grokvis.place_wakeword",
+        "documentation": {}
+    },
+    {
         "label": "start_timer",
         "kind": 2,
         "importPath": "grokvis.productivity",
@@ -5739,6 +5868,15 @@
         "documentation": {}
     },
     {
+        "label": "reset_persona",
+        "kind": 2,
+        "importPath": "grokvis.reset_persona",
+        "description": "grokvis.reset_persona",
+        "peekOfCode": "def reset_persona():\n    \"\"\"Delete the persona_config.txt file if it exists.\"\"\"\n    if os.path.exists('persona_config.txt'):\n        try:\n            os.remove('persona_config.txt')\n            print(\"Persona choice reset successfully. GrokVIS will ask for a persona choice on next run.\")\n        except Exception as e:\n            print(f\"Error resetting persona choice: {e}\")\n    else:\n        print(\"No persona choice found. GrokVIS will ask for a persona choice on next run.\")",
+        "detail": "grokvis.reset_persona",
+        "documentation": {}
+    },
+    {
         "label": "add_event",
         "kind": 2,
         "importPath": "grokvis.scheduler",
@@ -5763,6 +5901,42 @@
         "description": "grokvis.scheduler",
         "peekOfCode": "def remove_event(task_keyword):\n    \"\"\"Remove an event containing the given keyword.\"\"\"\n    try:\n        jobs = scheduler.get_jobs()\n        removed = False\n        for job in jobs:\n            if job.args and task_keyword.lower() in job.args[0].lower():\n                job_id = job.id\n                scheduler.remove_job(j极Id)\n                speak(f\"Removed event: {job.args[0]}\")",
         "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_directory",
+        "kind": 2,
+        "importPath": "grokvis.setup_wakeword",
+        "description": "grokvis.setup_wakeword",
+        "peekOfCode": "def ensure_directory(directory):\n    \"\"\"Ensure the directory exists\"\"\"\n    if not os.path.exists(directory):\n        os.makedirs(directory)\n        print(f\"Created directory: {directory}\")\n    return directory\ndef download_wakeword_file():\n    \"\"\"Download the wake word file if it doesn't exist\"\"\"\n    # Define paths\n    models_dir = ensure_directory(Path(\"models\"))",
+        "detail": "grokvis.setup_wakeword",
+        "documentation": {}
+    },
+    {
+        "label": "download_wakeword_file",
+        "kind": 2,
+        "importPath": "grokvis.setup_wakeword",
+        "description": "grokvis.setup_wakeword",
+        "peekOfCode": "def download_wakeword_file():\n    \"\"\"Download the wake word file if it doesn't exist\"\"\"\n    # Define paths\n    models_dir = ensure_directory(Path(\"models\"))\n    wakeword_dir = ensure_directory(Path(\"models/wakeword\"))\n    wakeword_zip = wakeword_dir / \"Hey--Grok_en_windows_v3_0_0.zip\"\n    # Check if the wake word file already exists in the models directory\n    if os.path.exists(wakeword_zip):\n        print(f\"Wake word file already exists at: {wakeword_zip}\")\n        return wakeword_zip",
+        "detail": "grokvis.setup_wakeword",
+        "documentation": {}
+    },
+    {
+        "label": "extract_wakeword_file",
+        "kind": 2,
+        "importPath": "grokvis.setup_wakeword",
+        "description": "grokvis.setup_wakeword",
+        "peekOfCode": "def extract_wakeword_file(zip_path):\n    \"\"\"Extract the wake word file\"\"\"\n    if zip_path and os.path.exists(zip_path):\n        try:\n            # Extract the zip file\n            with zipfile.ZipFile(zip_path, 'r') as zip_ref:\n                zip_ref.extractall(os.path.dirname(zip_path))\n            print(f\"Successfully extracted wake word file to {os.path.dirname(zip_path)}\")\n            return True\n        except Exception as e:",
+        "detail": "grokvis.setup_wakeword",
+        "documentation": {}
+    },
+    {
+        "label": "update_code_references",
+        "kind": 2,
+        "importPath": "grokvis.setup_wakeword",
+        "description": "grokvis.setup_wakeword",
+        "peekOfCode": "def update_code_references():\n    \"\"\"Update code references to point to the new model locations\"\"\"\n    # Update speech.py\n    speech_py = Path(\"grokvis/speech.py\")\n    if os.path.exists(speech_py):\n        with open(speech_py, 'r') as f:\n            content = f.read()\n        # Update wake word path references\n        if \"model_path=\" not in content:\n            content = content.replace(",
+        "detail": "grokvis.setup_wakeword",
         "documentation": {}
     },
     {
@@ -5833,7 +6007,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def speak(text):\n    print(f\"Speaking: {text}\")\ndef record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file. If an error occurs, provide feedback.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.MMicrophone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:",
+        "peekOfCode": "def speak(text):\n    print(f\"Speaking: {text}\")\ndef record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file. If an error occurs, log the error and provide feedback.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -5842,7 +6016,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file. If an error occurs, provide feedback.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.MMicrophone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:\n                f.write(audio.get_wav_data())\n    except Exception as e:",
+        "peekOfCode": "def record_clip(filename):\n    \"\"\"Record a short audio clip and save it to a file. If an error occurs, log the error and provide feedback.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Say something...\")\n            audio = recognizer.listen(source)\n            with open(filename, \"wb\") as f:\n                f.write(audio.get_wav_data())\n    except Exception as e:",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -5860,7 +6034,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def train_one_class_model(directory):\n    \"\"\"Train a One-Class SVM model on voice samples. Provide feedback if an error occurs.\"\"\"\n    try:\n        files = glob.glob(f\"{directory}/*.wav\")\n        X = [extract_mfcc(f) for f in files if extract_mfcc(f) is not None]\n        model = OneClassSVM(kernel='rbf', gamma='auto')\n        model.fit(X)\n        joblib.dump(model, 'voice_model.pkl')\n        return model\n    except Exception as e:",
+        "peekOfCode": "def train_one_class_model(directory):\n    \"\"\"Train a One-Class SVM model on voice samples. Provide feedback if an error occurs.\"\"\"\n    try:\n        files = glob.glob(f\"{directory}/*.wav\")\n        X = [extract_mfcc(f) for f in files if extract_mfcc(f) is not None]\n        model = OneClassSVM(kernel='rbf', gamma='auto')\n        model.fit(X)\n        joblib.dump(model, 'models/voice/voice_model.pkl')\n        return model\n    except Exception as e:",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -5869,7 +6043,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def listen():\n    \"\"\"Listen for a command and verify the speaker's voice. Provide feedback if an error occurs.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.MMicrophone() as source:\n            print(\"Listening...\")\n            audio = recognizer.listen(source)\n            with open(\"temp.wav\", \"wb\") as f:\n                f.write(audio.get_wav_data())\n            mfcc = extract_mfcc(\"temp.wav\")",
+        "peekOfCode": "def listen():\n    \"\"\"Listen for a command and verify the speaker's voice. Provide feedback if an error occurs.\"\"\"\n    try:\n        recognizer = sr.Recognizer()\n        with sr.Microphone() as source:\n            print(\"Listening...\")\n            audio = recognizer.listen(source)\n            with open(\"temp.wav\", \"wb\") as f:\n                f.write(audio.get_wav_data())\n            mfcc = extract_mfcc(\"temp.wav\")",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -5896,7 +6070,7 @@
         "kind": 2,
         "importPath": "grokvis.speech",
         "description": "grokvis.speech",
-        "peekOfCode": "def train_voice_model(retrain=False):\n    \"\"\"Load or train the voice model. Optionally retrain with new samples.\"\"\"\n    global model\n    try:\n        model = joblib.load('voice_model.pkl')\n        speak(\"Voice model loaded successfully.\")\n    except FileNotFoundError:\n        if retrain:\n            speak(\"I need to learn your voice. Please say 10 new phrases after each prompt.\")\n        else:",
+        "peekOfCode": "def train_voice_model(retrain=False):\n    \"\"\"Load or train the voice model. Optionally retrain with new samples.\"\"\"\n    global model\n    try:\n        model = joblib.load('models/voice/voice_model.pkl')\n        speak(\"Voice model loaded successfully.\")\n    except FileNotFoundError:\n        if retrain:\n            speak(\"I need to learn your voice. Please say 10 new phrases after each prompt.\")\n        else:",
         "detail": "grokvis.speech",
         "documentation": {}
     },
@@ -6477,6 +6651,33 @@
         "documentation": {}
     },
     {
+        "label": "check_microphone_devices",
+        "kind": 2,
+        "importPath": "tests.check_audio",
+        "description": "tests.check_audio",
+        "peekOfCode": "def check_microphone_devices():\n    \"\"\"List all available microphone devices\"\"\"\n    print(\"\\n=== Available Audio Devices ===\")\n    devices = sd.query_devices()\n    print(\"\\nAll devices:\")\n    for i, device in enumerate(devices):\n        print(f\"{i}: {device['name']} (Channels In: {device['max_input_channels']}, Out: {device['max_output_channels']})\")\n    print(\"\\nInput devices:\")\n    for i, device in enumerate(devices):\n        if device['max_input_channels'] > 0:",
+        "detail": "tests.check_audio",
+        "documentation": {}
+    },
+    {
+        "label": "test_microphone_recording",
+        "kind": 2,
+        "importPath": "tests.check_audio",
+        "description": "tests.check_audio",
+        "peekOfCode": "def test_microphone_recording():\n    \"\"\"Test microphone recording using speech_recognition\"\"\"\n    print(\"\\n=== Testing Microphone with Speech Recognition ===\")\n    r = sr.Recognizer()\n    try:\n        with sr.Microphone() as source:\n            print(\"Microphone initialized successfully!\")\n            print(\"Recording 3 seconds of audio...\")\n            audio = r.record(source, duration=3)\n            print(\"Recording completed successfully!\")",
+        "detail": "tests.check_audio",
+        "documentation": {}
+    },
+    {
+        "label": "test_sounddevice_recording",
+        "kind": 2,
+        "importPath": "tests.check_audio",
+        "description": "tests.check_audio",
+        "peekOfCode": "def test_sounddevice_recording():\n    \"\"\"Test microphone recording using sounddevice\"\"\"\n    print(\"\\n=== Testing Microphone with SoundDevice ===\")\n    try:\n        # Record 3 seconds of audio\n        sample_rate = 16000\n        duration = 3  # seconds\n        print(f\"Recording {duration} seconds of audio...\")\n        recording = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1)\n        sd.wait()",
+        "detail": "tests.check_audio",
+        "documentation": {}
+    },
+    {
         "label": "check_dependency",
         "kind": 2,
         "importPath": "tests.check_dependency",
@@ -6558,6 +6759,24 @@
         "documentation": {}
     },
     {
+        "label": "ensure_directory",
+        "kind": 2,
+        "importPath": "tests.extract_wakeword",
+        "description": "tests.extract_wakeword",
+        "peekOfCode": "def ensure_directory(directory):\n    \"\"\"Ensure the directory exists\"\"\"\n    if not os.path.exists(directory):\n        os.makedirs(directory)\n        print(f\"Created directory: {directory}\")\n    else:\n        print(f\"Directory already exists: {directory}\")\ndef extract_wakeword_file():\n    \"\"\"Extract the wake word file if it exists as a zip\"\"\"\n    # Define paths",
+        "detail": "tests.extract_wakeword",
+        "documentation": {}
+    },
+    {
+        "label": "extract_wakeword_file",
+        "kind": 2,
+        "importPath": "tests.extract_wakeword",
+        "description": "tests.extract_wakeword",
+        "peekOfCode": "def extract_wakeword_file():\n    \"\"\"Extract the wake word file if it exists as a zip\"\"\"\n    # Define paths\n    voice_samples_dir = Path(\"voice_samples\")\n    default_dir = voice_samples_dir / \"Default\"\n    wakeword_zip = default_dir / \"Hey--Grok_en_windows_v3_0_0.zip\"\n    # Ensure directories exist\n    ensure_directory(voice_samples_dir)\n    ensure_directory(default_dir)\n    # Check if the zip file exists",
+        "detail": "tests.extract_wakeword",
+        "documentation": {}
+    },
+    {
         "label": "run_tests",
         "kind": 2,
         "importPath": "tests.run_tests",
@@ -6609,15 +6828,6 @@
         "description": "tests.test_speech",
         "peekOfCode": "class TestSpeech(unittest.TestCase):\n    \"\"\"Test cases for speech functionality.\"\"\"\n    def test_speech_module_import(self):\n        \"\"\"Test that the speech module can be imported.\"\"\"\n        try:\n            from grokvis import speech\n            self.assertTrue(True)\n        except ImportError as e:\n            self.fail(f\"Failed to import speech module: {e}\")\n    def test_tts_initialization(self):",
         "detail": "tests.test_speech",
-        "documentation": {}
-    },
-    {
-        "label": "reset_persona",
-        "kind": 2,
-        "importPath": "reset_persona",
-        "description": "reset_persona",
-        "peekOfCode": "def reset_persona():\n    \"\"\"Delete the persona_config.txt file if it exists.\"\"\"\n    if os.path.exists('persona_config.txt'):\n        try:\n            os.remove('persona_config.txt')\n            print(\"Persona choice reset successfully. GrokVIS will ask for a persona choice on next run.\")\n        except Exception as e:\n            print(f\"Error resetting persona choice: {e}\")\n    else:\n        print(\"No persona choice found. GrokVIS will ask for a persona choice on next run.\")",
-        "detail": "reset_persona",
         "documentation": {}
     }
 ]
