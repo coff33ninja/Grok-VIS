@@ -1,6 +1,6 @@
 # GrokVIS - Voice Interactive System
 
-GrokVIS is a modular voice assistant with memory, scheduling, and home automation capabilities. It features a web dashboard, weather services, and voice recognition with speaker verification.
+GrokVIS is a modular voice assistant with memory, scheduling, and home automation capabilities. It features a web dashboard, weather services, and voice recognition with speaker verification. Everything is still in development as I'm bitting more than I can chew. The name comes from grok ai who gave me the inspiration during a long debate of AI vs humans... Such trauma 😂 
 
 ## Features
 
