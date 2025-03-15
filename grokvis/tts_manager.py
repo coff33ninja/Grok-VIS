@@ -43,7 +43,7 @@ def get_tts_instance():
             _tts_instance = TTS(
                 model_name="tts_models/en/ljspeech/tacotron2-DDC",
                 progress_bar=False,
-                gpu=False
+                gpu=True
             )
     return _tts_instance
 
@@ -61,7 +61,7 @@ def speak(text, persona="Default", command=None):
         import datetime
         command = f"speech_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
     # Construct the directory and file path
-    directory = os.path.join("voice_samples", persona)
+    directory = os.path.join("models/voice", persona)
     file_path = os.path.join(directory, f"{command}.wav")
 
     # Create the directory if it doesn't exist
