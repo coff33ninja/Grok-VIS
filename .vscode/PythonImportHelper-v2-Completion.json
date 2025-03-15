@@ -634,14 +634,6 @@
         "documentation": {}
     },
     {
-        "label": "scheduler",
-        "importPath": "grokvis.shared",
-        "description": "grokvis.shared",
-        "isExtraImport": true,
-        "detail": "grokvis.shared",
-        "documentation": {}
-    },
-    {
         "label": "model",
         "importPath": "grokvis.shared",
         "description": "grokvis.shared",
@@ -1243,6 +1235,14 @@
         "description": "sentence_transformers",
         "isExtraImport": true,
         "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundScheduler",
+        "importPath": "apscheduler.schedulers.background",
+        "description": "apscheduler.schedulers.background",
+        "isExtraImport": true,
+        "detail": "apscheduler.schedulers.background",
         "documentation": {}
     },
     {
@@ -5926,7 +5926,7 @@
         "kind": 2,
         "importPath": "grokvis.scheduler",
         "description": "grokvis.scheduler",
-        "peekOfCode": "def add_event(time_str, task):\n    \"\"\"Schedule an event using APScheduler.\"\"\"\n    try:\n        event_time = datetime.datetime.strptime(time_str, \"%H:%M\")\n        event_time = event_time.replace(year=datetime.datetime.now().year,\n                                      month=datetime.datetime.now().month,\n                                      day=datetime.datetime.now().day)\n        if event_time < datetime.datetime.now():\n            event_time += datetime.timedelta(days=1)\n        scheduler.add_job(speak, 'date', run_date=event_time, args=[f\"Reminder: {task} now.\"])",
+        "peekOfCode": "def add_event(time_str, task):\n    \"\"\"Schedule an event using APScheduler.\"\"\"\n    try:\n        event_time = datetime.datetime.strptime(time_str, \"%H:%M\")\n        event_time = event_time.replace(\n            year=datetime.datetime.now().year,\n            month=datetime.datetime.now().month,\n            day=datetime.datetime.now().day,\n        )\n        if event_time < datetime.datetime.now():",
         "detail": "grokvis.scheduler",
         "documentation": {}
     },
@@ -5944,7 +5944,16 @@
         "kind": 2,
         "importPath": "grokvis.scheduler",
         "description": "grokvis.scheduler",
-        "peekOfCode": "def remove_event(task_keyword):\n    \"\"\"Remove an event containing the given keyword.\"\"\"\n    try:\n        jobs = scheduler.get_jobs()\n        removed = False\n        for job in jobs:\n            if job.args and task_keyword.lower() in job.args[0].lower():\n                job_id = job.id\n                scheduler.remove_job(j极Id)\n                speak(f\"Removed event: {job.args[0]}\")",
+        "peekOfCode": "def remove_event(task_keyword):\n    \"\"\"Remove an event containing the given keyword.\"\"\"\n    try:\n        jobs = scheduler.get_jobs()\n        removed = False\n        for job in jobs:\n            if job.args and task_keyword.lower() in job.args[0].lower():\n                job_id = job.id\n                scheduler.remove_job(job_id)\n                speak(f\"Removed event: {job.args[0]}\")",
+        "detail": "grokvis.scheduler",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "kind": 5,
+        "importPath": "grokvis.scheduler",
+        "description": "grokvis.scheduler",
+        "peekOfCode": "scheduler = BackgroundScheduler()\nscheduler.start()\n# Import from other modules\nfrom grokvis.speech import speak\nfrom grokvis.memory import store_memory\ndef add_event(time_str, task):\n    \"\"\"Schedule an event using APScheduler.\"\"\"\n    try:\n        event_time = datetime.datetime.strptime(time_str, \"%H:%M\")\n        event_time = event_time.replace(",
         "detail": "grokvis.scheduler",
         "documentation": {}
     },

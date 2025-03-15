@@ -37,6 +37,7 @@ tqdm>=4.66.0
 py-cpuinfo>=8.0.0
 pynvml>=11.0.0
 GPUtil>=1.4.0
+supervisor
 
 # Platform-Specific Dependencies
 wmi>=1.5.1; sys_platform == "win32"
