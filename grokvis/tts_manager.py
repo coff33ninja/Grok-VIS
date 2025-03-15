@@ -49,6 +49,38 @@ def get_tts_instance():
 
 def speak(text, persona="Default", command=None):
     """
+    Synthesize speech from text and play it in real-time.
+    
+    Parameters:
+        text (str): The text to be synthesized.
+        persona (str, optional): Identifier for organizing voice samples. Defaults to "Default".
+        command (str, optional): Command or label used to name the output file. If None, a timestamp will be used.
+    """
+    # If command is not provided, use a timestamp
+    if command is None:
+        import datetime
+        command = f"speech_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
+    # Construct the directory and file path
+    directory = os.path.join("models/voice", persona)
+    file_path = os.path.join(directory, f"{command}.wav")
+
+    # Create the directory if it doesn't exist
+    os.makedirs(directory, exist_ok=True)
+
+    # Synthesize and play the audio in real-time
+    try:
+        tts = get_tts_instance()
+        logger.info("Synthesizing speech for text: '%s'", text)
+        audio_data = tts.tts(text=text)
+        
+        # Play the audio data using sounddevice
+        logger.info("Playing synthesized audio in real-time")
+        sd.play(audio_data, samplerate=tts.sample_rate)
+        sd.wait()
+    except Exception as e:
+        logger.error("Failed to synthesize or play speech: %s", e)
+        raise
+    """
     Synthesize speech from text, save it as a WAV file, and play it.
     
     Parameters:

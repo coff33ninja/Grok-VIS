@@ -6313,7 +6313,7 @@
         "kind": 2,
         "importPath": "grokvis.tts_manager",
         "description": "grokvis.tts_manager",
-        "peekOfCode": "def speak(text, persona=\"Default\", command=None):\n    \"\"\"\n    Synthesize speech from text, save it as a WAV file, and play it.\n    Parameters:\n        text (str): The text to be synthesized.\n        persona (str, optional): Identifier for organizing voice samples. Defaults to \"Default\".\n        command (str, optional): Command or label used to name the output file. If None, a timestamp will be used.\n    \"\"\"\n    # If command is not provided, use a timestamp\n    if command is None:",
+        "peekOfCode": "def speak(text, persona=\"Default\", command=None):\n    \"\"\"\n    Synthesize speech from text and play it in real-time.\n    Parameters:\n        text (str): The text to be synthesized.\n        persona (str, optional): Identifier for organizing voice samples. Defaults to \"Default\".\n        command (str, optional): Command or label used to name the output file. If None, a timestamp will be used.\n    \"\"\"\n    # If command is not provided, use a timestamp\n    if command is None:",
         "detail": "grokvis.tts_manager",
         "documentation": {}
     },
